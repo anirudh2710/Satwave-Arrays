@@ -1,0 +1,225 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuContent,
+    NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
+
+interface NavbarProps {
+    scrollTo?: (id: string) => void;
+    setAboutTab?: (tab: string) => void;
+}
+
+export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
+    const [isAtTop, setIsAtTop] = useState(true);
+    const pathname = usePathname();
+    const router = useRouter();
+    const isHomePage = pathname === '/';
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsAtTop(window.scrollY < 50);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const handleAboutClick = (tab: string) => {
+        if (isHomePage && scrollTo) {
+            setAboutTab?.(tab);
+            scrollTo('about');
+        } else {
+            // Use Next.js router for instant client-side navigation (no page reload)
+            router.push(`/?aboutTab=${tab}#about`);
+        }
+    };
+
+    return (
+        <nav className={`full-nav ${isAtTop ? 'nav-transparent' : 'nav-hero-active'}`}>
+            <div className="w-full px-6 h-20 flex items-center justify-between">
+                {/* Logo Container - Extreme Left */}
+                <div className="flex items-center">
+                    <Link href="/">
+                        <img
+                            src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White.svg'
+                            alt="Satwave Logo"
+                            className="h-12 w-auto cursor-pointer"
+                        />
+                    </Link>
+                </div>
+
+                {/* Navigation Menu - Extreme Right */}
+                <NavigationMenu className="hidden md:flex" viewport={false}>
+                    <NavigationMenuList className="gap-10">
+                        {/* About Dropdown */}
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                                About
+                            </NavigationMenuTrigger>
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:left-0">
+                                <ul className="grid w-[220px] gap-0.5 p-3">
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => handleAboutClick('overview')}
+                                        >
+                                            <div className="text-sm font-medium">Overview</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => handleAboutClick('mission')}
+                                        >
+                                            <div className="text-sm font-medium">Mission</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => handleAboutClick('values')}
+                                        >
+                                            <div className="text-sm font-medium">Values</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => handleAboutClick('governance')}
+                                        >
+                                            <div className="text-sm font-medium">Governance</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => handleAboutClick('team')}
+                                        >
+                                            <div className="text-sm font-medium">Team</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                </ul>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
+
+                        {/* Separator */}
+                        <div className="h-6 w-px bg-white/20"></div>
+
+                        {/* Products & Applications Dropdown */}
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                                Products & Applications
+                            </NavigationMenuTrigger>
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:-left-20">
+                                <ul className="grid grid-cols-2 w-[440px] gap-4 p-4">
+                                    {/* Products Section */}
+                                    <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/products?tab=products" className="block p-4 rounded-md cursor-pointer hover:bg-white/10 transition-all duration-200">
+                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                                                    Products
+                                                </div>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                        Ku Antenna
+                                                    </span>
+                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                        Ka Antenna
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li>
+
+                                    {/* Applications Section */}
+                                    <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/products?tab=applications" className="block p-4 rounded-md cursor-pointer hover:bg-white/10 transition-all duration-200">
+                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+                                                    Applications
+                                                </div>
+                                                <div className="flex flex-wrap gap-2">
+                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                        Application One
+                                                    </span>
+                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                        Application Two
+                                                    </span>
+                                                </div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li>
+                                </ul>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
+
+                        {/* Separator */}
+                        <div className="h-6 w-px bg-white/20"></div>
+
+                        {/* Technology */}
+                        <NavigationMenuItem>
+                            <Button
+                                onClick={() => {
+                                    if (isHomePage && scrollTo) {
+                                        scrollTo('technology');
+                                    } else {
+                                        window.location.href = '/#technology';
+                                    }
+                                }}
+                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md"
+                            >
+                                Technology
+                            </Button>
+                        </NavigationMenuItem>
+
+                        {/* Separator */}
+                        <div className="h-6 w-px bg-white/20"></div>
+
+                        {/* More */}
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                                More
+                            </NavigationMenuTrigger>
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:right-0 md:left-auto">
+                                <ul className="grid w-[220px] gap-0.5 p-3">
+                                    <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link
+                                                href="/news"
+                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            >
+                                                <div className="text-sm font-medium">News</div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            onClick={() => {
+                                                if (isHomePage && scrollTo) {
+                                                    scrollTo('contact');
+                                                } else {
+                                                    window.location.href = '/#contact';
+                                                }
+                                            }}
+                                        >
+                                            <div className="text-sm font-medium">Contact Us</div>
+                                        </NavigationMenuLink>
+                                    </li>
+                                </ul>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
+                    </NavigationMenuList>
+                </NavigationMenu>
+            </div>
+        </nav>
+    );
+}
