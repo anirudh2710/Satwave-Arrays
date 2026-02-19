@@ -24,6 +24,19 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
     const router = useRouter();
     const isHomePage = pathname === '/';
 
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+    // Close dropdowns on click outside
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (activeDropdown && !(event.target as Element).closest('.nav-dropdown-trigger') && !(event.target as Element).closest('.nav-dropdown-content')) {
+                setActiveDropdown(null);
+            }
+        };
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, [activeDropdown]);
+
     useEffect(() => {
         const handleScroll = () => {
             setIsAtTop(window.scrollY < 50);
@@ -57,11 +70,17 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                 </div>
 
                 {/* Navigation Menu - Extreme Right */}
-                <NavigationMenu className="hidden md:flex" viewport={false}>
+                {/* Navigation Menu - Extreme Right */}
+                <NavigationMenu className="hidden md:flex" viewport={false} value={activeDropdown || ""} onValueChange={setActiveDropdown}>
                     <NavigationMenuList className="gap-10">
                         {/* About Dropdown */}
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                        <NavigationMenuItem value="about">
+                            <NavigationMenuTrigger
+                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                onPointerMove={(e: any) => e.preventDefault()}
+                                onPointerLeave={(e: any) => e.preventDefault()}
+                                onClick={() => setActiveDropdown(activeDropdown === 'about' ? null : 'about')}
+                            >
                                 About
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:left-0">
@@ -114,8 +133,13 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         <div className="h-6 w-px bg-white/20"></div>
 
                         {/* Products & Applications Dropdown */}
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                        <NavigationMenuItem value="products">
+                            <NavigationMenuTrigger
+                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                onPointerMove={(e: any) => e.preventDefault()}
+                                onPointerLeave={(e: any) => e.preventDefault()}
+                                onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
+                            >
                                 Products & Applications
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:-left-20">
@@ -184,8 +208,13 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         <div className="h-6 w-px bg-white/20"></div>
 
                         {/* More */}
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5">
+                        <NavigationMenuItem value="more">
+                            <NavigationMenuTrigger
+                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                onPointerMove={(e: any) => e.preventDefault()}
+                                onPointerLeave={(e: any) => e.preventDefault()}
+                                onClick={() => setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
+                            >
                                 More
                             </NavigationMenuTrigger>
                             <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:right-0 md:left-auto">
