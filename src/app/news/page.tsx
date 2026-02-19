@@ -1,5 +1,3 @@
-'use client';
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
     Breadcrumb,
@@ -12,60 +10,31 @@ import {
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { client } from "../../sanity/client";
+import { ALL_NEWS_QUERY } from "../../sanity/queries";
+import { urlFor } from "../../sanity/image";
 
-// Sample news data - replace with your actual content
-const newsArticles = [
-    {
-        id: "article-1",
-        headline: "Satwave Launches Next-Generation Ka-Band Antenna",
-        image: "/news/placeholder-1.jpg",
-        excerpt: "Revolutionary phased array technology enables seamless LEO/MEO satellite connectivity for maritime and aviation applications.",
-        date: "February 2026",
-        category: "Product Launch"
-    },
-    {
-        id: "article-2",
-        headline: "Expanding Global Connectivity: New Partnership Announcement",
-        image: "/news/placeholder-2.jpg",
-        excerpt: "Strategic collaboration brings advanced satellite communication solutions to underserved markets worldwide.",
-        date: "January 2026",
-        category: "Partnership"
-    },
-    {
-        id: "article-3",
-        headline: "Innovation in Satellite Communications: Q4 2025 Highlights",
-        image: "/news/placeholder-3.jpg",
-        excerpt: "A look back at our achievements in advancing phased array antenna technology and customer deployments.",
-        date: "December 2025",
-        category: "Company News"
-    },
-    {
-        id: "article-4",
-        headline: "Satwave Receives Industry Recognition for Technical Excellence",
-        image: "/news/placeholder-4.jpg",
-        excerpt: "Award recognizes breakthrough innovations in electronically steered antenna systems for mobile platforms.",
-        date: "November 2025",
-        category: "Awards"
-    },
-    {
-        id: "article-5",
-        headline: "Maritime Connectivity Revolution: Case Study",
-        image: "/news/placeholder-5.jpg",
-        excerpt: "How our Ku-Band antenna is transforming communications for commercial shipping fleets.",
-        date: "October 2025",
-        category: "Case Study"
-    },
-    {
-        id: "article-6",
-        headline: "Technology Deep Dive: Phased Array Antenna Design",
-        image: "/news/placeholder-6.jpg",
-        excerpt: "An inside look at the engineering innovations powering our next-generation satellite communication systems.",
-        date: "September 2025",
-        category: "Technology"
-    },
-];
+// Revalidate every 60 seconds
+export const revalidate = 60;
 
-export default function NewsPage() {
+interface NewsArticle {
+    title: string;
+    slug: string;
+    mainImage?: any;
+    publishedAt: string;
+    category?: string;
+    body?: any;
+}
+
+export default async function NewsPage() {
+    let newsArticles: NewsArticle[] = [];
+
+    try {
+        newsArticles = await client.fetch(ALL_NEWS_QUERY);
+    } catch (error) {
+        console.error("Failed to fetch news:", error);
+    }
+
     return (
         <div className="min-h-screen bg-[#0A0C1F]">
             {/* Navbar */}
@@ -108,53 +77,67 @@ export default function NewsPage() {
 
             {/* News Grid */}
             <section className="max-w-7xl mx-auto px-6 py-16">
-                <div className="grid md:grid-cols-3 gap-8">
-                    {newsArticles.map((article) => (
-                        <Link key={article.id} href={`/news/${article.id}`}>
-                            <Card className="group glass-card border-brand-blue/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
-                                <CardContent className="p-0">
-                                    {/* Image */}
-                                    <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-blue/20 to-brand-accent/20">
-                                        <div className="w-full h-full flex items-center justify-center text-6xl">
-                                            📰
+                {newsArticles.length === 0 ? (
+                    <div className="text-center text-gray-400 py-20">
+                        <p>No news articles found at the moment.</p>
+                    </div>
+                ) : (
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {newsArticles.map((article) => (
+                            <Link key={article.slug} href={`/news/${article.slug}`}>
+                                <Card className="group glass-card border-brand-blue/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                                    <CardContent className="p-0">
+                                        {/* Image */}
+                                        <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-blue/20 to-brand-accent/20 relative">
+                                            {article.mainImage ? (
+                                                <img
+                                                    src={urlFor(article.mainImage).width(800).height(450).url()}
+                                                    alt={article.title}
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center text-6xl">
+                                                    📰
+                                                </div>
+                                            )}
                                         </div>
-                                    </div>
 
-                                    {/* Content */}
-                                    <div className="p-6">
-                                        {/* Category & Date */}
-                                        <div className="flex items-center justify-between mb-3">
-                                            <span className="px-3 py-1 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
-                                                {article.category}
-                                            </span>
-                                            <span className="text-gray-500 text-xs">
-                                                {article.date}
-                                            </span>
+                                        {/* Content */}
+                                        <div className="p-6">
+                                            {/* Category & Date */}
+                                            <div className="flex items-center justify-between mb-3">
+                                                <span className="px-3 py-1 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                    {article.category || 'News'}
+                                                </span>
+                                                <span className="text-gray-500 text-xs">
+                                                    {new Date(article.publishedAt).toLocaleDateString()}
+                                                </span>
+                                            </div>
+
+                                            {/* Headline */}
+                                            <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors line-clamp-2">
+                                                {article.title}
+                                            </h3>
+
+                                            {/* Excerpt - manually truncated or needs a field */}
+                                            <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+                                                Click to read full story...
+                                            </p>
+
+                                            {/* Read More */}
+                                            <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
+                                                <span className="group-hover:underline">Read More</span>
+                                                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </div>
                                         </div>
-
-                                        {/* Headline */}
-                                        <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
-                                            {article.headline}
-                                        </h3>
-
-                                        {/* Excerpt */}
-                                        <p className="text-gray-400 text-sm leading-relaxed">
-                                            {article.excerpt}
-                                        </p>
-
-                                        {/* Read More */}
-                                        <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
-                                            <span className="group-hover:underline">Read More</span>
-                                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </Link>
-                    ))}
-                </div>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+                )}
             </section>
 
             {/* Footer */}
