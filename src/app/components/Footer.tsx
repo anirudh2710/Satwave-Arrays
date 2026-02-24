@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-void-black py-16 border-t border-purple-accent/10 text-center relative z-20">
+        <footer className="bg-brand-black py-16 border-t border-mid-gray-tint/10 text-center relative z-20">
             <div className="mb-8">
                 <img
                     src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White.svg'

@@ -36,7 +36,7 @@ export default async function NewsPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[#0A0C1F]">
+        <div className="min-h-screen bg-brand-black">
             {/* Navbar */}
             <Navbar />
 
@@ -85,10 +85,10 @@ export default async function NewsPage() {
                     <div className="grid md:grid-cols-3 gap-8">
                         {newsArticles.map((article) => (
                             <Link key={article.slug} href={`/news/${article.slug}`}>
-                                <Card className="group glass-card border-brand-blue/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                                <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
                                     <CardContent className="p-0">
                                         {/* Image */}
-                                        <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-blue/20 to-brand-accent/20 relative">
+                                        <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 relative">
                                             {article.mainImage ? (
                                                 <img
                                                     src={urlFor(article.mainImage).width(800).height(450).url()}
@@ -106,7 +106,7 @@ export default async function NewsPage() {
                                         <div className="p-6">
                                             {/* Category & Date */}
                                             <div className="flex items-center justify-between mb-3">
-                                                <span className="px-3 py-1 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                <span className="px-3 py-1 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                     {article.category || 'News'}
                                                 </span>
                                                 <span className="text-gray-500 text-xs">

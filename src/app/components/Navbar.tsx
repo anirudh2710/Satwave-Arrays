@@ -60,11 +60,19 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
             <div className="w-full px-6 h-20 flex items-center justify-between">
                 {/* Logo Container - Extreme Left */}
                 <div className="flex items-center">
-                    <Link href="/">
+                    <Link
+                        href="/"
+                        onClick={(e) => {
+                            if (isHomePage) {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: 'instant' });
+                            }
+                        }}
+                    >
                         <img
                             src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White.svg'
                             alt="Satwave Logo"
-                            className="h-12 w-auto cursor-pointer"
+                            className="h-10 w-auto cursor-pointer"
                         />
                     </Link>
                 </div>
@@ -72,18 +80,18 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                 {/* Navigation Menu - Extreme Right */}
                 {/* Navigation Menu - Extreme Right */}
                 <NavigationMenu className="hidden md:flex" viewport={false} value={activeDropdown || ""} onValueChange={setActiveDropdown}>
-                    <NavigationMenuList className="gap-10">
+                    <NavigationMenuList className="gap-8">
                         {/* About Dropdown */}
                         <NavigationMenuItem value="about">
                             <NavigationMenuTrigger
-                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                className="uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
                                 onPointerMove={(e: any) => e.preventDefault()}
                                 onPointerLeave={(e: any) => e.preventDefault()}
                                 onClick={() => setActiveDropdown(activeDropdown === 'about' ? null : 'about')}
                             >
                                 About
                             </NavigationMenuTrigger>
-                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:left-0">
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-mid-gray-tint/30 shadow-xl rounded-lg md:left-0">
                                 <ul className="grid w-[220px] gap-0.5 p-3">
                                     <li>
                                         <NavigationMenuLink
@@ -142,7 +150,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                             >
                                 Products & Applications
                             </NavigationMenuTrigger>
-                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:-left-20">
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-mid-gray-tint/30 shadow-xl rounded-lg md:-left-20">
                                 <ul className="grid grid-cols-2 w-[440px] gap-4 p-4">
                                     {/* Products Section */}
                                     <li>
@@ -152,10 +160,10 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                     Products
                                                 </div>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Ku Antenna
                                                     </span>
-                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Ka Antenna
                                                     </span>
                                                 </div>
@@ -171,10 +179,10 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                     Applications
                                                 </div>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Application One
                                                     </span>
-                                                    <span className="px-3 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-xs font-medium border border-brand-blue/30">
+                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Application Two
                                                     </span>
                                                 </div>
@@ -217,7 +225,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                             >
                                 More
                             </NavigationMenuTrigger>
-                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-purple-accent/30 shadow-xl rounded-lg md:right-0 md:left-auto">
+                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-mid-gray-tint/30 shadow-xl rounded-lg md:right-0 md:left-auto">
                                 <ul className="grid w-[220px] gap-0.5 p-3">
                                     <li>
                                         <NavigationMenuLink asChild>

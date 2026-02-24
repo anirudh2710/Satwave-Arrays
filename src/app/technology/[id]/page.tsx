@@ -190,7 +190,7 @@ export default function TechnologyDetailPage() {
 
     if (!topic) {
         return (
-            <main className="min-h-screen bg-[#0A0C1F] flex items-center justify-center">
+            <main className="min-h-screen bg-brand-black flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">Topic Not Found</h1>
                     <Link href="/technology" className="text-brand-accent hover:underline">
@@ -202,7 +202,7 @@ export default function TechnologyDetailPage() {
     }
 
     return (
-        <div className="min-h-screen bg-[#0A0C1F]">
+        <div className="min-h-screen bg-brand-black">
             {/* Navbar */}
             <Navbar />
 
@@ -235,7 +235,7 @@ export default function TechnologyDetailPage() {
 
                 {/* Title Section */}
                 <div className="flex items-start gap-6 mb-12">
-                    <div className="text-7xl bg-brand-blue/20 p-6 rounded-2xl border border-brand-blue/30">
+                    <div className="text-7xl bg-brand-black/20 p-6 rounded-2xl border border-brand-black/30">
                         {topic.icon}
                     </div>
                     <div>
@@ -251,7 +251,7 @@ export default function TechnologyDetailPage() {
 
             {/* Content Area */}
             <section className="max-w-4xl mx-auto px-6 pb-24">
-                <div className="glass-card p-10 border-brand-blue/30 bg-brand-blue/5">
+                <div className="glass-card p-10 border-brand-black/30 bg-brand-black/5">
                     <div
                         className="prose prose-invert prose-lg max-w-none
                             prose-headings:text-white prose-headings:font-bold prose-headings:mt-10 prose-headings:mb-4
@@ -270,7 +270,7 @@ export default function TechnologyDetailPage() {
                         Interested in our technology or have specific requirements?
                     </p>
                     <Link href="/#contact">
-                        <button className="px-8 py-4 bg-brand-blue hover:bg-brand-blue/80 text-white font-bold uppercase tracking-widest rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(34,37,122,0.3)] hover:shadow-[0_0_30px_rgba(34,37,122,0.5)]">
+                        <button className="btn-brand h-auto px-4 md:px-8 py-3 md:py-4 text-xs md:text-sm">
                             Contact Our Engineering Team
                         </button>
                     </Link>

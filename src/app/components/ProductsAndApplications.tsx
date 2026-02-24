@@ -174,10 +174,10 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
                 <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
                     <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/5 backdrop-blur-sm p-1 rounded-lg">
-                        <TabsTrigger value="products" className="data-[state=active]:bg-brand-blue data-[state=active]:text-white">
+                        <TabsTrigger value="products" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800">
                             Products
                         </TabsTrigger>
-                        <TabsTrigger value="applications" className="data-[state=active]:bg-brand-blue data-[state=active]:text-white">
+                        <TabsTrigger value="applications" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800">
                             Applications
                         </TabsTrigger>
                     </TabsList>
@@ -186,7 +186,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                     <TabsContent value="products" className="mt-8">
                         <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                             {/* Ku-Band Antenna */}
-                            <Card className="glass-card border-brand-blue/30">
+                            <Card className="glass-card border-slate-gray/30">
                                 <CardContent className="p-6">
                                     <h3 className="text-2xl font-bold text-white mb-4 text-center">Ku-Band Antenna</h3>
                                     <Carousel
@@ -219,8 +219,8 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                 </CarouselItem>
                                             ))}
                                         </CarouselContent>
-                                        <CarouselPrevious className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
-                                        <CarouselNext className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
+                                        <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
+                                        <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
                                     </Carousel>
 
                                     {/* Specifications */}
@@ -236,7 +236,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                             </Card>
 
                             {/* Ka-Band Antenna */}
-                            <Card className="glass-card border-brand-blue/30">
+                            <Card className="glass-card border-brand-black/30">
                                 <CardContent className="p-6">
                                     <h3 className="text-2xl font-bold text-white mb-4 text-center">Ka-Band Antenna</h3>
                                     <Carousel
@@ -269,8 +269,8 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                 </CarouselItem>
                                             ))}
                                         </CarouselContent>
-                                        <CarouselPrevious className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
-                                        <CarouselNext className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
+                                        <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
+                                        <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
                                     </Carousel>
 
                                     {/* Specifications */}
@@ -302,7 +302,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                         {/* Application Cards in Grid */}
                         <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
                             {applicationImages.map((item, index) => (
-                                <Card key={index} className="glass-card border-brand-blue/30">
+                                <Card key={index} className="glass-card border-brand-black/30">
                                     <CardContent className="p-6">
                                         <Carousel
                                             className="w-full mb-4"
@@ -316,7 +316,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                             <CarouselContent>
                                                 <CarouselItem>
                                                     {/* Orbit Visualization */}
-                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-blue/20 to-brand-accent/20 rounded-lg flex items-center justify-center">
+                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-black/20 to-brand-accent/20 rounded-lg flex items-center justify-center">
                                                         <div className="text-center p-6">
                                                             <div className="text-7xl mb-4">🛰️</div>
                                                             <span className="text-white font-bold text-2xl">{item.orbit}</span>
@@ -325,7 +325,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                 </CarouselItem>
                                                 <CarouselItem>
                                                     {/* Diagram Placeholder */}
-                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-accent/20 to-brand-blue/20 rounded-lg flex items-center justify-center">
+                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-accent/20 to-brand-black/20 rounded-lg flex items-center justify-center">
                                                         <div className="text-center p-6">
                                                             <div className="text-7xl mb-4">🌍</div>
                                                             <span className="text-white/60 text-sm">{item.orbit} Orbit Diagram</span>
@@ -333,8 +333,8 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                     </div>
                                                 </CarouselItem>
                                             </CarouselContent>
-                                            <CarouselPrevious className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
-                                            <CarouselNext className="bg-brand-blue/80 text-white border-brand-blue hover:bg-brand-blue" />
+                                            <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
+                                            <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
                                         </Carousel>
 
                                         {/* Content */}

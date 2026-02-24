@@ -154,7 +154,7 @@ export default function ContactUs() {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className={`w-full btn-brand font-bold py-4 rounded-lg uppercase tracking-widest shadow-[0_0_15px_rgba(34,37,122,0.4)] transition-opacity ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-90'
+                            className={`w-full btn-brand py-4 uppercase tracking-widest ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02]'
                                 }`}
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}

@@ -26,7 +26,7 @@ export default async function NewsArticlePage({ params }: NewsArticleProps) {
     }
 
     return (
-        <div className="min-h-screen bg-[#0A0C1F]">
+        <div className="min-h-screen bg-brand-black">
             {/* Navbar */}
             <Navbar />
 
@@ -43,7 +43,7 @@ export default async function NewsArticlePage({ params }: NewsArticleProps) {
 
                     {/* Category & Date - Right */}
                     <div className="flex items-center gap-4">
-                        <span className="px-4 py-1.5 bg-brand-blue/20 text-brand-accent rounded-full text-sm font-medium border border-brand-blue/30">
+                        <span className="px-4 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-sm font-medium border border-brand-black/30">
                             {article.category || 'News'}
                         </span>
                         <span className="text-gray-500 text-sm">
@@ -66,7 +66,7 @@ export default async function NewsArticlePage({ params }: NewsArticleProps) {
                 </h1>
 
                 {/* Featured Image */}
-                <div className="aspect-video w-full rounded-lg overflow-hidden bg-gradient-to-br from-brand-blue/20 to-brand-accent/20 mb-12 relative">
+                <div className="aspect-video w-full rounded-lg overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 mb-12 relative">
                     {article.mainImage ? (
                         <img
                             src={urlFor(article.mainImage).url()}

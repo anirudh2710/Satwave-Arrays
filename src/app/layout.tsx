@@ -3,7 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Satwave Arrays",
-    description: "Satwave Arrays Website"
+    description: "Satwave Arrays Website",
+    icons: {
+        icon: "/Satwave_logos/S Mark/JPGs/S_White.jpg",
+    },
 }
 
 export default function RootLayout({
@@ -12,8 +15,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body>
+        <html lang="en" suppressHydrationWarning>
+            <body suppressHydrationWarning>
                 {children}
             </body>
         </html>

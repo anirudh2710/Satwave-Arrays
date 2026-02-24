@@ -60,7 +60,7 @@ export default function TechnologyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0A0C1F]">
+        <div className="min-h-screen bg-brand-black">
             {/* Navbar */}
             <Navbar />
 
@@ -105,10 +105,10 @@ export default function TechnologyPage() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {topics.map((topic) => (
                         <Link key={topic.id} href={`/technology/${topic.id}`}>
-                            <Card className="group glass-card border-brand-blue/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                            <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
                                 <CardContent className="p-0">
                                     {/* Image Placeholder */}
-                                    <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-blue/20 to-brand-accent/20">
+                                    <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
                                         <div className="w-full h-full flex items-center justify-center text-6xl">
                                             {topic.icon}
                                         </div>
