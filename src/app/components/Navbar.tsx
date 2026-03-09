@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -20,6 +22,7 @@ interface NavbarProps {
 
 export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
     const [isAtTop, setIsAtTop] = useState(true);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
     const isHomePage = pathname === '/';
@@ -79,7 +82,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
 
                 {/* Navigation Menu - Extreme Right */}
                 {/* Navigation Menu - Extreme Right */}
-                <NavigationMenu className="hidden md:flex" viewport={false} value={activeDropdown || ""} onValueChange={setActiveDropdown}>
+                <NavigationMenu className="hidden lg:flex" viewport={false} value={activeDropdown || ""} onValueChange={setActiveDropdown}>
                     <NavigationMenuList className="gap-8">
                         {/* About Dropdown */}
                         <NavigationMenuItem value="about">
@@ -98,7 +101,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('overview')}
                                         >
-                                            <div className="text-sm font-medium">Overview</div>
+                                            <div className="uppercase text-sm font-medium">Overview</div>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
@@ -106,7 +109,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('mission')}
                                         >
-                                            <div className="text-sm font-medium">Mission</div>
+                                            <div className="uppercase text-sm font-medium">Mission</div>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
@@ -114,7 +117,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('values')}
                                         >
-                                            <div className="text-sm font-medium">Values</div>
+                                            <div className="uppercase text-sm font-medium">Values</div>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
@@ -122,7 +125,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('governance')}
                                         >
-                                            <div className="text-sm font-medium">Governance</div>
+                                            <div className="uppercase text-sm font-medium">Governance</div>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
@@ -130,7 +133,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('team')}
                                         >
-                                            <div className="text-sm font-medium">Team</div>
+                                            <div className="uppercase text-sm font-medium">Team</div>
                                         </NavigationMenuLink>
                                     </li>
                                 </ul>
@@ -160,10 +163,10 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                     Products
                                                 </div>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
+                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Ku Antenna
                                                     </span>
-                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
+                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
                                                         Ka Antenna
                                                     </span>
                                                 </div>
@@ -179,11 +182,11 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                     Applications
                                                 </div>
                                                 <div className="flex flex-wrap gap-2">
-                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Application One
+                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
+                                                        Comms on the Move
                                                     </span>
-                                                    <span className="px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Application Two
+                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
+                                                        Comms on the Pause
                                                     </span>
                                                 </div>
                                             </Link>
@@ -198,18 +201,14 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
 
                         {/* Technology */}
                         <NavigationMenuItem>
-                            <Button
-                                onClick={() => {
-                                    if (isHomePage && scrollTo) {
-                                        scrollTo('technology');
-                                    } else {
-                                        window.location.href = '/#technology';
-                                    }
-                                }}
-                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md"
-                            >
-                                Technology
-                            </Button>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    href="/technology"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                >
+                                    Technology
+                                </Link>
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
 
                         {/* Separator */}
@@ -256,7 +255,82 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
+
+                {/* Mobile Menu Toggle */}
+                <div className="flex items-center justify-end lg:hidden flex-1 relative z-50">
+                    <button
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        className="p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+                        aria-label="Toggle mobile menu"
+                    >
+                        {isMobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
+                    </button>
+                </div>
             </div>
+
+            {/* Mobile Navigation Drawer */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: '100vh' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                        className="fixed inset-0 top-0 left-0 w-full bg-brand-black/95 backdrop-blur-xl z-40 overflow-y-auto pt-24 pb-12 px-6 lg:hidden flex flex-col"
+                    >
+                        <div className="space-y-6">
+                            {/* About Section */}
+                            <div className="border-b border-white/10 pb-6">
+                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">About</h3>
+                                <div className="grid gap-3 pl-4">
+                                    <button onClick={() => { handleAboutClick('overview'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Overview</button>
+                                    <button onClick={() => { handleAboutClick('mission'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Mission</button>
+                                    <button onClick={() => { handleAboutClick('values'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Values</button>
+                                    <button onClick={() => { handleAboutClick('governance'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Governance</button>
+                                    <button onClick={() => { handleAboutClick('team'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Team</button>
+                                </div>
+                            </div>
+
+                            {/* Products & Applications */}
+                            <div className="border-b border-white/10 pb-6">
+                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Products & Applications</h3>
+                                <div className="grid gap-3 pl-4">
+                                    <Link href="/products?tab=products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">Products</Link>
+                                    <Link href="/products?tab=applications" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">Applications</Link>
+                                </div>
+                            </div>
+
+                            {/* Technology */}
+                            <div className="border-b border-white/10 pb-6">
+                                <Link href="/technology" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest">
+                                    Technology
+                                </Link>
+                            </div>
+
+                            {/* More */}
+                            <div className="pb-6">
+                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">More</h3>
+                                <div className="grid gap-3 pl-4">
+                                    <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">News</Link>
+                                    <button
+                                        onClick={() => {
+                                            setIsMobileMenuOpen(false);
+                                            if (isHomePage && scrollTo) {
+                                                scrollTo('contact');
+                                            } else {
+                                                window.location.href = '/#contact';
+                                            }
+                                        }}
+                                        className="text-left text-brand-accent text-lg font-medium"
+                                    >
+                                        Contact Us
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 }

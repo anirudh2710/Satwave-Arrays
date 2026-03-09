@@ -60,86 +60,95 @@ export default function TechnologyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-brand-black">
+        <div className="min-h-screen bg-brand-black flex flex-col relative z-0">
             {/* Navbar */}
             <Navbar />
 
-            {/* Header */}
-            <section className="section-bg-container border-b border-white/5 pt-20">
-                <div className="section-bg topo-pattern" />
-                <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-                    {/* Breadcrumb and Back Link Row */}
-                    <div className="mb-6 flex items-center justify-between">
-                        <Breadcrumb>
-                            <BreadcrumbList>
-                                <BreadcrumbItem>
-                                    <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
-                                </BreadcrumbItem>
-                                <BreadcrumbSeparator className="text-gray-600" />
-                                <BreadcrumbItem>
-                                    <BreadcrumbPage className="text-white font-medium">Technology</BreadcrumbPage>
-                                </BreadcrumbItem>
-                            </BreadcrumbList>
-                        </Breadcrumb>
+            {/* Main Content Area with Background */}
+            <main className="relative flex-grow">
+                {/* Background spanning only main content */}
+                <div className="absolute inset-0 z-[-1] technology-home-bg" />
 
-                        <Link href="/" className="group inline-flex items-center text-brand-accent hover:bg-white/10 transition-all px-3 py-2 rounded-md">
-                            <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                            Go Back
-                        </Link>
+                {/* Header */}
+                <section className="relative z-10 border-b border-white/5 pt-20">
+                    <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+                        {/* Breadcrumb and Back Link Row */}
+                        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <Breadcrumb>
+                                <BreadcrumbList>
+                                    <BreadcrumbItem>
+                                        <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                    </BreadcrumbItem>
+                                    <BreadcrumbSeparator className="text-gray-600" />
+                                    <BreadcrumbItem>
+                                        <BreadcrumbPage className="text-white font-medium">Technology</BreadcrumbPage>
+                                    </BreadcrumbItem>
+                                </BreadcrumbList>
+                            </Breadcrumb>
+
+                            <Link href="/" className="group inline-flex items-center text-brand-accent hover:bg-white/10 transition-all px-3 py-2 rounded-md">
+                                <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                                Go Back
+                            </Link>
+                        </div>
+
+                        {/* Page Header */}
+                        <h1 className="text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
+                            Technology Portfolio
+                        </h1>
+                        <p className="text-gray-400 text-center text-lg max-w-3xl mx-auto">
+                            Explore our comprehensive technology portfolio in phased array antenna systems
+                        </p>
                     </div>
+                </section>
 
-                    {/* Page Header */}
-                    <h1 className="text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
-                        Technology Portfolio
-                    </h1>
-                    <p className="text-gray-400 text-center text-lg max-w-3xl mx-auto">
-                        Explore our comprehensive technology portfolio in phased array antenna systems
-                    </p>
-                </div>
-            </section>
+                {/* Topic Cards Grid */}
+                <section className="relative z-10 py-16">
+                    <div className="max-w-7xl mx-auto px-6 relative z-10">
+                        <div className="grid md:grid-cols-3 gap-8">
+                            {topics.map((topic) => (
+                                <Link key={topic.id} href={`/technology/${topic.id}`}>
+                                    <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                                        <CardContent className="p-0">
+                                            {/* Image Placeholder */}
+                                            <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
+                                                <div className="w-full h-full flex items-center justify-center text-6xl">
+                                                    {topic.icon}
+                                                </div>
+                                            </div>
 
-            {/* Topic Cards Grid */}
-            <section className="max-w-7xl mx-auto px-6 py-16">
-                <div className="grid md:grid-cols-3 gap-8">
-                    {topics.map((topic) => (
-                        <Link key={topic.id} href={`/technology/${topic.id}`}>
-                            <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
-                                <CardContent className="p-0">
-                                    {/* Image Placeholder */}
-                                    <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
-                                        <div className="w-full h-full flex items-center justify-center text-6xl">
-                                            {topic.icon}
-                                        </div>
-                                    </div>
+                                            {/* Content */}
+                                            <div className="p-6">
+                                                {/* Title */}
+                                                <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
+                                                    {topic.title}
+                                                </h3>
 
-                                    {/* Content */}
-                                    <div className="p-6">
-                                        {/* Title */}
-                                        <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
-                                            {topic.title}
-                                        </h3>
+                                                {/* Description */}
+                                                <p className="text-gray-400 text-sm leading-relaxed">
+                                                    {topic.description}
+                                                </p>
 
-                                        {/* Description */}
-                                        <p className="text-gray-400 text-sm leading-relaxed">
-                                            {topic.description}
-                                        </p>
+                                                {/* Learn More */}
+                                                <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
+                                                    <span className="group-hover:underline">Learn More</span>
+                                                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            </main>
 
-                                        {/* Learn More */}
-                                        <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
-                                            <span className="group-hover:underline">Learn More</span>
-                                            <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </Link>
-                    ))}
-                </div>
-            </section>
+            {/* Footer */}
             <Footer />
         </div>
     );

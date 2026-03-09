@@ -136,13 +136,13 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
     // Application images and content
     const applicationImages = [
         {
-            title: "Application One",
+            title: "Comms on the pause",
             description: "Description for Application One",
             image: "/placeholder-geo.jpg",
             orbit: "GEO"
         },
         {
-            title: "Application Two",
+            title: "Comms on the move",
             description: "Description for Application Two",
             image: "/placeholder-leo.jpg",
             orbit: "LEO"
@@ -151,7 +151,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
     return (
         <section id="products" className="section-bg-container section-container border-b border-white/5">
-            <div className="section-bg" />
+            <div className="section-bg products-bg" />
             <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
                 {/* <h2 className="text-4xl font-bold mb-12 text-white text-center uppercase tracking-wider">
                     Products & Applications
@@ -173,11 +173,11 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                 </div>
 
                 <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                    <TabsList className="grid w-full grid-cols-2 mb-8 bg-white/5 backdrop-blur-sm p-1 rounded-lg">
-                        <TabsTrigger value="products" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800">
+                    <TabsList className="grid w-full grid-cols-2 mb-8 bg-[#696969] backdrop-blur-sm p-1 rounded-lg">
+                        <TabsTrigger value="products" className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800">
                             Products
                         </TabsTrigger>
-                        <TabsTrigger value="applications" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800">
+                        <TabsTrigger value="applications" className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800">
                             Applications
                         </TabsTrigger>
                     </TabsList>
@@ -212,8 +212,6 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                         </div>
                                                         {/* Content */}
                                                         <div className="space-y-2">
-                                                            <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-                                                            <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
                                                         </div>
                                                     </div>
                                                 </CarouselItem>
@@ -225,12 +223,53 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
                                     {/* Specifications */}
                                     <div className="mt-6 pt-6 border-t border-white/10">
-                                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Key Specifications</h4>
-                                        <ul className="space-y-2 text-gray-300 text-sm">
-                                            <li>• Frequency: 10.7-14.5 GHz</li>
-                                            <li>• Beam steering: Electronic phased array</li>
-                                            <li>• Applications: Broadcast, VSAT, mobile communications</li>
-                                        </ul>
+                                        <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
+                                        <div className="grid grid-cols-1 gap-y-3 text-sm">
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Prototype Size</span>
+                                                <span className="text-white text-right font-semibold">40” × 18.5” × 6”</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Prototype Weight</span>
+                                                <span className="text-white text-right font-semibold">&lt;50 lbs</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Power</span>
+                                                <span className="text-white text-right font-semibold">~417 W</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">EIRP (CW)</span>
+                                                <span className="text-white text-right font-semibold">47 dBW</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; LP</span>
+                                                <span className="text-white text-right font-semibold text-xs">46.25 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; LP</span>
+                                                <span className="text-white text-right font-semibold text-xs">42.35 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; CP</span>
+                                                <span className="text-white text-right font-semibold text-xs">49.25 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; CP</span>
+                                                <span className="text-white text-right font-semibold text-xs">45.35 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ Broadside</span>
+                                                <span className="text-white text-right font-semibold text-xs">8.7 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ 60 deg scan</span>
+                                                <span className="text-white text-right font-semibold text-xs">4.8 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Manual Beam Load Time</span>
+                                                <span className="text-white text-right font-semibold">&lt; 500 µS</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>
@@ -262,8 +301,6 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                                         </div>
                                                         {/* Content */}
                                                         <div className="space-y-2">
-                                                            <h4 className="text-lg font-semibold text-white">{item.title}</h4>
-                                                            <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
                                                         </div>
                                                     </div>
                                                 </CarouselItem>
@@ -275,12 +312,49 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
                                     {/* Specifications */}
                                     <div className="mt-6 pt-6 border-t border-white/10">
-                                        <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Key Specifications</h4>
-                                        <ul className="space-y-2 text-gray-300 text-sm">
-                                            <li>• Frequency: 17.7-31.0 GHz</li>
-                                            <li>• Beam steering: Advanced phased array</li>
-                                            <li>• Applications: High-throughput satellite, 5G backhaul</li>
-                                        </ul>
+                                        <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
+                                        <div className="grid grid-cols-1 gap-y-3 text-sm">
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Prototype Size</span>
+                                                <span className="text-white text-right font-semibold">50cm × 50cm × 7.8cm (19.69" × 19.69" × 3.07")</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Prototype Weight</span>
+                                                <span className="text-white text-right font-semibold">&lt; 20 lbs</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Power</span>
+                                                <span className="text-white text-right font-semibold">~341 W</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; LP</span>
+                                                <span className="text-white text-right font-semibold text-xs">46 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; LP</span>
+                                                <span className="text-white text-right font-semibold text-xs">42 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; CP</span>
+                                                <span className="text-white text-right font-semibold text-xs">49 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; CP</span>
+                                                <span className="text-white text-right font-semibold text-xs">45 dBW @ Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ Broadside</span>
+                                                <span className="text-white text-right font-semibold text-xs">10.2 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
+                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ 60deg scan</span>
+                                                <span className="text-white text-right font-semibold text-xs">6.3 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
+                                            </div>
+                                            <div className="grid grid-cols-2 items-center pb-2">
+                                                <span className="text-gray-400 font-medium pr-4">Manual Beam Load Time</span>
+                                                <span className="text-white text-right font-semibold">&lt; 500 µS</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>

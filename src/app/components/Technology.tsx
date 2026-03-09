@@ -4,45 +4,17 @@ import Link from "next/link";
 export default function Technology() {
     return (
         <section id="technology" className="section-bg-container section-container border-b border-white/5">
-            <div className="section-bg topo-pattern" />
+            <div className="section-bg technology-section-bg" />
             <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-                {/* Main Card Container */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    {/* Main Heading */}
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-4xl font-bold mb-6 text-white uppercase tracking-wider text-center"
-                    >
-                        Satwave Arrays: Engineering the Future of Connectivity
-                    </motion.h2>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-                    {/* Introduction */}
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="text-lg text-gray-300 mb-12 text-center max-w-4xl mx-auto leading-relaxed"
-                    >
-                        In an era where global communication demands agility, Satwave Arrays has positioned itself at the vanguard of phased array flat panel satellite antenna technology.
-                    </motion.p>
-
-                    {/* Two Column Layout for Core Focus and Approach */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                        {/* Left Column: Our Core Focus */}
+                    {/* Left Column: Cards */}
+                    <div className="flex flex-col gap-6">
                         <motion.div
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: 0.4 }}
+                            transition={{ duration: 0.7, delay: 0.2 }}
                             className="glass-card p-6 border-brand-black/20"
                         >
                             <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Our Core Focus</h3>
@@ -53,7 +25,7 @@ export default function Technology() {
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-brand-accent mr-2 mt-1 flex-shrink-0">▸</span>
-                                    <span>Specialization in Ku-band and Ka-band systems for multi-orbit operation (LEO, MEO, GEO).</span>
+                                    <span>Ku-band and Ka-band systems for multi-orbit operation (LEO, MEO, GEO).</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="text-brand-accent mr-2 mt-1 flex-shrink-0">▸</span>
@@ -66,12 +38,11 @@ export default function Technology() {
                             </ul>
                         </motion.div>
 
-                        {/* Right Column: Our Approach */}
                         <motion.div
-                            initial={{ opacity: 0, x: 30 }}
+                            initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.7, delay: 0.5 }}
+                            transition={{ duration: 0.7, delay: 0.4 }}
                             className="glass-card p-6 border-brand-black/20"
                         >
                             <h3 className="text-2xl font-bold text-white mb-4 uppercase tracking-wide">Our Approach</h3>
@@ -81,21 +52,49 @@ export default function Technology() {
                         </motion.div>
                     </div>
 
-                    {/* Explore Technology Button */}
+                    {/* Right Column: Heading and Text */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        className="flex justify-center"
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="flex flex-col justify-center"
                     >
-                        <Link href="/technology">
-                            <button className="btn-brand uppercase px-8 py-4 text-lg tracking-widest -mt-2">
-                                Explore Our Technology
-                            </button>
-                        </Link>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="text-4xl md:text-5xl font-bold mb-6 text-white uppercase tracking-wider text-left leading-snug"
+                        >
+                            Satwave Arrays: Engineering the Future of Connectivity
+                        </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="text-lg text-gray-300 mb-10 text-left max-w-xl leading-relaxed"
+                        >
+                            In an era where global communication demands agility, Satwave Arrays has positioned itself at the vanguard of phased array flat panel satellite antenna technology.
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.7 }}
+                            className="flex justify-start"
+                        >
+                            <Link href="/technology">
+                                <button className="btn-brand uppercase px-8 py-4 text-lg tracking-widest">
+                                    Explore Our Technology
+                                </button>
+                            </Link>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

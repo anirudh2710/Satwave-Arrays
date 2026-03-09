@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Hero from "./Hero";
-import AntennaShowcase from "./AntennaShowcase";
 import About from "./About";
 import ContactUs from "./ContactUs";
 import Technology from "./Technology";
@@ -13,6 +12,7 @@ interface NewsItem {
     slug: string;
     publishedAt: string;
     category: string;
+    excerpt?: string;
 }
 
 interface HomeContentProps {
@@ -35,19 +35,18 @@ export default function HomeContent({ news }: HomeContentProps) {
         const hash = window.location.hash.replace('#', '');
         if (hash) {
             setTimeout(() => {
-                document.getElementById(hash)?.scrollIntoView({ behavior: 'instant' });
+                document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
             }, 100);
         }
     }, []);
 
     const scrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'instant' });
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     };
 
     return (
         <main className="relative">
             <Hero scrollTo={scrollTo} setAboutTab={setAboutTab} news={news} />
-            <AntennaShowcase />
             <div className="relative z-10">
                 <About activeTab={aboutTab} onTabChange={setAboutTab} />
                 <Technology />

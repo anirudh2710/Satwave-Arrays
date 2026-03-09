@@ -7,6 +7,7 @@ interface NewsItem {
     slug: string;
     publishedAt: string;
     category: string;
+    excerpt?: string;
 }
 
 export default async function Home() {

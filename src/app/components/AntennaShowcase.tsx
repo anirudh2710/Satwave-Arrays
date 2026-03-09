@@ -205,7 +205,7 @@ export default function AntennaShowcase() {
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Ku-Band Canvas */}
                     <div className="relative">
-                        <div className="relative overflow-hidden rounded-lg bg-black aspect-[800/304]">
+                        <div className="relative overflow-hidden bg-black aspect-[800/304]">
                             <canvas
                                 ref={kuCanvasRef}
                                 className="w-full h-full"
@@ -230,7 +230,7 @@ export default function AntennaShowcase() {
 
                     {/* Ka-Band Canvas */}
                     <div className="relative">
-                        <div className="relative overflow-hidden rounded-lg bg-black aspect-[800/304]">
+                        <div className="relative overflow-hidden bg-black aspect-[800/304]">
                             <canvas
                                 ref={kaCanvasRef}
                                 className="w-full h-full"

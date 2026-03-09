@@ -97,7 +97,6 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
     const teamMembers = [
         { name: "Anay Badlani", role: "Position", image: "/team/optimized/anay.jpg", bio: "I am a current computer science student at Georgia Tech. I am a software engineering intern at Satwave, where I love tackling interesting problems and building performance-critical software . Outside of work, I like playing soccer and going on hikes.", linkedin: "https://linkedin.com/in/anaybadlani" },
         { name: "Alvaro Garcia", role: "Position", image: "/team/optimized/alvaro.jpg", bio: "I'm a telecommunications enthusiast focused on the development of phased array antennas for satellite communications. At Satwave, I work across the antenna and RF design, enjoying the engineering culture and the team's passion for building antennas that empower global connectivity. When I am away from the office, I enjoy traveling and exploring new cities and food spots… and playing padel!", linkedin: "https://linkedin.com/in/alvaro-garciac" },
-        { name: "Shivam Kundan", role: "Position", image: "/team/optimized/shivam.jpg", bio: "I'm a recent PhD grad focused on building reliable, high-performance, and power-efficient hardware-software systems. At Satwave, I bring antenna and platform concepts to life by integrating firmware, custom hardware (sensors, IMUs, PCBs), and system-level design. I enjoy working here because of the team's deep technical curiosity and shared passion for aerospace technologies. Outside the office, you'll usually find me tinkering with hobby electronics or getting out into nature hiking and kayaking, sometimes combining the two by building and testing gadgets along the way.", linkedin: "https://linkedin.com/in/shivamkundan" },
         { name: "Manuel Jimenez Martinez", role: "Position", image: "/team/optimized/manuel.jpg", bio: "Placeholder bio for Manuel Jimenez Martinez. Driving innovation in phased array technology.", linkedin: "https://linkedin.com/in/manueljmg" },
         { name: "Shanelle Metellus", role: "Position", image: "/team/optimized/shanelle.jpg", bio: "I keep the moving parts of the company running smoothly so our team can focus on building something great! And I am always on the hunt for the best iced latte in town. ", linkedin: "https://linkedin.com/in/shanelle-metellus-17904b16b" },
         { name: "Bhavadharini Narayanan", role: "Position", image: "/team/optimized/bhava.jpg", bio: "I work in IT Systems and Security Administration at Satwave. I recently finished my master's and joined the team to help build our cloud and network security. I enjoy working here because I get to learn and contribute to a great team. Outside of work, I love traveling and cooking.", linkedin: "https://linkedin.com/in/bhavadharininarayanan" },
@@ -112,7 +111,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
 
     return (
         <section id="about" className="section-bg-container section-container border-b border-white/5">
-            <div className="section-bg topo-pattern about-bg" />
+            <div className="section-bg about-bg" />
             <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -121,20 +120,20 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                        <TabsList className="grid w-full grid-cols-5 mb-8 bg-white/5 backdrop-blur-sm p-1 rounded-lg">
-                            <TabsTrigger value="overview" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                        <TabsList className="flex flex-wrap justify-center w-full mb-8 bg-[#696969] backdrop-blur-sm p-1 rounded-lg h-auto gap-1">
+                            <TabsTrigger value="overview" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
                                 Overview
                             </TabsTrigger>
-                            <TabsTrigger value="mission" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="mission" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
                                 Mission
                             </TabsTrigger>
-                            <TabsTrigger value="values" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="values" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
                                 Values
                             </TabsTrigger>
-                            <TabsTrigger value="governance" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
                                 Governance
                             </TabsTrigger>
-                            <TabsTrigger value="team" className="data-[state=active]:bg-slate-gray data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
                                 Team
                             </TabsTrigger>
                         </TabsList>
@@ -147,7 +146,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                 transition={{ duration: 0.5 }}
                                 className="w-full max-w-7xl mx-auto"
                             >
-                                <Card className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch glass-card border-brand-black/30 p-6 overflow-hidden">
+                                <Card className="grid grid-cols-1 lg:grid-cols-5 rounded-lg gap-6 items-stretch glass-card border-brand-black/30 p-6 overflow-hidden">
                                     {/* Left: Image Carousel (3/5 = 60% width) */}
                                     <div className="lg:col-span-3">
                                         <div className="px-8 h-full flex items-center">
@@ -210,7 +209,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                             >
                                 <Card className="glass-card border-brand-black/30 max-w-4xl mx-auto">
                                     <CardHeader>
-                                        <CardTitle className="text-3xl font-bold text-white text-center">Our Mission</CardTitle>
+                                        <CardTitle className="text-3xl font-bold text-white uppercase text-center"><h3>Our Mission</h3></CardTitle>
                                     </CardHeader>
                                     <CardContent>
                                         <p className="text-xl text-gray-300 leading-relaxed text-center mb-6">
@@ -224,10 +223,11 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
 
                         {/* Values Tab - Grid of Cards */}
                         <TabsContent value="values" className="mt-8">
-                            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
                                 {values.map((value, i) => (
                                     <motion.div
                                         key={i}
+                                        className="w-full md:w-[calc(33.333%-16px)]"
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
@@ -237,8 +237,8 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                             className="glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 group h-full"
                                         >
                                             <CardHeader>
-                                                <CardTitle className="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">
-                                                    {value.title}
+                                                <CardTitle className="text-2xl uppercase font-bold text-white group-hover:text-brand-accent transition-colors">
+                                                    <h4>{value.title}</h4>
                                                 </CardTitle>
                                             </CardHeader>
                                             <CardContent>
@@ -417,7 +417,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                         href={selectedMember.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-black to-brand-accent hover:from-brand-accent hover:to-brand-black text-white text-lg font-semibold rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-brand-accent/50"
+                                        className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-black to-brand-accent hover:from-brand-accent hover:to-brand-black text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-brand-accent/50"
                                     >
                                         <svg className="w-6 h-6 transition-transform group-hover:fill-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

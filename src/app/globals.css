@@ -1,6 +1,7 @@
 /* Premium Typography System */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @font-face {
     font-family: 'IBM Plex Sans';
@@ -202,6 +203,7 @@ body {
 
 .nav-hero-active {
     background: var(--color-surface-color);
+    opacity: 0.9;
 }
 
 .nav-transparent {
@@ -221,8 +223,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 70%),
-        url('/Background/gpt_bg.png');
+        /* linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 70%), */
+        url('/Background/elevated_bg.jpg');
+    opacity: 0.6;
 }
 
 .news-ticker-area {
@@ -338,10 +341,78 @@ body {
 
 /* Products Section Background */
 .products-bg {
-    background-image: url('/Background/antenna_bg1.png');
+    background-image: url('/Background/earth1.jpg');
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat; */
+}
+
+/* Contact Us Section Background */
+.contact {
+    background-image:
+        /* linear-gradient(to bottom, var(--color-elevated-bg) 0%, color-mix(in srgb, var(--color-elevated-bg) 60%, transparent) 50%, var(--color-elevated-bg) 100%), */
+        url('/Background/thumb1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+/* Wavy Lines (Technology) */
+.topo-pattern {
+    background-color: var(--color-brand-black);
+    background-image:
+        linear-gradient(to bottom, var(--color-elevated-bg) 0%, transparent 20%, transparent 80%, var(--color-elevated-bg) 100%),
+        url('/Background/topo.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.technology-home-bg {
+    background-image:
+        linear-gradient(to bottom, var(--color-elevated-bg) 0%, transparent 20%, transparent 80%, var(--color-elevated-bg) 100%),
+        url('/Background/fpga1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.technology-section-bg {
+    background-image:
+        /* linear-gradient(to bottom, var(--color-elevated-bg) 0%, transparent 20%, transparent 80%, var(--color-elevated-bg) 100%), */
+        url('/Background/tech.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.news-bg {
+    background-image: url('/Background/chip1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.bg-tech-detail {
+    background-image: linear-gradient(to bottom, var(--color-elevated-bg) 0%, transparent 20%, transparent 80%, var(--color-elevated-bg) 100%), url('/Background/board5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.3;
+}
+
+.bg-newsletter-detail {
+    background-image: linear-gradient(to bottom, var(--color-elevated-bg) 0%, transparent 20%, transparent 80%, var(--color-elevated-bg) 100%), url('/Background/board4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.3;
 }
 
 .input-field {

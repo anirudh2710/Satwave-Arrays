@@ -4,7 +4,8 @@ export const NEWS_TICKER_QUERY = groq`*[_type == "news"] | order(publishedAt des
   title,
   "slug": slug.current,
   publishedAt,
-  category
+  category,
+  "excerpt": pt::text(body)
 }`;
 
 export const ALL_NEWS_QUERY = groq`*[_type == "news"] | order(publishedAt desc) {
