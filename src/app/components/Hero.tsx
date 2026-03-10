@@ -33,18 +33,6 @@ export default function Hero({ scrollTo, setAboutTab, news }: HeroProps) {
                         <h1 className="uppercase text-white text-7xl sm:text-8xl md:text-9xl leading-[0.85] w-full mb-6 drop-shadow-2xl">
                             Enabling<br className="sm:hidden" /> Mobility
                         </h1>
-                        {/* <p className="text-gray-300 text-lg md:text-2xl font-light max-w-3xl mx-auto mb-10 leading-relaxed drop-shadow-lg">
-                            Advanced phased array antenna systems and resilient satellite communications for the most demanding environments.
-                        </p> */}
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <button
-                                onClick={() => scrollTo('contact')}
-                                className="btn-brand px-8 py-4 uppercase tracking-widest text-sm"
-                            >
-                                Contact Us
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

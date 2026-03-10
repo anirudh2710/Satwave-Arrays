@@ -19,8 +19,5 @@ describe('Hero Component', () => {
         expect(screen.getByText(/Mobility/i)).toBeInTheDocument()
     })
 
-    it('renders the CTA buttons', () => {
-        render(<Hero scrollTo={mockScrollTo} news={mockNews} />)
-        expect(screen.getByText(/Contact Us/i)).toBeInTheDocument()
-    })
+
 })

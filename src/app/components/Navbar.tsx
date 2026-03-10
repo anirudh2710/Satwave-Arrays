@@ -237,8 +237,29 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
+                                        <div className="px-4 pt-3 pb-1 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                            Resources
+                                        </div>
+                                        <NavigationMenuLink asChild>
+                                            <Link
+                                                href="/resources/ku-band"
+                                                className="block px-4 py-2 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            >
+                                                <div className="text-sm font-medium pl-2">Ku-band</div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                        <NavigationMenuLink asChild>
+                                            <Link
+                                                href="/resources/ka-band"
+                                                className="block px-4 py-2 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            >
+                                                <div className="text-sm font-medium pl-2">Ka-band</div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
                                         <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 mt-1"
                                             onClick={() => {
                                                 if (isHomePage && scrollTo) {
                                                     scrollTo('contact');
@@ -312,6 +333,11 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                 <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">More</h3>
                                 <div className="grid gap-3 pl-4">
                                     <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">News</Link>
+
+                                    <div className="pt-2 pb-1 text-white/50 text-xs font-bold uppercase tracking-widest block">Resources</div>
+                                    <Link href="/resources/ku-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 text-lg font-medium block pl-4 hover:text-brand-accent">Ku-band</Link>
+                                    <Link href="/resources/ka-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 text-lg font-medium block pl-4 hover:text-brand-accent">Ka-band</Link>
+
                                     <button
                                         onClick={() => {
                                             setIsMobileMenuOpen(false);
@@ -321,7 +347,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                 window.location.href = '/#contact';
                                             }
                                         }}
-                                        className="text-left text-brand-accent text-lg font-medium"
+                                        className="text-left text-brand-accent text-lg font-medium mt-2"
                                     >
                                         Contact Us
                                     </button>
