@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "@next/swc-darwin-arm64": "^16.1.6",
     "@portabletext/react": "^6.0.2",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-slot": "^1.2.4",
