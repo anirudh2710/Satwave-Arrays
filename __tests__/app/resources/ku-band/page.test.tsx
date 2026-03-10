@@ -77,14 +77,14 @@ describe('KuBandPage Component', () => {
 
         const frontBackImg = screen.getByAltText(/Ku-band Antenna Front and Back/i);
         expect(frontBackImg).toBeInTheDocument();
-        expect(frontBackImg).toHaveAttribute('src', '/resources/ku-band/antenna-front-back.png');
+        expect(frontBackImg).toHaveAttribute('src', '/resources/ku-band/antenna-front-back.jpg');
 
         const heatmapImg = screen.getByAltText(/Antenna Heatmap Results/i);
         expect(heatmapImg).toBeInTheDocument();
-        expect(heatmapImg).toHaveAttribute('src', '/resources/ku-band/heatmap.png');
+        expect(heatmapImg).toHaveAttribute('src', '/resources/ku-band/heatmap1.png');
 
         const propagationImg = screen.getByAltText(/Ku Band/i);
         expect(propagationImg).toBeInTheDocument();
-        expect(propagationImg).toHaveAttribute('src', '/resources/ku-band/array-propagation.png');
+        expect(propagationImg).toHaveAttribute('src', '/resources/ku-band/chart.png');
     });
 });

@@ -120,20 +120,20 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                        <TabsList className="flex flex-wrap justify-center w-full mb-8 bg-[#696969] backdrop-blur-sm p-1 rounded-lg h-auto gap-1">
-                            <TabsTrigger value="overview" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                        <TabsList className="flex flex-wrap justify-center w-full mb-8 bg-[#696969] backdrop-blur-sm p-2 rounded-lg h-auto gap-2">
+                            <TabsTrigger value="overview" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Overview
                             </TabsTrigger>
-                            <TabsTrigger value="mission" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="mission" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Mission
                             </TabsTrigger>
-                            <TabsTrigger value="values" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="values" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Values
                             </TabsTrigger>
-                            <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Governance
                             </TabsTrigger>
-                            <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase">
+                            <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Team
                             </TabsTrigger>
                         </TabsList>

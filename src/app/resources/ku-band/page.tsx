@@ -10,7 +10,7 @@ import {
 
 export default function KuBandPage() {
     return (
-        <div className="min-h-screen bg-brand-black relative z-0 flex flex-col">
+        <div className="min-h-screen bg-brand-black relative z-0 flex flex-col overflow-x-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-[-1] topo-pattern opacity-50 bg-fixed bg-contain bg-center bg-no-repeat" />
 
@@ -42,7 +42,7 @@ export default function KuBandPage() {
                     {/* Title Section */}
                     <div className="flex flex-col items-center sm:items-start gap-6 mb-12 text-center sm:text-left text-brand-accent">
                         <div>
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight uppercase tracking-tight font-bebas-neue flex justify-center">
+                            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight uppercase tracking-tight font-bebas-neue flex justify-center text-center">
                                 Full Duplex Ku-Band AESA
                             </h1>
                             <p className="text-gray-300 text-xl sm:text-2xl mt-6 font-light opacity-90 leading-relaxed">
@@ -54,14 +54,14 @@ export default function KuBandPage() {
 
                 {/* Content Area */}
                 <section className="max-w-7xl mx-auto px-6 pb-24 w-full flex-grow">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-stretch">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-20 items-stretch">
                         {/* Left Column: Key Features */}
-                        <Card className="lg:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-brand-accent h-full flex flex-col justify-center">
+                        <Card className="md:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-brand-accent h-full flex flex-col justify-center">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold text-white uppercase tracking-wider font-bebas-neue">Key features include:</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="text-gray-300 space-y-4">
+                                <ul className="text-gray-300 space-y-4 list-disc list-outside pl-5 marker:text-brand-accent">
                                     {[
                                         "AESA design scalable to custom sizes and multi-panel antennas",
                                         "Stacked patch radiating elements with proprietary, ML optimized, inner layers for wideband performance, enhanced cross-polarization, and improved efficiency at large scan angles",
@@ -72,29 +72,26 @@ export default function KuBandPage() {
                                         "Full system - Antenna Control Unit and Auto tracking algorithm to integrate with external modem",
                                         "Driven by FreeRTOS software, which is supported by Amazon and used by millions of devices"
                                     ].map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-4">
-                                            <div className="flex-shrink-0 mt-1.5 w-5 h-5 rounded-full bg-brand-accent/20 flex items-center justify-center">
-                                                <div className="w-2 h-2 rounded-full bg-brand-accent" />
-                                            </div>
-                                            <span className="leading-relaxed">{feature}</span>
+                                        <li key={idx} className="leading-relaxed">
+                                            {feature}
                                         </li>
                                     ))}
                                 </ul>
                             </CardContent>
                         </Card>
 
-                        <div className="lg:col-span-2 w-full h-full">
+                        <div className="md:col-span-2 w-full h-full">
                             <Card className="glass-card border-brand-black/30 bg-white/5 backdrop-blur-sm w-full h-full flex items-center justify-center p-4">
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src="/resources/ku-band/antenna-front-back.png" alt="Ku-band Antenna Front and Back" className="w-full h-full object-contain" />
+                                    <img src="/resources/ku-band/antenna-front-back.jpg" alt="Ku-band Antenna Front and Back" className="w-full h-full object-contain" />
                                 </div>
                             </Card>
                         </div>
                     </div>
                     {/* Engineering Philosophy Section (Section Breaker) */}
-                    <div className="mt-20 max-w-6xl mx-auto">
+                    <div className="mt-20 max-w-6xl mx-auto px-6">
                         <div className="text-center mb-10">
-                            <h2 className="text-3xl font-bold text-white uppercase tracking-wider font-bebas-neue">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white uppercase tracking-wider font-bebas-neue">
                                 Satwave’s Engineering Philosophy
                             </h2>
                         </div>
@@ -125,15 +122,15 @@ export default function KuBandPage() {
 
                     {/* Performance Testing Intro */}
                     <div className="mt-20">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
                             {/* Left Column: Image Area */}
                             <Card className="glass-card border-brand-black/30 overflow-hidden bg-white/5 backdrop-blur-sm flex items-center justify-center p-4">
-                                <img src="/resources/ku-band/heatmap.png" alt="Antenna Heatmap Results" className="w-full h-auto object-contain rounded-lg" />
+                                <img src="/resources/ku-band/heatmap1.png" alt="Antenna Heatmap Results" className="w-full h-auto object-contain rounded-lg" />
                             </Card>
 
                             {/* Right Column: Text Card */}
                             <Card className="glass-card border-brand-black/30 bg-brand-black/5 text-gray-300 flex flex-col justify-center">
-                                <CardContent className="p-4 lg:p-8 space-y-6 text-lg font-light leading-relaxed">
+                                <CardContent className="p-4 md:p-8 space-y-6 text-lg font-light leading-relaxed">
                                     <p>
                                         The Ku-Band AESA PCB design was tested in a Planar Near Field Range and Compact Antenna Test Range to generate comprehensive view of antenna performance.
                                     </p>
@@ -145,8 +142,8 @@ export default function KuBandPage() {
                         </div>
 
                         {/* Technical Specifications & Data */}
-                        <div className="mt-12 lg:mt-24">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                        <div className="mt-12 md:mt-24">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
                                 {/* Left Column: Data Tables & Specs */}
                                 <Card className="glass-card border-brand-black/30 bg-brand-black/5 text-gray-300">
                                     <CardHeader className="pb-4">
@@ -247,7 +244,7 @@ export default function KuBandPage() {
                                 <div className="w-full">
                                     <Card className="glass-card border-brand-black/30 bg-white/5 backdrop-blur-sm w-full aspect-square flex items-center justify-center p-4">
                                         <div className="w-full h-full">
-                                            <img src="/resources/ku-band/array-propagation.png" alt="Ku Band" className="w-full h-full object-contain" />
+                                            <img src="/resources/ku-band/chart.png" alt="Ku Band" className="w-full h-full object-contain" />
                                         </div>
                                     </Card>
                                 </div>

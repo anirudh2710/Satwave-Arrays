@@ -143,57 +143,16 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         {/* Separator */}
                         <div className="h-6 w-px bg-white/20"></div>
 
-                        {/* Products & Applications Dropdown */}
-                        <NavigationMenuItem value="products">
-                            <NavigationMenuTrigger
-                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
-                                onPointerMove={(e: any) => e.preventDefault()}
-                                onPointerLeave={(e: any) => e.preventDefault()}
-                                onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
-                            >
-                                Products & Applications
-                            </NavigationMenuTrigger>
-                            <NavigationMenuContent className="gradient-navbar-dropdown backdrop-blur-2xl border border-mid-gray-tint/30 shadow-xl rounded-lg md:-left-20">
-                                <ul className="grid grid-cols-2 w-[440px] gap-4 p-4">
-                                    {/* Products Section */}
-                                    <li>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="/products?tab=products" className="block p-4 rounded-md cursor-pointer hover:bg-white/10 transition-all duration-200">
-                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-                                                    Products
-                                                </div>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Ku Antenna
-                                                    </span>
-                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Ka Antenna
-                                                    </span>
-                                                </div>
-                                            </Link>
-                                        </NavigationMenuLink>
-                                    </li>
-
-                                    {/* Applications Section */}
-                                    <li>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="/products?tab=applications" className="block p-4 rounded-md cursor-pointer hover:bg-white/10 transition-all duration-200">
-                                                <div className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
-                                                    Applications
-                                                </div>
-                                                <div className="flex flex-wrap gap-2">
-                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Comms on the Move
-                                                    </span>
-                                                    <span className="uppercase px-3 py-1.5 bg-brand-black/20 text-brand-accent rounded-full text-xs font-medium border border-brand-black/30">
-                                                        Comms on the Pause
-                                                    </span>
-                                                </div>
-                                            </Link>
-                                        </NavigationMenuLink>
-                                    </li>
-                                </ul>
-                            </NavigationMenuContent>
+                        {/* Products & Applications - Direct Link */}
+                        <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    href="/products?tab=products"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                >
+                                    Products & Applications
+                                </Link>
+                            </NavigationMenuLink>
                         </NavigationMenuItem>
 
                         {/* Separator */}
@@ -237,23 +196,23 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
-                                        <div className="px-4 pt-3 pb-1 text-xs font-bold text-gray-500 uppercase tracking-widest">
+                                        <div className="block px-4 py-2.5 rounded-md text-gray-300 text-sm font-medium">
                                             Resources
                                         </div>
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href="/resources/ku-band"
-                                                className="block px-4 py-2 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                                className="block px-6 py-2 rounded-md cursor-pointer text-gray-500 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             >
-                                                <div className="text-sm font-medium pl-2">Ku-band</div>
+                                                <div className="text-sm font-normal">Ku-band</div>
                                             </Link>
                                         </NavigationMenuLink>
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href="/resources/ka-band"
-                                                className="block px-4 py-2 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                                className="block px-6 py-2 rounded-md cursor-pointer text-gray-500 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             >
-                                                <div className="text-sm font-medium pl-2">Ka-band</div>
+                                                <div className="text-sm font-normal">Ka-band</div>
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
@@ -302,56 +261,61 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         <div className="space-y-6">
                             {/* About Section */}
                             <div className="border-b border-white/10 pb-6">
-                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">About</h3>
-                                <div className="grid gap-3 pl-4">
-                                    <button onClick={() => { handleAboutClick('overview'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Overview</button>
-                                    <button onClick={() => { handleAboutClick('mission'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Mission</button>
-                                    <button onClick={() => { handleAboutClick('values'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Values</button>
-                                    <button onClick={() => { handleAboutClick('governance'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Governance</button>
-                                    <button onClick={() => { handleAboutClick('team'); setIsMobileMenuOpen(false); }} className="text-left text-white text-lg font-medium">Team</button>
+                                <div className="text-white text-xl font-bold uppercase tracking-widest mb-4">About</div>
+                                <div className="grid gap-4 pl-4">
+                                    <button onClick={() => { handleAboutClick('overview'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Overview</button>
+                                    <button onClick={() => { handleAboutClick('mission'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Mission</button>
+                                    <button onClick={() => { handleAboutClick('values'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Values</button>
+                                    <button onClick={() => { handleAboutClick('governance'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Governance</button>
+                                    <button onClick={() => { handleAboutClick('team'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Team</button>
                                 </div>
                             </div>
 
                             {/* Products & Applications */}
                             <div className="border-b border-white/10 pb-6">
-                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">Products & Applications</h3>
-                                <div className="grid gap-3 pl-4">
-                                    <Link href="/products?tab=products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">Products</Link>
-                                    <Link href="/products?tab=applications" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">Applications</Link>
-                                </div>
+                                <Link href="/products?tab=products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
+                                    Products & Applications
+                                </Link>
                             </div>
 
                             {/* Technology */}
                             <div className="border-b border-white/10 pb-6">
-                                <Link href="/technology" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest">
+                                <Link href="/technology" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
                                     Technology
                                 </Link>
                             </div>
 
-                            {/* More */}
-                            <div className="pb-6">
-                                <h3 className="text-white/50 text-xs font-bold uppercase tracking-widest mb-4">More</h3>
-                                <div className="grid gap-3 pl-4">
-                                    <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-lg font-medium block">News</Link>
+                            {/* News */}
+                            <div className="border-b border-white/10 pb-6">
+                                <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
+                                    News
+                                </Link>
+                            </div>
 
-                                    <div className="pt-2 pb-1 text-white/50 text-xs font-bold uppercase tracking-widest block">Resources</div>
-                                    <Link href="/resources/ku-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 text-lg font-medium block pl-4 hover:text-brand-accent">Ku-band</Link>
-                                    <Link href="/resources/ka-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 text-lg font-medium block pl-4 hover:text-brand-accent">Ka-band</Link>
-
-                                    <button
-                                        onClick={() => {
-                                            setIsMobileMenuOpen(false);
-                                            if (isHomePage && scrollTo) {
-                                                scrollTo('contact');
-                                            } else {
-                                                window.location.href = '/#contact';
-                                            }
-                                        }}
-                                        className="text-left text-brand-accent text-lg font-medium mt-2"
-                                    >
-                                        Contact Us
-                                    </button>
+                            {/* Resources */}
+                            <div className="border-b border-white/10 pb-6">
+                                <div className="text-white text-xl font-bold uppercase tracking-widest mb-4 block">Resources</div>
+                                <div className="grid gap-4 pl-4">
+                                    <Link href="/resources/ku-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 hover:text-white text-lg font-medium block transition-colors">Ku-band</Link>
+                                    <Link href="/resources/ka-band" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-300 hover:text-white text-lg font-medium block transition-colors">Ka-band</Link>
                                 </div>
+                            </div>
+
+                            {/* Contact Us */}
+                            <div className="pb-6">
+                                <button
+                                    onClick={() => {
+                                        setIsMobileMenuOpen(false);
+                                        if (isHomePage && scrollTo) {
+                                            scrollTo('contact');
+                                        } else {
+                                            window.location.href = '/#contact';
+                                        }
+                                    }}
+                                    className="text-left text-white text-xl font-bold uppercase tracking-widest block w-full"
+                                >
+                                    Contact Us
+                                </button>
                             </div>
                         </div>
                     </motion.div>

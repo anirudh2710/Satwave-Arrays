@@ -60,7 +60,7 @@ export default function TechnologyPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-brand-black flex flex-col relative z-0">
+        <div className="min-h-screen bg-brand-black flex flex-col relative z-0 overflow-x-hidden">
             {/* Navbar */}
             <Navbar />
 
@@ -95,7 +95,7 @@ export default function TechnologyPage() {
                         </div>
 
                         {/* Page Header */}
-                        <h1 className="text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
                             Technology Portfolio
                         </h1>
                         <p className="text-gray-400 text-center text-lg max-w-3xl mx-auto">
