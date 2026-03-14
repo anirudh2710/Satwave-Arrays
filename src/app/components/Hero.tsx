@@ -26,18 +26,18 @@ export default function Hero({ scrollTo, setAboutTab, news }: HeroProps) {
             <Navbar scrollTo={scrollTo} setAboutTab={setAboutTab} />
 
             {/* Top Section - Main Content */}
-            <div className="relative z-10 flex flex-col justify-center min-h-[50vh] md:min-h-[60vh] py-12 md:py-16 mt-10 lg:mt-20">
+            <div className="relative z-10 flex flex-col justify-center flex-grow py-12 md:py-24 mt-20 lg:mt-32">
                 {/* Headline & CTA */}
                 <div className="flex-1 flex flex-col items-center justify-center w-full px-4 sm:px-6 lg:px-8">
                     <div className="w-full max-w-7xl text-center">
-                        <h1 className="uppercase text-white text-7xl sm:text-8xl md:text-9xl leading-[0.85] w-full mb-6 drop-shadow-2xl">
+                        <h1 className="uppercase text-white text-7xl sm:text-8xl md:text-8xl leading-[0.85] w-full mb-6 drop-shadow-2xl">
                             Enabling<br className="sm:hidden" /> Mobility
                         </h1>
                     </div>
                 </div>
             </div>
 
-            <div className="w-full flex-grow flex flex-col justify-end min-h-[40vh] pb-8 relative z-10">
+            <div className="w-full flex flex-col justify-end pb-8 relative z-10">
                 <NewsTicker news={news} />
             </div>
         </div>

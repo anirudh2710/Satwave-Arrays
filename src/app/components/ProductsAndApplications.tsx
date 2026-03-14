@@ -25,6 +25,20 @@ interface ProductsAndApplicationsProps {
 }
 
 export default function ProductsAndApplications({ activeTab = 'products', onTabChange }: ProductsAndApplicationsProps) {
+    // Shared Capabilities
+    const sharedCapabilities = [
+        "Both antennas are designed for mobility.",
+        "They are full duplex, but configurable to a customer’s needs or application.",
+        "They utilize a proprietary RF architecture.",
+        "To maintain total design control, the RF backend is engineered in-house.",
+        "Printed Circuit Board (PCB) based design, manufacturable at lower cost at scale.",
+        "Based on commercially available phased array technology – Beam-Forming Integrated Circuits (BFICs).",
+        "The hardware is fully integrated with Satwave’s proprietary Antenna Control Unit.",
+        "Tracking algorithm to track and hold satellites in various constellations and orbits.",
+        "Thermal Management to operate in very cold as well as hot environments.",
+        "Driven by FreeRTOS software, which is supported by Amazon and used by millions of devices."
+    ];
+
     // Ku-Band product images and content
     const kuBandImages = [
         {
@@ -172,6 +186,29 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                     </Breadcrumb>
                 </div>
 
+                {/* Introduction Section */}
+                <div className="mb-16">
+                    <div className="text-center max-w-4xl mx-auto mb-12">
+                        <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-wider font-bebas-neue">
+                            Mission-Critical AESA Technology
+                        </h2>
+                        <p className="text-lg text-gray-300 leading-relaxed">
+                            Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance 32×32 AESAs designed for mission-specific applications in defense and aerospace.
+                        </p>
+                    </div>
+
+                    {/* Shared Capabilities Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 max-w-7xl mx-auto">
+                        {sharedCapabilities.map((capability, idx) => (
+                            <div key={idx} className="glass-card border-brand-black/30 p-5 flex items-start hover:border-brand-accent/50 transition-colors group h-full">
+                                <span className="text-base sm:text-lg leading-relaxed font-medium group-hover:text-white transition-colors">
+                                    {capability}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
                 <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
                     <TabsList className="grid w-full grid-cols-2 mb-8 bg-[#696969] backdrop-blur-sm p-1 rounded-lg">
                         <TabsTrigger value="products" className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800">
@@ -184,10 +221,10 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
                     {/* Products Tab */}
                     <TabsContent value="products" className="mt-8">
-                        <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                        <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto">
                             {/* Ku-Band Antenna */}
-                            <Card className="glass-card border-slate-gray/30">
-                                <CardContent className="p-6">
+                            <Card className="glass-card border-slate-gray/30 h-full flex flex-col">
+                                <CardContent className="p-6 flex flex-col flex-1">
                                     <h3 className="text-2xl font-bold text-white mb-4 text-center">Ku-Band Antenna</h3>
                                     <Carousel
                                         className="w-full"
@@ -222,7 +259,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                     </Carousel>
 
                                     {/* Specifications */}
-                                    <div className="mt-6 pt-6 border-t border-white/10">
+                                    <div className="mt-auto pt-6 border-t border-white/10">
                                         <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
                                         <div className="grid grid-cols-1 gap-y-3 text-sm">
                                             <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
@@ -275,8 +312,8 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                             </Card>
 
                             {/* Ka-Band Antenna */}
-                            <Card className="glass-card border-brand-black/30">
-                                <CardContent className="p-6">
+                            <Card className="glass-card border-brand-black/30 h-full flex flex-col">
+                                <CardContent className="p-6 flex flex-col flex-1">
                                     <h3 className="text-2xl font-bold text-white mb-4 text-center">Ka-Band Antenna</h3>
                                     <Carousel
                                         className="w-full"
@@ -311,7 +348,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                     </Carousel>
 
                                     {/* Specifications */}
-                                    <div className="mt-6 pt-6 border-t border-white/10">
+                                    <div className="mt-auto pt-6 border-t border-white/10">
                                         <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
                                         <div className="grid grid-cols-1 gap-y-3 text-sm">
                                             <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
@@ -374,10 +411,10 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                         </div>
 
                         {/* Application Cards in Grid */}
-                        <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+                        <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto">
                             {applicationImages.map((item, index) => (
-                                <Card key={index} className="glass-card border-brand-black/30">
-                                    <CardContent className="p-6">
+                                <Card key={index} className="glass-card border-brand-black/30 h-full flex flex-col">
+                                    <CardContent className="p-6 flex flex-col flex-1">
                                         <Carousel
                                             className="w-full mb-4"
                                             plugins={[
@@ -418,7 +455,7 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                                         </div>
 
                                         {/* Orbit Details */}
-                                        <div className="mt-4 pt-4 border-t border-white/10">
+                                        <div className="mt-auto pt-4 border-t border-white/10">
                                             <div className="text-xs text-gray-400 space-y-1">
                                                 {item.orbit === 'GEO' && (
                                                     <>

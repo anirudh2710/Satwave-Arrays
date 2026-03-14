@@ -211,27 +211,31 @@ export default function KuBandPage() {
 
                                         {/* G/T Table */}
                                         <div>
-                                            <h4 className="text-white font-semibold mb-3">G/T <span className="text-brand-accent/70 font-normal text-sm">| 25&deg; C</span></h4>
+                                            <h4 className="text-white font-semibold mb-3">G/T</h4>
                                             <div className="overflow-x-auto text-sm lg:text-base font-mono">
                                                 <table className="w-full text-left border-collapse">
                                                     <thead>
                                                         <tr className="border-b border-white/10 text-brand-accent/80">
                                                             <th className="py-2 px-4 font-normal">Steer</th>
+                                                            <th className="py-2 px-4 font-normal">25&deg; C</th>
                                                             <th className="py-2 px-4 font-normal">Hottest*</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody className="divide-y divide-white/5">
                                                         <tr>
                                                             <td className="py-3 px-4">0&deg; (measured)</td>
-                                                            <td className="py-3 px-4">10 dB/K <span className="text-gray-500">| 8 dB/K</span></td>
+                                                            <td className="py-3 px-4">10 dB/K</td>
+                                                            <td className="py-3 px-4">8 dB/K</td>
                                                         </tr>
                                                         <tr>
                                                             <td className="py-3 px-4">45&deg; (measured)</td>
-                                                            <td className="py-3 px-4">8 dB/K <span className="text-gray-500">| 6 dB/K</span></td>
+                                                            <td className="py-3 px-4">8 dB/K</td>
+                                                            <td className="py-3 px-4">6 dB/K</td>
                                                         </tr>
                                                         <tr>
                                                             <td className="py-3 px-4 text-brand-accent">60&deg; (extrapolated)</td>
-                                                            <td className="py-3 px-4">6 dB/K <span className="text-gray-500">| 4 dB/K</span></td>
+                                                            <td className="py-3 px-4">6 dB/K</td>
+                                                            <td className="py-3 px-4">4 dB/K</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

@@ -130,9 +130,9 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                             <TabsTrigger value="values" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Values
                             </TabsTrigger>
-                            <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
+                            {/* <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Governance
-                            </TabsTrigger>
+                            </TabsTrigger> */}
                             <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Team
                             </TabsTrigger>
@@ -234,16 +234,18 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                         transition={{ delay: i * 0.1 }}
                                     >
                                         <Card
-                                            className="glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 group h-full"
+                                            className="glass-card border-brand-black/30 duration-300 group h-full flex flex-col"
                                         >
                                             <CardHeader>
                                                 <CardTitle className="text-2xl uppercase font-bold text-white group-hover:text-brand-accent transition-colors">
                                                     <h4>{value.title}</h4>
                                                 </CardTitle>
                                             </CardHeader>
-                                            <CardContent>
-                                                <p className="text-gray-400">{value.desc}</p>
-                                                <div className="mt-6 w-12 h-1 bg-brand-black group-hover:w-full transition-all duration-500" />
+                                            <CardContent className="flex flex-col flex-grow">
+                                                <div className="flex-grow">
+                                                    <p>{value.desc}</p>
+                                                </div>
+                                                <div className="mt-6 w-12 h-1 bg-brand-black group-hover:w-full transition-all duration-500 mt-auto" />
                                             </CardContent>
                                         </Card>
                                     </motion.div>
@@ -252,7 +254,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                         </TabsContent>
 
                         {/* Governance Tab - Board Members */}
-                        <TabsContent value="governance" className="mt-8">
+                        {/* <TabsContent value="governance" className="mt-8">
                             <div className="max-w-6xl mx-auto">
                                 <div className="grid md:grid-cols-5 gap-6">
                                     {boardMembers.map((member, i) => (
@@ -276,7 +278,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                     ))}
                                 </div>
                             </div>
-                        </TabsContent>
+                        </TabsContent> */}
 
                         {/* Team Tab - Team Members Grid */}
                         <TabsContent value="team" className="mt-8">

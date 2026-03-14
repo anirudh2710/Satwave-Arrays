@@ -19,42 +19,49 @@ export default function TechnologyPage() {
             id: "phased-array",
             title: "Large-Scale Phased Array System Development",
             icon: "📡",
+            image: "/large-scale-array/image003.png",
             description: "Advanced 32×32 AESA systems for Ku and Ka-band"
         },
         {
             id: "em-simulation",
             title: "Electromagnetic Simulation & Modeling",
             icon: "🔬",
+            image: "/em-sim/image005.png",
             description: "Data-driven EM design validation and analysis"
         },
         {
             id: "acu",
             title: "Proprietary Antenna Control Unit (ACU)",
             icon: "⚙️",
+            image: "/proprietory-antenna-control-unit/proprietory-a-c-u.jpg",
             description: "In-house ACU with OPENAMIP/OPENBMIP support"
         },
         {
             id: "tracking",
             title: "Tracking & Control Algorithms",
             icon: "🎯",
+            image: "/tracking-control/image.png",
             description: "Conical scan techniques for LEO and GEO satellites"
         },
         {
             id: "validation",
             title: "Measurement & Validation",
             icon: "📊",
+            image: "/measurement-and-validation/image002.png",
             description: "Extensive testing in near-field and compact ranges"
         },
         {
             id: "next-gen",
             title: "Next-Generation Systems",
             icon: "🚀",
+            image: "/em-sim/image006.gif",
             description: "R&D into multi-band, digital beamforming, and AI-driven designs"
         },
         {
             id: "philosophy",
             title: "Satwave's Engineering Philosophy",
             icon: "💡",
+            image: "/em-sim/image004.png",
             description: "Data-driven, transparent, and iterative development"
         }
     ];
@@ -114,20 +121,24 @@ export default function TechnologyPage() {
                                         <CardContent className="p-0">
                                             {/* Image Placeholder */}
                                             <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
-                                                <div className="w-full h-full flex items-center justify-center text-6xl">
-                                                    {topic.icon}
-                                                </div>
+                                                {topic.image ? (
+                                                    <img src={topic.image} alt={topic.title} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center text-6xl">
+                                                        {topic.icon}
+                                                    </div>
+                                                )}
                                             </div>
 
                                             {/* Content */}
                                             <div className="p-6">
                                                 {/* Title */}
-                                                <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
+                                                <h3 className="text-white uppercase font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
                                                     {topic.title}
                                                 </h3>
 
                                                 {/* Description */}
-                                                <p className="text-gray-400 text-sm leading-relaxed">
+                                                <p className="uppercase text-gray-400 text-sm leading-relaxed">
                                                     {topic.description}
                                                 </p>
 
