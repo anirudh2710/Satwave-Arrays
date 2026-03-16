@@ -289,6 +289,7 @@ body {
     background-image: url('/Background/image009.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     opacity: 0.2;
     /* background-repeat: no-repeat; */
 }

@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
     Carousel,
@@ -198,16 +199,31 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                         </p>
                     </div>
 
-                    {/* Shared Capabilities Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6 max-w-7xl mx-auto">
-                        {sharedCapabilities.map((capability, idx) => (
-                            <div key={idx} className="glass-card border-brand-black/30 p-5 flex items-start hover:border-brand-accent/50 transition-colors group h-full">
-                                <span className="text-base sm:text-lg leading-relaxed font-medium group-hover:text-white transition-colors">
-                                    {capability}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
+                    {/* Shared Capabilities Accordion */}
+                    <Accordion type="single" collapsible className="w-full max-w-7xl mx-auto mb-16">
+                        <AccordionItem value="capabilities" className="border-white/10 glass-card bg-brand-black/20 px-6 rounded-lg">
+                            <AccordionTrigger className="text-xl font-bold text-white hover:text-brand-accent transition-colors py-6 hover:no-underline">
+                                View Shared Ku-Band & Ka-Band Capabilities
+                            </AccordionTrigger>
+                            <AccordionContent className="pt-2 pb-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6">
+                                    {sharedCapabilities.map((capability, idx) => (
+                                        <div key={idx} className="relative overflow-hidden bg-brand-black/40 backdrop-blur-md border border-white/10 p-6 hover:border-brand-accent/50 hover:bg-brand-black/60 transition-all duration-300 group h-full rounded-lg">
+                                            {/* Subtle Glowing Accent Line at the top */}
+                                            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            
+                                            {/* Accent gradient blob in the background on hover */}
+                                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"></div>
+
+                                            <span className="relative z-10 text-base sm:text-lg leading-relaxed font-medium text-gray-300 group-hover:text-white transition-colors">
+                                                {capability}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </div>
 
                 <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
