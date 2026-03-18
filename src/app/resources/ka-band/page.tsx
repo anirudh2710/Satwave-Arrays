@@ -56,7 +56,7 @@ export default function KaBandPage() {
                 <section className="max-w-7xl mx-auto px-6 pb-24 w-full flex-grow">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-20 items-stretch">
                         {/* Left Column: Key Features */}
-                        <Card className="md:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-brand-accent h-full flex flex-col justify-center">
+                        <Card className="md:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-brand-accent h-full flex flex-col justify-start py-6">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold text-white uppercase tracking-wider font-bebas-neue">Key features include:</CardTitle>
                             </CardHeader>
@@ -80,10 +80,10 @@ export default function KaBandPage() {
                             </CardContent>
                         </Card>
 
-                        <div className="md:col-span-2 w-full h-full">
-                            <Card className="glass-card border-brand-black/30 bg-white/5 backdrop-blur-sm w-full h-full flex items-center justify-center p-4">
+                        <div className="md:col-span-2 w-full h-full flex items-center">
+                            <Card className="glass-card border-brand-black/30 bg-white/5 backdrop-blur-sm w-full min-h-[350px] md:max-h-[500px] flex items-center justify-center p-4">
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <img src="/resources/ka-band/ka_band.jpg" alt="Ka-band Antenna Front and Back" className="w-full h-full object-contain" />
+                                    <img src="/resources/ka-band/ka_band.jpg" alt="Ka-band Antenna Front and Back" className="w-full h-full object-contain max-h-[400px]" />
                                 </div>
                             </Card>
                         </div>
