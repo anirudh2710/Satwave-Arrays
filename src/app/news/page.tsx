@@ -11,6 +11,8 @@ import {
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import AnimatedHeading from "../components/AnimatedHeading";
+import AnimatedNewsGrid from "../components/AnimatedNewsGrid";
 import { client } from "../../sanity/client";
 import { ALL_NEWS_QUERY } from "../../sanity/queries";
 import { urlFor } from "../../sanity/image";
@@ -71,9 +73,9 @@ export default async function NewsPage() {
                             </Link>
                         </div>
 
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
+                        <AnimatedHeading className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white text-center uppercase tracking-tight mb-4 leading-tight">
                             News & Information
-                        </h1>
+                        </AnimatedHeading>
                         <p className="text-gray-400 text-center text-lg max-w-3xl mx-auto">
                             Stay updated with the latest developments, product launches, and insights from Satwave
                         </p>
@@ -82,67 +84,7 @@ export default async function NewsPage() {
 
                 {/* News Grid */}
                 <section className="max-w-7xl mx-auto px-6 py-16">
-                    {newsArticles.length === 0 ? (
-                        <div className="text-center text-gray-400 py-20">
-                            <p>No news articles found at the moment.</p>
-                        </div>
-                    ) : (
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {newsArticles.map((article) => (
-                                <Link key={article.slug} href={`/news/${article.slug}`}>
-                                    <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
-                                        <CardContent className="p-0">
-                                            {/* Image */}
-                                            <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 relative">
-                                                {article.mainImage ? (
-                                                    <img
-                                                        src={urlFor(article.mainImage).width(800).height(450).url()}
-                                                        alt={article.title}
-                                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                    />
-                                                ) : (
-                                                    <div className="w-full h-full flex items-center justify-center text-6xl">
-                                                        📰
-                                                    </div>
-                                                )}
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="p-6">
-                                                {/* Category & Date */}
-                                                <div className="flex items-center justify-between mb-3">
-                                                    <span className={cn("px-3 py-1 rounded-full text-xs font-medium border", getCategoryColor(article.category))}>
-                                                        {article.category || 'News'}
-                                                    </span>
-                                                    <span className="text-gray-500 text-xs">
-                                                        {new Date(article.publishedAt).toLocaleDateString()}
-                                                    </span>
-                                                </div>
-
-                                                {/* Headline */}
-                                                <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors line-clamp-2">
-                                                    {article.title}
-                                                </h3>
-
-                                                {/* Excerpt - manually truncated or needs a field */}
-                                                <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
-                                                    Click to read full story...
-                                                </p>
-
-                                                {/* Read More */}
-                                                <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
-                                                    <span className="group-hover:underline">Read More</span>
-                                                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </Link>
-                            ))}
-                        </div>
-                    )}
+                    <AnimatedNewsGrid articles={newsArticles} />
                 </section>
             </main>
 

@@ -42,9 +42,14 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
             image: "/overview/team.jpg"
         },
         {
-            title: "Testing & Validation",
-            description: "Testing facility",
-            image: "/overview/testing.jpg"
+            title: "Ku",
+            description: "Ku",
+            image: "/overview/ku.png"
+        },
+        {
+            title: "Ka",
+            description: "Ka",
+            image: "/overview/ka.png"
         },
         {
             title: "Car",
@@ -52,9 +57,9 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
             image: "/overview/car-with-antenna.jpg"
         },
         {
-            title: "Ku",
-            description: "Ku",
-            image: "/overview/ku.jpeg"
+            title: "Testing & Validation",
+            description: "Testing facility",
+            image: "/overview/testing.jpg"
         },
         {
             title: "Office work",
@@ -94,7 +99,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
         { name: "Manuel Jimenez Martinez", role: "Sr. RF Engineer", image: "/team/optimized/manuel.jpg", bio: "Senior RF Engineer and Lead Antenna Engineer at Satwave, where I lead the design and development of phased array antennas as well as RF systems for satellite communications. My experience spans Antenna engineering, RF systems analysis, electromagnetic simulations, PCB-based phased arrays, Parabolic antennas, RF structures, testing, and product development. I am passionate about building innovative antenna technology and solving super complex engineering challenges. Outside of work, I love traveling to new places, hiking, and capturing my experiences through videography.", linkedin: "https://linkedin.com/in/manueljmg" },
         { name: "Shanelle Metellus", role: "Executive Administrator", image: "/team/optimized/shanelle.jpg", bio: "I keep the moving parts of the company running smoothly so our team can focus on building something great! And I am always on the hunt for the best iced latte in town. ", linkedin: "https://linkedin.com/in/shanelle-metellus-17904b16b" },
         { name: "Bhavadharini Narayanan", role: "IT & Systems Administrator", image: "/team/optimized/bhava.jpg", bio: "I work in IT Systems and Security Administration at Satwave. I recently finished my master's and joined the team to help build our cloud and network security. I enjoy working here because I get to learn and contribute to a great team. Outside of work, I love traveling and cooking.", linkedin: "https://linkedin.com/in/bhavadharininarayanan" },
-        { name: "Sergio Navarrete", role: "Mechanical Engineer", image: "/team/optimized/sergio.jpg", bio: "I am one of the lead Mechanical Engineers at Satwave with about half a decade experience in the SATCOM industry. With a primary focus on design optimization, I help drive the team in the areas of Quality Assurance, MRP, and some Program Management to ensure the best possible products have the potential to get delivered onto the market in a timely and efficient manner. I enjoy working here because it almost feels like everyday is a new challenge and can always keep learning something new! When I am away from the office, I enjoy going the gym, going for walks and also love cleaning my car.", linkedin: "https://linkedin.com/in/placeholder" },
+        { name: "Sergio Navarrete", role: "Mechanical Engineer", image: "/team/optimized/sergio.jpg", bio: "I am one of the lead Mechanical Engineers at Satwave with about half a decade experience in the SATCOM industry. With a primary focus on design optimization, I help drive the team in the areas of Quality Assurance, MRP, and some Program Management to ensure the best possible products have the potential to get delivered onto the market in a timely and efficient manner. I enjoy working here because it almost feels like everyday is a new challenge and can always keep learning something new! When I am away from the office, I enjoy going the gym, going for walks and also love cleaning my car.", linkedin: "https://linkedin.com/in/snavarrete93" },
         { name: "Hunter Rabun", role: "Software Engineer", image: "/team/optimized/hunter.jpg", bio: "I am a digital engineer experienced in Hardware, Software, and RF systems. I am at Satwave because I get to work on everything from application software, to bare-metal firmware, and PCBs while working with a diverse, open-minded, and gifted team. In my free time I like to play video games, tinker with electronics, and go on spirited drives.", linkedin: "https://linkedin.com/in/hunter-rabun-8626b0231" },
         { name: "Gabriel Richmond", role: "Software Engineer", image: "/team/optimized/123.jpg", bio: "I am a soon-to-be graduate in computer engineering from Kennesaw State University with a passion for embedded systems development and design. I am at Satwave because of my desire to not only apply my learned skills but gain new ones within the RF and satellite industry. As an intern I aid with an array of projects from firmware, hardware, software, and testing. When I am not working, I am usually playing boardgames, watching movies, working on side projects, or playing video games with friends.", linkedin: "https://linkedin.com/in/placeholder" },
         { name: "Nikolay Tranakiev", role: "Sr. Software Engineer", image: "/team/optimized/n.jpg", bio: "As an embedded engineer at Satwave AI, I work with our software team on implementing our antenna control stack as well as building an extensive software test suite. I come from a background in the satellite and space industry and enjoy being at Satwave for the opportunity to solve complex technical challenges with a great team. Outside of work, I enjoy tinkering with various hands-on projects and trying out every coffee shop in Atlanta. ", linkedin: "https://linkedin.com/in/nikolay-tranakiev" },

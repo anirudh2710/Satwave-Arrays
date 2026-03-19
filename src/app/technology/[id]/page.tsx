@@ -22,15 +22,15 @@ const techTopics = [
         image: "/large-scale-array/image003.png",
         description: "Advanced 32×32 AESA systems for Ku and Ka-band",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class=" my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Our current Design and realization of phased array systems include:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">32×32 Ku-band AESA</li>
                         <li class="mb-2 leading-relaxed">32×32 Ka-band AESA</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">The architectures Satwave implemented include:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Stacked patch radiating elements with proprietary, ML-optimized, inner layers for 
                         wideband performance, enhanced cross-polarization, and improved efficiency at large scan angles.</li>                
                     </ul>
@@ -47,9 +47,9 @@ const techTopics = [
         image: "/em-sim/image005.png",
         description: "Data-driven EM design validation and analysis",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">We rely on data-driven electromagnetic (EM) design validation and use both commercial EM solvers and internally developed (in-progress) FDTD tools for:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Large-scale array analysis.</li>
                         <li class="mb-2 leading-relaxed">Element-to-element coupling studies.</li>
                         <li class="mb-2 leading-relaxed">Wide-scan and broadband performance prediction.</li>
@@ -66,15 +66,15 @@ const techTopics = [
         image: "/measurement-and-validation/image002.png",
         description: "Extensive antenna testing in:",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Extensive antenna testing in:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Planar near-field measurement range</li>
                         <li class="mb-2 leading-relaxed">Compact antenna test range</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Validation across:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Multiple frequencies</li>
                         <li class="mb-2 leading-relaxed">Wide scan angles</li>
                         <li class="mb-2 leading-relaxed">Large beam sets</li>
@@ -92,18 +92,18 @@ const techTopics = [
         image: "/proprietory-antenna-control-unit/proprietory-a-c-u.jpg",
         description: "In-house ACU with OPENAMIP/OPENBMIP support",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Satwave Arrays has fully designed, developed, and tested its own Antenna Control Unit (ACU) in-house.</li>
                 <li class="mb-3 leading-relaxed">Native support for OPENAMIP and OPENBMIP, enabling direct interoperability with commercial and defense SATCOM modems.</li>
                 <li class="mb-3 leading-relaxed">The Satwave ACU manages:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Satellite acquisition and tracking</li>
                         <li class="mb-2 leading-relaxed">Beam steering and pointing control</li>
                         <li class="mb-2 leading-relaxed">Interface coordination between antenna, beamforming layer, and modem</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Enables a plug-and-play system architecture:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Connect a modem</li>
                         <li class="mb-2 leading-relaxed">Load configuration</li>
                         <li class="mb-2 leading-relaxed">Operate — no external controllers or custom integration layers required</li>
@@ -120,16 +120,16 @@ const techTopics = [
         image: "/tracking-control/image.png",
         description: "Conical scan techniques for LEO and GEO satellites",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Satellite tracking algorithms based on scan techniques.</li>
                 <li class="mb-3 leading-relaxed">We validate our algorithms using:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Motion platforms with roll and pitch dynamics.</li>
                         <li class="mb-2 leading-relaxed">Live tracking of MEO and GEO satellites.</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Designed for direct integration with:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">The Satwave ACU.</li>
                         <li class="mb-2 leading-relaxed">Ground segment and system-level controllers.</li>
                     </ul>
@@ -145,11 +145,11 @@ const techTopics = [
         image: "/em-sim/image006.gif",
         description: "R&D into multi-band, digital beamforming, and AI-driven designs",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">R&D into simultaneous Ku and Ka operation through a single antenna                    
                 </li>
                 <li class="mb-3 leading-relaxed">Exploration of next gen capabilities:
-                    <ul class="text-gray-400 my-4 list-[circle] pl-6">
+                    <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Higher-frequency arrays</li>
                         <li class="mb-2 leading-relaxed">Multi-band and Multi-Beam architectures</li>
                         <li class="mb-2 leading-relaxed">True-Time Delay architectures for large scale arrays</li>
@@ -168,7 +168,7 @@ const techTopics = [
         image: "/em-sim/image004.png",
         description: "Data-driven, transparent, and iterative development",
         content: `
-            <ul class="text-gray-300 my-6 list-disc pl-6">
+            <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed"><strong class="text-white font-semibold">Data-Driven Design:</strong> Simulation is always paired with real-world measurements.</li>
                 <li class="mb-3 leading-relaxed"><strong class="text-white font-semibold">Open-Book Engineering:</strong> Customers receive detailed performance data and validation reports.</li>
                 <li class="mb-3 leading-relaxed"><strong class="text-white font-semibold">Iterative Development:</strong> Design → test → refine → re-test</li>
@@ -230,7 +230,7 @@ export default function TechnologyDetailPage() {
                             <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
-                            Portfolio
+                            Go Back
                         </Link>
                     </div>
 
@@ -258,7 +258,7 @@ export default function TechnologyDetailPage() {
                 <section className="max-w-4xl mx-auto px-6 pb-24 w-full flex-grow">
                     <div className="glass-card p-10 border-brand-black/30 bg-brand-black/5">
                         <div
-                            className="max-w-none text-brand-accent"
+                            className="max-w-none text-brand-accent text-sm sm:text-lg"
                             dangerouslySetInnerHTML={{ __html: topic.content }}
                         />
                     </div>

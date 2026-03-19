@@ -1,5 +1,7 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -89,18 +91,37 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                 </div>
                 {/* Introduction Section */}
                 <div className="text-center max-w-4xl mx-auto mb-16 px-6">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-wider font-bebas-neue">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 1, ease: 'easeOut' }}
+                        className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 uppercase tracking-tight leading-tight"
+                    >
                         Mission-Critical AESA Technology
-                    </h1>
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+                        className="text-lg text-gray-300 leading-relaxed"
+                    >
                         Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance 32×32 AESAs designed for mission-specific applications in defense and aerospace.
-                    </p>
+                    </motion.p>
                 </div>
 
                 {/* Row 1: Carousels Only */}
-                <div className="grid md:grid-cols-2 gap-16 items-start max-w-7xl mx-auto mb-16 px-6">
+                <motion.div
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, margin: '-60px' }}
+                    variants={{ hidden: {}, show: { transition: { staggerChildren: 0.2 } } }}
+                    className="grid md:grid-cols-2 gap-16 items-start max-w-7xl mx-auto mb-16 px-6"
+                >
                     {/* Ku-Band Carousel */}
-                    <div className="w-full flex justify-center">
+                    <motion.div
+                        variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } }}
+                        className="w-full flex justify-center"
+                    >
                         <div className="w-full">
                             <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide uppercase">Ku-Band Antenna</h3>
                             <Carousel
@@ -129,10 +150,13 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                                 <CarouselNext className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white right-0 shadow-lg" />
                             </Carousel>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Ka-Band Carousel */}
-                    <div className="w-full flex justify-center">
+                    <motion.div
+                        variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } } }}
+                        className="w-full flex justify-center"
+                    >
                         <div className="w-full">
                             <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide uppercase">Ka-Band Antenna</h3>
                             <Carousel
@@ -161,11 +185,17 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                                 <CarouselNext className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white right-0 shadow-lg" />
                             </Carousel>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Row 2: Shared Capabilities Accordion */}
-                <div className="w-full mb-16 px-4 sm:px-8 lg:px-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.7, ease: 'easeOut' }}
+                    className="w-full mb-16 px-4 sm:px-8 lg:px-12"
+                >
                     <Accordion type="single" collapsible defaultValue="capabilities" className="w-full max-w-none">
                         <AccordionItem value="capabilities" className="border-white/10 glass-card bg-brand-black/20 px-6 md:px-12 lg:px-24 rounded-2xl">
                             <AccordionTrigger className="text-xl font-bold text-white justify-center hover:text-brand-accent transition-colors py-6 hover:no-underline">
@@ -190,7 +220,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
-                </div>
+                </motion.div>
 
                 {/* Row 3: Specifications (2 Columns) */}
                 <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto w-full px-6">

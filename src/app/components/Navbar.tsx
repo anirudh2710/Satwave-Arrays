@@ -143,6 +143,21 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         {/* Separator */}
                         <div className="h-6 w-px bg-white/20"></div>
 
+                        {/* Why Satwave - Direct Link */}
+                        <NavigationMenuItem>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    href="/why"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                >
+                                    Why Satwave
+                                </Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+
+                        {/* Separator */}
+                        <div className="h-6 w-px bg-white/20"></div>
+
                         {/* Technology */}
                         <NavigationMenuItem>
                             <NavigationMenuLink asChild>
@@ -258,6 +273,13 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                             <div className="border-b border-white/10 pb-6">
                                 <Link href="/products?tab=products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
                                     Products
+                                </Link>
+                            </div>
+
+                            {/* Why Satwave */}
+                            <div className="border-b border-white/10 pb-6">
+                                <Link href="/why" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
+                                    Why Satwave
                                 </Link>
                             </div>
 
