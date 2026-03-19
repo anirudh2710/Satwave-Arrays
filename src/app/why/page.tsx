@@ -53,7 +53,7 @@ export default function WhySatwave() {
                         </div>
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
                             WHY SATWAVE <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">AESAS?</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">AESAs?</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
                             Pioneering the next generation of flat panel satellite antennas through unmatched engineering excellence and innovation.
@@ -181,88 +181,78 @@ export default function WhySatwave() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Bento Box Benefits Section */}
+                    {/* Benefits — numbered list */}
                     <div className="pt-24 border-t border-white/10">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.7 }}
-                            className="text-center mb-16"
-                        >
-                            <h2 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-tight mb-4">
-                                Benefits of our <span className="text-brand-accent bg-brand-accent/10 px-4 py-1 rounded-lg">Approach</span>
-                            </h2>
-                            <p className="text-lg text-gray-400 font-light max-w-2xl mx-auto">
-                                We architect every component of our arrays to scale beautifully, reduce integration friction, and maximize on-mission performance.
-                            </p>
-                        </motion.div>
+                        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
 
-                        {/* Bento Grid layout */}
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, margin: "-50px" }}
-                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min"
-                        >
-                            {/* Bento Item 1 - Large span */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-l-4 border-l-brand-accent border-brand-black/30 bg-gradient-to-br from-brand-accent/5 to-transparent hover:bg-white/[0.03] transition-colors md:col-span-2 flex items-start gap-4">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={28} strokeWidth={2} />
-                                <span className="text-xl lg:text-2xl text-white font-light leading-snug">
-                                    <strong className="font-semibold">Full system capabilities</strong> — Antenna Control Unit and Auto Tracking algorithm engineered natively to integrate with any external modem available in the market.
-                                </span>
+                            {/* Left: sticky label */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.7 }}
+                                className="lg:w-72 shrink-0"
+                            >
+                                <p className="text-brand-accent text-sm font-semibold tracking-widest uppercase mb-4">Why it matters</p>
+                                <h2 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-6">
+                                    Benefits of our Approach
+                                </h2>
+                                <p className="text-gray-400 font-light leading-relaxed">
+                                    We architect every component of our arrays to scale beautifully, reduce integration friction, and maximise on-mission performance.
+                                </p>
+                                <div className="mt-8 w-12 h-px bg-brand-accent" />
                             </motion.div>
 
-                            {/* Bento Item 2 */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 hover:border-white/10 hover:bg-white/[0.03] transition-colors flex items-start gap-4">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg text-gray-300 font-light leading-relaxed">
-                                    AESA design perfectly scalable to custom sizes and multi-panel antennas.
-                                </span>
-                            </motion.div>
-
-                            {/* Bento Item 3 */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 hover:border-white/10 hover:bg-white/[0.03] transition-colors flex items-start gap-4">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg text-gray-300 font-light leading-relaxed">
-                                    PCB-based design, making it highly manufacturable at extremely lower cost at scale.
-                                </span>
-                            </motion.div>
-
-                            {/* Bento Item 4 - Highlighting technical performance */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 bg-gradient-to-tr from-brand-accent/10 to-transparent hover:border-brand-accent/30 transition-colors md:col-span-2 flex items-start gap-4 relative overflow-hidden">
-                                <div className="absolute right-0 top-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-[50px]"></div>
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg lg:text-xl text-gray-200 font-light leading-relaxed relative z-10">
-                                    <strong className="text-white font-semibold">Proprietary & ML optimized inner layers.</strong> Built for unmatched wideband performance, enhanced cross-polarization, and vastly improved efficiency at phenomenally large scan angles.
-                                </span>
-                            </motion.div>
-
-                            {/* Bento Item 5 */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 hover:border-white/10 hover:bg-white/[0.03] transition-colors flex items-start gap-4">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg text-gray-300 font-light leading-relaxed">
-                                    Built confidently on reliable, commercially available analog BFICs.
-                                </span>
-                            </motion.div>
-
-                            {/* Bento Item 6 */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 hover:border-white/10 hover:bg-white/[0.03] transition-colors flex items-start gap-4 md:col-span-1 lg:col-span-2">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg text-gray-300 font-light leading-relaxed">
-                                    Targeted to be highly resilient: <strong className="text-white">IP67 compliant</strong> and fully engineered to operate in harsh <strong className="text-white">MIL-STD-810H</strong> class environments seamlessly.
-                                </span>
-                            </motion.div>
-
-                            {/* Bento Item 7 */}
-                            <motion.div variants={itemVariants} className="glass-card p-8 border-brand-black/30 hover:border-white/10 hover:bg-white/[0.03] transition-colors flex items-start gap-4">
-                                <CheckCircle2 className="text-brand-accent shrink-0 mt-1" size={24} strokeWidth={2} />
-                                <span className="text-lg text-gray-300 font-light leading-relaxed">
-                                    Driven robustly by <strong className="text-white">FreeRTOS software</strong> (supported actively by Amazon and trusted by millions of devices globally).
-                                </span>
-                            </motion.div>
-                        </motion.div>
+                            {/* Right: numbered list */}
+                            <motion.ol
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true, margin: '-60px' }}
+                                className="flex-1 divide-y divide-white/[0.07]"
+                            >
+                                {[
+                                    {
+                                        title: 'AESA design scalable to custom sizes and multi-panel antennas.',
+                                    },
+                                    {
+                                        title: 'Proprietary, ML optimized, inner layers for wideband performance, enhanced cross-polarization, and improved efficiency at large scan angles.',
+                                    },
+                                    {
+                                        title: 'PCB-based design, manufacturable at lower cost at scale.',
+                                    },
+                                    {
+                                        title: 'Built on commercially available analog BFICs.',
+                                    },
+                                    {
+                                        title: 'Targeted to be IP67 compliant and to operate in MIL-STD-810H environments.',
+                                    },
+                                    {
+                                        title: 'Full system — Antenna Control Unit and Auto tracking algorithm to integrate with external modem available in the market.',
+                                    },
+                                    {
+                                        title: 'Driven by FreeRTOS software (supported by Amazon and used by millions of devices).',
+                                    },
+                                ].map((item, i) => (
+                                    <motion.li
+                                        key={i}
+                                        variants={itemVariants}
+                                        className="group flex items-center gap-10 py-8 hover:bg-white/[0.02] transition-colors px-2 rounded-sm"
+                                    >
+                                        {/* Number */}
+                                        <span className="text-5xl font-black text-white/60 group-hover:text-brand-accent/70 transition-colors leading-none select-none w-10 shrink-0">
+                                            {String(i + 1).padStart(2, '0')}
+                                        </span>
+                                        {/* Content */}
+                                        <div>
+                                            <p className="text-xl text-white/90 font-light leading-relaxed group-hover:text-white transition-colors">
+                                                {item.title}
+                                            </p>
+                                        </div>
+                                    </motion.li>
+                                ))}
+                            </motion.ol>
+                        </div>
                     </div>
                 </div>
             </section>
