@@ -18,7 +18,6 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import image from 'next/image';
 
 interface AboutProps {
     activeTab?: string;
@@ -30,7 +29,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
     const values = [
         { title: "Curiosity", desc: "We are dedicated to pioneering advanced technologies that redefine satellite communication" },
         { title: "Innovation", desc: "We're unafraid to question old principles and embrace new ideas, materials, and processes." },
-        { title: "Reliability", desc: "We design high-efficiency flat panel satellite antennas to work where and when they're needed, without compromise." },
+        { title: "Reliability", desc: "We design high-efficiency AESA antennas to work where and when they're needed, without compromise." },
         { title: "Collaboration", desc: "We see our customers as partners, not just buyers. We believe co-creation leads to better solutions." },
         { title: "Integrity", desc: "We do business with a commitment to truthfulness, respect, and accountability." },
     ];
@@ -48,14 +47,14 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
             image: "/overview/testing.jpg"
         },
         {
-            title: "Development",
-            description: "Development process",
-            image: "/overview/testing1.jpg"
+            title: "Car",
+            description: "Car with antenna",
+            image: "/overview/car-with-antenna.jpg"
         },
         {
-            title: "Sunset Man Install",
-            description: "Sunset Man Install",
-            image: "/overview/sunset_man_install.png"
+            title: "Ku",
+            description: "Ku",
+            image: "/overview/ku.jpeg"
         },
         {
             title: "Office work",
@@ -63,14 +62,9 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
             image: "/overview/office_work.jpg"
         },
         {
-            title: "Contact",
-            description: "Contact",
-            image: "/overview/contact.jpg"
-        },
-        {
-            title: "Antenna",
-            description: "Antenna",
-            image: "/overview/antenna_front.jpg"
+            title: "office",
+            description: "office",
+            image: "/overview/office.jpeg"
         }
     ];
 
@@ -88,22 +82,22 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
 
     // Leadership team - displayed in first row
     const leadershipTeam = [
-        { name: "Sridhar Ganesan", role: "Position", image: "/team/optimized/sridhar.jpg", bio: "I am a satellite industry veteran with global experience in strategy, business development, raising capital, M&A and running operations.  I am at Satwave because we have a talented group of people that love building antennas.  I lead all operations, financial and legal needs of Satwave, and with Scott, drive strategy, business development and supporting our customers.  When I am not working on Satwave stuff, I am a foodie who loves to hack at golf, meet people, travel and watch tennis.", linkedin: "https://linkedin.com/in/sridharganesan" },
-        { name: "Jimmy Strates", role: "Position", image: "/team/optimized/jimmy.jpg", bio: "Placeholder bio for Jimmy Strates. Focused on product development and innovation.", linkedin: "https://linkedin.com/in/placeholder" },
-        { name: "Scott Zimmer", role: "Position", image: "/team/optimized/scott.jpg", bio: "I have been in the satellite industry since 1981.  Much of my career was spent managing Dish Network and EchoStar's international business.  I became involved with Satwave because of my interest in developing a flat electronically scanned antenna which enables mobility and connectivity with MEO and LEO satellites.  At this stage of my career I choose to work with creative, curious, and industrious young people.  In my spare time I enjoy photography and hiking.", linkedin: "https://linkedin.com/in/robert-scott-zimmer-b0857012" },
+        { name: "Sridhar Ganesan", role: "CFO & COO", image: "/team/optimized/sridhar.jpg", bio: "I am a satellite industry veteran with global experience in strategy, business development, raising capital, M&A and running operations.  I am at Satwave because we have a talented group of people that love building antennas.  I lead all operations, financial and legal needs of Satwave, and with Scott, drive strategy, business development and supporting our customers.  When I am not working on Satwave stuff, I am a foodie who loves to hack at golf, meet people, travel and watch tennis.", linkedin: "https://linkedin.com/in/sridharganesan" },
+        { name: "Jimmy Strates", role: "CTO", image: "/team/optimized/jimmy.jpg", bio: "I am an electrical engineer with a career focused on advanced antenna systems for satellite communications. I am at Satwave leading our technical development because I believe we are building a compelling flat panel array that brings real flexibility to satellite connectivity and are gearing up to start addressing some of the most challenging problems in the industry. My background includes several years in the satellite communications industry designing antenna systems including ten years at Georgia Tech Research Institute where I worked on advanced antenna and RF systems, as well as the development of a software defined antenna technology. Outside of work, I am passionate about hiking, photography and many other things, but as my colleagues would say, I mostly end up doing native plant gardening, which means waging a slow, patient war against English Ivy.", linkedin: "https://linkedin.com/in/placeholder" },
+        { name: "Scott Zimmer", role: "CEO", image: "/team/optimized/scott.jpg", bio: "I have been in the satellite industry since 1981.  Much of my career was spent managing Dish Network and EchoStar's international business.  I became involved with Satwave because of my interest in developing a flat electronically scanned antenna which enables mobility and connectivity with MEO and LEO satellites.  At this stage of my career I choose to work with creative, curious, and industrious young people.  In my spare time I enjoy photography and hiking.", linkedin: "https://linkedin.com/in/robert-scott-zimmer-b0857012" },
     ];
 
     // Rest of the team - displayed in subsequent rows
     const teamMembers = [
-        { name: "Anay Badlani", role: "Position", image: "/team/optimized/anay.jpg", bio: "I am a current computer science student at Georgia Tech. I am a software engineering intern at Satwave, where I love tackling interesting problems and building performance-critical software . Outside of work, I like playing soccer and going on hikes.", linkedin: "https://linkedin.com/in/anaybadlani" },
-        { name: "Alvaro Garcia", role: "Position", image: "/team/optimized/alvaro.jpg", bio: "I'm a telecommunications enthusiast focused on the development of phased array antennas for satellite communications. At Satwave, I work across the antenna and RF design, enjoying the engineering culture and the team's passion for building antennas that empower global connectivity. When I am away from the office, I enjoy traveling and exploring new cities and food spots… and playing padel!", linkedin: "https://linkedin.com/in/alvaro-garciac" },
-        { name: "Manuel Jimenez Martinez", role: "Position", image: "/team/optimized/manuel.jpg", bio: "Placeholder bio for Manuel Jimenez Martinez. Driving innovation in phased array technology.", linkedin: "https://linkedin.com/in/manueljmg" },
-        { name: "Shanelle Metellus", role: "Position", image: "/team/optimized/shanelle.jpg", bio: "I keep the moving parts of the company running smoothly so our team can focus on building something great! And I am always on the hunt for the best iced latte in town. ", linkedin: "https://linkedin.com/in/shanelle-metellus-17904b16b" },
-        { name: "Bhavadharini Narayanan", role: "Position", image: "/team/optimized/bhava.jpg", bio: "I work in IT Systems and Security Administration at Satwave. I recently finished my master's and joined the team to help build our cloud and network security. I enjoy working here because I get to learn and contribute to a great team. Outside of work, I love traveling and cooking.", linkedin: "https://linkedin.com/in/bhavadharininarayanan" },
-        { name: "Sergio Navarrete", role: "Position", image: "/team/optimized/sergio.jpg", bio: "I am one of the lead Mechanical Engineers at Satwave with about half a decade experience in the SATCOM industry. With a primary focus on design optimization, I help drive the team in the areas of Quality Assurance, MRP, and some Program Management to ensure the best possible products have the potential to get delivered onto the market in a timely and efficient manner. I enjoy working here because it almost feels like everyday is a new challenge and can always keep learning something new! When I am away from the office, I enjoy going the gym, going for walks and also love cleaning my car.", linkedin: "https://linkedin.com/in/placeholder" },
-        { name: "Hunter Rabun", role: "Position", image: "/team/optimized/hunter.jpg", bio: "I am a digital engineer experienced in Hardware, Software, and RF systems. I am at Satwave because I get to work on everything from application software, to bare-metal firmware, and PCBs while working with a diverse, open-minded, and gifted team. In my free time I like to play video games, tinker with electronics, and go on spirited drives.", linkedin: "https://linkedin.com/in/hunter-rabun-8626b0231" },
-        { name: "Gabriel Richmond", role: "Position", image: "/team/optimized/123.jpg", bio: "I am a soon-to-be graduate in computer engineering from Kennesaw State University with a passion for embedded systems development and design. I am at Satwave because of my desire to not only apply my learned skills but gain new ones within the RF and satellite industry. As an intern I aid with an array of projects from firmware, hardware, software, and testing. When I am not working, I am usually playing boardgames, watching movies, working on side projects, or playing video games with friends.", linkedin: "https://linkedin.com/in/placeholder" },
-        { name: "Nikolay Tranakiev", role: "Position", image: "/team/optimized/n.jpg", bio: "As an embedded engineer at Satwave AI, I work with our software team on implementing our antenna control stack as well as building an extensive software test suite. I come from a background in the satellite and space industry and enjoy being at Satwave for the opportunity to solve complex technical challenges with a great team. Outside of work, I enjoy tinkering with various hands-on projects and trying out every coffee shop in Atlanta. ", linkedin: "https://linkedin.com/in/nikolay-tranakiev" },
+        { name: "Anay Badlani", role: "Software Engineer", image: "/team/optimized/anay.jpg", bio: "I am a current computer science student at Georgia Tech. I am a software engineering intern at Satwave, where I love tackling interesting problems and building performance-critical software . Outside of work, I like playing soccer and going on hikes.", linkedin: "https://linkedin.com/in/anaybadlani" },
+        { name: "Alvaro Garcia", role: "RF Engineer", image: "/team/optimized/alvaro.jpg", bio: "I'm a telecommunications enthusiast focused on the development of phased array antennas for satellite communications. At Satwave, I work across the antenna and RF design, enjoying the engineering culture and the team's passion for building antennas that empower global connectivity. When I am away from the office, I enjoy traveling and exploring new cities and food spots… and playing padel!", linkedin: "https://linkedin.com/in/alvaro-garciac" },
+        { name: "Manuel Jimenez Martinez", role: "Sr. RF Engineer", image: "/team/optimized/manuel.jpg", bio: "Senior RF Engineer and Lead Antenna Engineer at Satwave, where I lead the design and development of phased array antennas as well as RF systems for satellite communications. My experience spans Antenna engineering, RF systems analysis, electromagnetic simulations, PCB-based phased arrays, Parabolic antennas, RF structures, testing, and product development. I am passionate about building innovative antenna technology and solving super complex engineering challenges. Outside of work, I love traveling to new places, hiking, and capturing my experiences through videography.", linkedin: "https://linkedin.com/in/manueljmg" },
+        { name: "Shanelle Metellus", role: "Executive Administrator", image: "/team/optimized/shanelle.jpg", bio: "I keep the moving parts of the company running smoothly so our team can focus on building something great! And I am always on the hunt for the best iced latte in town. ", linkedin: "https://linkedin.com/in/shanelle-metellus-17904b16b" },
+        { name: "Bhavadharini Narayanan", role: "IT & Systems Administrator", image: "/team/optimized/bhava.jpg", bio: "I work in IT Systems and Security Administration at Satwave. I recently finished my master's and joined the team to help build our cloud and network security. I enjoy working here because I get to learn and contribute to a great team. Outside of work, I love traveling and cooking.", linkedin: "https://linkedin.com/in/bhavadharininarayanan" },
+        { name: "Sergio Navarrete", role: "Mechanical Engineer", image: "/team/optimized/sergio.jpg", bio: "I am one of the lead Mechanical Engineers at Satwave with about half a decade experience in the SATCOM industry. With a primary focus on design optimization, I help drive the team in the areas of Quality Assurance, MRP, and some Program Management to ensure the best possible products have the potential to get delivered onto the market in a timely and efficient manner. I enjoy working here because it almost feels like everyday is a new challenge and can always keep learning something new! When I am away from the office, I enjoy going the gym, going for walks and also love cleaning my car.", linkedin: "https://linkedin.com/in/placeholder" },
+        { name: "Hunter Rabun", role: "Software Engineer", image: "/team/optimized/hunter.jpg", bio: "I am a digital engineer experienced in Hardware, Software, and RF systems. I am at Satwave because I get to work on everything from application software, to bare-metal firmware, and PCBs while working with a diverse, open-minded, and gifted team. In my free time I like to play video games, tinker with electronics, and go on spirited drives.", linkedin: "https://linkedin.com/in/hunter-rabun-8626b0231" },
+        { name: "Gabriel Richmond", role: "Software Engineer", image: "/team/optimized/123.jpg", bio: "I am a soon-to-be graduate in computer engineering from Kennesaw State University with a passion for embedded systems development and design. I am at Satwave because of my desire to not only apply my learned skills but gain new ones within the RF and satellite industry. As an intern I aid with an array of projects from firmware, hardware, software, and testing. When I am not working, I am usually playing boardgames, watching movies, working on side projects, or playing video games with friends.", linkedin: "https://linkedin.com/in/placeholder" },
+        { name: "Nikolay Tranakiev", role: "Sr. Software Engineer", image: "/team/optimized/n.jpg", bio: "As an embedded engineer at Satwave AI, I work with our software team on implementing our antenna control stack as well as building an extensive software test suite. I come from a background in the satellite and space industry and enjoy being at Satwave for the opportunity to solve complex technical challenges with a great team. Outside of work, I enjoy tinkering with various hands-on projects and trying out every coffee shop in Atlanta. ", linkedin: "https://linkedin.com/in/nikolay-tranakiev" },
     ];
 
     // Combined for dialog selection
@@ -125,14 +119,8 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                 Overview
                             </TabsTrigger>
                             <TabsTrigger value="mission" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
-                                Mission
+                                Mission & Values
                             </TabsTrigger>
-                            <TabsTrigger value="values" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
-                                Values
-                            </TabsTrigger>
-                            {/* <TabsTrigger value="governance" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
-                                Governance
-                            </TabsTrigger> */}
                             <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
                                 Team
                             </TabsTrigger>
@@ -180,11 +168,9 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
 
                                     {/* Right: Text Content (2/5 = 40% width) */}
                                     <div className="lg:col-span-2 flex">
-                                        {/* <Card className="glass-card border-brand-black/30 w-full flex flex-col">
-                                            <CardContent className="p-8 flex flex-col justify-center flex-grow"> */}
                                         <div className="space-y-3 leading-relaxed text-lg">
                                             <p>
-                                                Satwave Arrays is a flat panel antenna company based in the city of Atlanta. We design, develop, and deliver active electronically steered phased array antennas for satellite communications. We are building reliable, robust, and high-quality phased-array systems that support mobility and fixed connectivity across LEO, MEO, and GEO.
+                                                Satwave Arrays is a satellite antenna company based in the city of Atlanta, USA. We design, develop, and deliver active electronically steered phased array antennas for satellite communications. We are building reliable, robust, and high-quality phased-array systems that support mobility and fixed connectivity across LEO, MEO, and GEO.
                                             </p>
                                             <p>
                                                 We have built and validated multiple prototype antennas and performed extensive measurements, tests and analysis yielding results that demonstrate strong performance. Currently, we are designing them primarily for Ku and Ka bands but will expand to other bands as markets evolve.
@@ -200,56 +186,58 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                             </motion.div>
                         </TabsContent>
 
-                        {/* Mission Tab - Text Content */}
+                        {/* Mission & Values Tab */}
                         <TabsContent value="mission" className="mt-8">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                            >
-                                <Card className="glass-card border-brand-black/30 max-w-4xl mx-auto">
-                                    <CardHeader>
-                                        <CardTitle className="text-3xl font-bold text-white uppercase text-center"><h3>Our Mission</h3></CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <p className="text-xl text-gray-300 leading-relaxed text-center mb-6">
-                                            To revolutionize satellite communication through innovative flat panel phased array antenna technology,
-                                            delivering reliable, high-performance solutions for military, government, and commercial applications.
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        </TabsContent>
+                            <div className="space-y-16">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <Card className="glass-card border-brand-black/30 max-w-4xl mx-auto">
+                                        <CardHeader>
+                                            <CardTitle className="text-3xl font-bold text-white uppercase text-center"><h3>Our Mission</h3></CardTitle>
+                                        </CardHeader>
+                                        <CardContent>
+                                            <p className="text-xl text-gray-300 leading-relaxed text-center uppercase mb-6">
+                                                To revolutionize satellite communication through innovative phased array antenna technology,
+                                                delivering reliable, high-performance solutions for military, government, and commercial applications.
+                                            </p>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
 
-                        {/* Values Tab - Grid of Cards */}
-                        <TabsContent value="values" className="mt-8">
-                            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-                                {values.map((value, i) => (
-                                    <motion.div
-                                        key={i}
-                                        className="w-full md:w-[calc(33.333%-16px)]"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                    >
-                                        <Card
-                                            className="glass-card border-brand-black/30 duration-300 group h-full flex flex-col"
-                                        >
-                                            <CardHeader>
-                                                <CardTitle className="text-2xl uppercase font-bold text-white group-hover:text-brand-accent transition-colors">
-                                                    <h4>{value.title}</h4>
-                                                </CardTitle>
-                                            </CardHeader>
-                                            <CardContent className="flex flex-col flex-grow">
-                                                <div className="flex-grow">
-                                                    <p>{value.desc}</p>
-                                                </div>
-                                                <div className="mt-6 w-12 h-1 bg-brand-black group-hover:w-full transition-all duration-500 mt-auto" />
-                                            </CardContent>
-                                        </Card>
-                                    </motion.div>
-                                ))}
+                                <div className="space-y-8">
+                                    <h3 className="text-white text-3xl font-bold text-center uppercase">Our Values</h3>
+                                    <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
+                                        {values.map((value, i) => (
+                                            <motion.div
+                                                key={i}
+                                                className="w-full md:w-[calc(33.333%-16px)]"
+                                                initial={{ opacity: 0, y: 20 }}
+                                                whileInView={{ opacity: 1, y: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: i * 0.1 }}
+                                            >
+                                                <Card
+                                                    className="glass-card border-brand-black/30 duration-300 group h-full flex flex-col"
+                                                >
+                                                    <CardHeader>
+                                                        <CardTitle className="text-2xl uppercase font-bold text-white group-hover:text-brand-accent transition-colors">
+                                                            <h4>{value.title}</h4>
+                                                        </CardTitle>
+                                                    </CardHeader>
+                                                    <CardContent className="flex flex-col flex-grow">
+                                                        <div className="flex-grow mb-6">
+                                                            <p>{value.desc}</p>
+                                                        </div>
+                                                        <div className="w-12 h-1 bg-brand-black group-hover:w-full transition-all duration-500 mt-auto" />
+                                                    </CardContent>
+                                                </Card>
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </TabsContent>
 
@@ -381,7 +369,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
 
                 {/* Team Member Bio Modal */}
                 <Dialog open={!!selectedMember} onOpenChange={(open) => !open && setSelectedMember(null)}>
-                    <DialogContent className="gradient-deep-ocean border-0 backdrop-blur-3xl max-w-6xl shadow-purple-glow rounded-2xl animate-in fade-in-0 zoom-in-95 duration-300">
+                    <DialogContent className="gradient-deep-ocean border-0 backdrop-blur-3xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl max-h-[80vh] overflow-y-auto shadow-purple-glow rounded-2xl animate-in fade-in-0 zoom-in-95 duration-300">
                         {selectedMember && (
                             <>
                                 <DialogHeader>

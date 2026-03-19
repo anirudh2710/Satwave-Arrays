@@ -75,7 +75,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         <img
                             src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White.svg'
                             alt="Satwave Logo"
-                            className="h-10 w-auto cursor-pointer"
+                            className="h-12 w-auto cursor-pointer"
                         />
                     </Link>
                 </div>
@@ -109,25 +109,10 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
                                             onClick={() => handleAboutClick('mission')}
                                         >
-                                            <div className="uppercase text-sm font-medium">Mission</div>
+                                            <div className="uppercase text-sm font-medium">Mission & Values</div>
                                         </NavigationMenuLink>
                                     </li>
-                                    <li>
-                                        <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
-                                            onClick={() => handleAboutClick('values')}
-                                        >
-                                            <div className="uppercase text-sm font-medium">Values</div>
-                                        </NavigationMenuLink>
-                                    </li>
-                                    <li>
-                                        <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
-                                            onClick={() => handleAboutClick('governance')}
-                                        >
-                                            <div className="uppercase text-sm font-medium">Governance</div>
-                                        </NavigationMenuLink>
-                                    </li>
+
                                     <li>
                                         <NavigationMenuLink
                                             className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
@@ -150,7 +135,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                     href="/products?tab=products"
                                     className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
                                 >
-                                    Products & Applications
+                                    Products
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
@@ -264,9 +249,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                 <div className="text-white text-xl font-bold uppercase tracking-widest mb-4">About</div>
                                 <div className="grid gap-4 pl-4">
                                     <button onClick={() => { handleAboutClick('overview'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Overview</button>
-                                    <button onClick={() => { handleAboutClick('mission'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Mission</button>
-                                    <button onClick={() => { handleAboutClick('values'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Values</button>
-                                    <button onClick={() => { handleAboutClick('governance'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Governance</button>
+                                    <button onClick={() => { handleAboutClick('mission'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Mission & Values</button>
                                     <button onClick={() => { handleAboutClick('team'); setIsMobileMenuOpen(false); }} className="text-left text-gray-300 hover:text-white text-lg font-medium transition-colors">Team</button>
                                 </div>
                             </div>
@@ -274,7 +257,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                             {/* Products & Applications */}
                             <div className="border-b border-white/10 pb-6">
                                 <Link href="/products?tab=products" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
-                                    Products & Applications
+                                    Products
                                 </Link>
                             </div>
 

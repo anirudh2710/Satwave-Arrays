@@ -5,19 +5,11 @@ import Navbar from '../components/Navbar';
 import ProductsAndApplications from '../components/ProductsAndApplications';
 import Footer from '../components/Footer';
 import { Skeleton } from '@/components/ui/skeleton';
-import { useSearchParams } from 'next/navigation';
+
 
 function ProductsContent() {
-    const searchParams = useSearchParams();
-    const tab = searchParams.get('tab') || 'products';
-
     return (
-        <ProductsAndApplications activeTab={tab} onTabChange={(newTab) => {
-            // Update URL when tab changes
-            const url = new URL(window.location.href);
-            url.searchParams.set('tab', newTab);
-            window.history.pushState({}, '', url);
-        }} />
+        <ProductsAndApplications />
     );
 }
 

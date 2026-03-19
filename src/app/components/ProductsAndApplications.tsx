@@ -3,7 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 import {
     Carousel,
     CarouselContent,
@@ -22,11 +22,10 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 interface ProductsAndApplicationsProps {
-    activeTab?: string;
-    onTabChange?: (tab: string) => void;
+    // legacy props no longer used after layout update
 }
 
-export default function ProductsAndApplications({ activeTab = 'products', onTabChange }: ProductsAndApplicationsProps) {
+export default function ProductsAndApplications(props: ProductsAndApplicationsProps) {
     // Shared Capabilities
     const sharedCapabilities = [
         "Both antennas are designed for mobility.",
@@ -43,138 +42,39 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
 
     // Ku-Band product images and content
     const kuBandImages = [
-        {
-            title: "Ku-Band Antenna - Integrated Unit 1",
-            description: "High-performance Ku-band phased array antenna with advanced beamforming capabilities.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-3.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 2",
-            description: "Compact flat panel design optimized for broadcast and VSAT communications.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-6.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 3",
-            description: "Precision-engineered antenna system for reliable satellite connectivity.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-19.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 4",
-            description: "Advanced technology delivering superior performance for mobile communications.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-22.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 5",
-            description: "Robust construction with electronic beam steering for optimal signal reception.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-24.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 6",
-            description: "State-of-the-art antenna technology for demanding environments.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-27.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 7",
-            description: "Versatile deployment options for various platform configurations.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-30.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 8",
-            description: "High-throughput satellite communication system with easy installation.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-40.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 9",
-            description: "Production-ready antenna delivering exceptional signal quality.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-46.JPG"
-        },
-        {
-            title: "Ku-Band Antenna - Integrated Unit 10",
-            description: "Integrated phased array system for broadcast and mobile applications.",
-            image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-68.JPG"
-        }
+        { title: "Ku-Band AESA - Back Render", description: "Compact flat panel design optimized for broadcast and VSAT communications.", image: "/Antenna_images/ku_antenna_render/optimized/01-001009-00-030226-9.png" },
+        { title: "Ku-Band AESA - Front Render", description: "High-performance Ku-band phased array antenna with advanced beamforming capabilities.", image: "/Antenna_images/ku_antenna_render/optimized/01-001009-00-030226-4.png" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Precision-engineered antenna system for reliable satellite connectivity.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-3.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Advanced technology delivering superior performance for mobile communications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-19.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Robust construction with electronic beam steering for optimal signal reception.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-22.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "State-of-the-art antenna technology for demanding environments.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-27.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Versatile deployment options for various platform configurations.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-30.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Integrated phased array system for broadcast and mobile applications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-68.JPG" }
     ];
 
     // Ka-Band product images and content
     const kaBandImages = [
-        {
-            title: "Ka-Band Antenna - Production Unit 1",
-            description: "High-precision Ka-band phased array antenna with advanced beamforming capabilities.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020226-6.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 2",
-            description: "Next-generation flat panel design for high-throughput satellite communications.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020226-7.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 3",
-            description: "Compact and lightweight design optimized for mobile and fixed installations.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020226-9.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 4",
-            description: "Advanced technology delivering superior performance in demanding environments.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-1.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 5",
-            description: "Precision-engineered phased array system for reliable satellite connectivity.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-2.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 6",
-            description: "State-of-the-art antenna technology for military and commercial applications.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-3.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 7",
-            description: "Robust construction with electronic beam steering capabilities.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-4.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 8",
-            description: "High-performance antenna system for LEO, MEO, and GEO satellite networks.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-8.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 9",
-            description: "Versatile deployment options for various platform configurations.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-9.JPG"
-        },
-        {
-            title: "Ka-Band Antenna - Production Unit 10",
-            description: "Production-ready antenna delivering exceptional signal quality and reliability.",
-            image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-11.JPG"
-        }
+        { title: "Ka-Band AESA - Front Render", description: "High-precision Ka-band phased array antenna with advanced beamforming capabilities.", image: "/Antenna_images/ka_antenna_render/optimized/01-001005-00-030326-3.png" },
+        { title: "Ka-Band AESA - Back Render", description: "Next-generation flat panel design for high-throughput satellite communications.", image: "/Antenna_images/ka_antenna_render/optimized/01-001005-00-030326-4.png" },
+        { title: "Ka-Band Antenna - Production Unit", description: "Compact and lightweight design optimized for mobile and fixed installations.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020226-7.JPG" },
+        { title: "Ka-Band Antenna - Production Unit", description: "Advanced technology delivering superior performance in demanding environments.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-3.JPG" },
+        { title: "Ka-Band Antenna - Production Unit", description: "State-of-the-art antenna technology for military and commercial applications.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-4.JPG" },
+        { title: "Ka-Band Antenna - Production Unit", description: "Robust construction with electronic beam steering capabilities.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-11.JPG" },
+        { title: "Ka-Band Antenna - Production Unit", description: "High-performance antenna system for LEO, MEO, and GEO satellite networks.", image: "/Antenna_images/ka_antenna_render/optimized/Ku_Integrated_020726-40.JPG" },
+        { title: "Ka-Band Antenna - Production Unit", description: "Production-ready antenna delivering exceptional signal quality and reliability.", image: "/Antenna_images/ka_antenna_render/optimized/Ku_Integrated_020726-46.JPG" }
     ];
 
-    // Application images and content
-    const applicationImages = [
-        {
-            title: "Comms on the pause",
-            description: "Description for Application One",
-            image: "/placeholder-geo.jpg",
-            orbit: "GEO"
-        },
-        {
-            title: "Comms on the move",
-            description: "Description for Application Two",
-            image: "/placeholder-leo.jpg",
-            orbit: "LEO"
-        }
-    ];
 
     return (
         <section id="products" className="section-bg-container section-container border-b border-white/5">
             <div className="section-bg products-bg" />
-            <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
+            <div className="w-full py-24 relative z-10">
                 {/* <h2 className="text-4xl font-bold mb-12 text-white text-center uppercase tracking-wider">
                     Products & Applications
                 </h2> */}
 
                 {/* Breadcrumb */}
-                <div className="mb-8">
+                <div className="mb-8 max-w-7xl mx-auto px-6">
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
@@ -182,36 +82,102 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                             </BreadcrumbItem>
                             <BreadcrumbSeparator className="text-gray-600" />
                             <BreadcrumbItem>
-                                <BreadcrumbPage className="text-white font-medium">Products & Applications</BreadcrumbPage>
+                                <BreadcrumbPage className="text-white font-medium">Products</BreadcrumbPage>
                             </BreadcrumbItem>
                         </BreadcrumbList>
                     </Breadcrumb>
                 </div>
-
                 {/* Introduction Section */}
-                <div className="mb-16">
-                    <div className="text-center max-w-4xl mx-auto mb-12">
-                        <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-wider font-bebas-neue">
-                            Mission-Critical AESA Technology
-                        </h2>
-                        <p className="text-lg text-gray-300 leading-relaxed">
-                            Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance 32×32 AESAs designed for mission-specific applications in defense and aerospace.
-                        </p>
+                <div className="text-center max-w-4xl mx-auto mb-16 px-6">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-wider font-bebas-neue">
+                        Mission-Critical AESA Technology
+                    </h1>
+                    <p className="text-lg text-gray-300 leading-relaxed">
+                        Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance 32×32 AESAs designed for mission-specific applications in defense and aerospace.
+                    </p>
+                </div>
+
+                {/* Row 1: Carousels Only */}
+                <div className="grid md:grid-cols-2 gap-16 items-start max-w-7xl mx-auto mb-16 px-6">
+                    {/* Ku-Band Carousel */}
+                    <div className="w-full flex justify-center">
+                        <div className="w-full">
+                            <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide uppercase">Ku-Band Antenna</h3>
+                            <Carousel
+                                className="w-full px-10"
+                                plugins={[
+                                    Autoplay({
+                                        delay: 8000,
+                                        stopOnInteraction: true,
+                                    })
+                                ]}
+                            >
+                                <CarouselContent>
+                                    {kuBandImages.map((item, index) => (
+                                        <CarouselItem key={index}>
+                                            <div className="aspect-video w-full rounded-lg overflow-hidden shadow-2xl ring-1 ring-white/10 bg-transparent">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                <CarouselPrevious className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white left-0 shadow-lg" />
+                                <CarouselNext className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white right-0 shadow-lg" />
+                            </Carousel>
+                        </div>
                     </div>
 
-                    {/* Shared Capabilities Accordion */}
-                    <Accordion type="single" collapsible className="w-full max-w-7xl mx-auto mb-16">
-                        <AccordionItem value="capabilities" className="border-white/10 glass-card bg-brand-black/20 px-6 rounded-lg">
-                            <AccordionTrigger className="text-xl font-bold text-white hover:text-brand-accent transition-colors py-6 hover:no-underline">
-                                View Shared Ku-Band & Ka-Band Capabilities
+                    {/* Ka-Band Carousel */}
+                    <div className="w-full flex justify-center">
+                        <div className="w-full">
+                            <h3 className="text-2xl font-bold text-white mb-4 text-center tracking-wide uppercase">Ka-Band Antenna</h3>
+                            <Carousel
+                                className="w-full px-10"
+                                plugins={[
+                                    Autoplay({
+                                        delay: 8000,
+                                        stopOnInteraction: true,
+                                    })
+                                ]}
+                            >
+                                <CarouselContent>
+                                    {kaBandImages.map((item, index) => (
+                                        <CarouselItem key={index}>
+                                            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 bg-transparent">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                <CarouselPrevious className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white left-0 shadow-lg" />
+                                <CarouselNext className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:text-white text-white right-0 shadow-lg" />
+                            </Carousel>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Row 2: Shared Capabilities Accordion */}
+                <div className="w-full mb-16 px-4 sm:px-8 lg:px-12">
+                    <Accordion type="single" collapsible defaultValue="capabilities" className="w-full max-w-none">
+                        <AccordionItem value="capabilities" className="border-white/10 glass-card bg-brand-black/20 px-6 md:px-12 lg:px-24 rounded-2xl">
+                            <AccordionTrigger className="text-xl font-bold text-white justify-center hover:text-brand-accent transition-colors py-6 hover:no-underline">
+                                Our Shared Approach for Ku-Band & Ka-Band Antennas
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-8">
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-6">
                                     {sharedCapabilities.map((capability, idx) => (
                                         <div key={idx} className="relative overflow-hidden bg-brand-black/40 backdrop-blur-md border border-white/10 p-6 hover:border-brand-accent/50 hover:bg-brand-black/60 transition-all duration-300 group h-full rounded-lg">
                                             {/* Subtle Glowing Accent Line at the top */}
                                             <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                            
+
                                             {/* Accent gradient blob in the background on hover */}
                                             <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"></div>
 
@@ -226,310 +192,215 @@ export default function ProductsAndApplications({ activeTab = 'products', onTabC
                     </Accordion>
                 </div>
 
-                <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                    <TabsList className="grid w-full grid-cols-2 mb-8 bg-[#696969] backdrop-blur-sm p-1 rounded-lg">
-                        <TabsTrigger value="products" className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800">
-                            Products
-                        </TabsTrigger>
-                        <TabsTrigger value="applications" className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800">
-                            Applications
-                        </TabsTrigger>
-                    </TabsList>
-
-                    {/* Products Tab */}
-                    <TabsContent value="products" className="mt-8">
-                        <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto">
-                            {/* Ku-Band Antenna */}
-                            <Card className="glass-card border-slate-gray/30 h-full flex flex-col">
-                                <CardContent className="p-6 flex flex-col flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-4 text-center">Ku-Band Antenna</h3>
-                                    <Carousel
-                                        className="w-full"
-                                        plugins={[
-                                            Autoplay({
-                                                delay: 8000,
-                                                stopOnInteraction: true,
-                                            })
-                                        ]}
-                                    >
-                                        <CarouselContent>
-                                            {kuBandImages.map((item, index) => (
-                                                <CarouselItem key={index}>
-                                                    <div className="space-y-4">
-                                                        {/* Actual Image */}
-                                                        <div className="aspect-video w-full rounded-lg overflow-hidden bg-gray-900">
-                                                            <img
-                                                                src={item.image}
-                                                                alt={item.title}
-                                                                className="w-full h-full object-cover"
-                                                            />
-                                                        </div>
-                                                        {/* Content */}
-                                                        <div className="space-y-2">
-                                                        </div>
-                                                    </div>
-                                                </CarouselItem>
-                                            ))}
-                                        </CarouselContent>
-                                        <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                        <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                    </Carousel>
-
-                                    {/* Specifications */}
-                                    <div className="mt-auto pt-6 border-t border-white/10">
-                                        <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
-                                        <div className="grid grid-cols-1 gap-y-3 text-sm">
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Prototype Size</span>
-                                                <span className="text-white text-right font-semibold">40” × 18.5” × 6”</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Prototype Weight</span>
-                                                <span className="text-white text-right font-semibold">&lt;50 lbs</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Power</span>
-                                                <span className="text-white text-right font-semibold">~417 W</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">EIRP (CW)</span>
-                                                <span className="text-white text-right font-semibold">47 dBW</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; LP</span>
-                                                <span className="text-white text-right font-semibold text-xs">46.25 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; LP</span>
-                                                <span className="text-white text-right font-semibold text-xs">42.35 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; CP</span>
-                                                <span className="text-white text-right font-semibold text-xs">49.25 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; CP</span>
-                                                <span className="text-white text-right font-semibold text-xs">45.35 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ Broadside</span>
-                                                <span className="text-white text-right font-semibold text-xs">8.7 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ 60 deg scan</span>
-                                                <span className="text-white text-right font-semibold text-xs">4.8 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Manual Beam Load Time</span>
-                                                <span className="text-white text-right font-semibold">&lt; 500 µS</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Download Button */}
-                                        <div className="mt-8 pt-4 flex justify-center border-t border-white/5">
-                                            <Button 
-                                                asChild 
-                                                className="btn-brand h-auto px-6 py-3 w-full sm:w-auto flex items-center justify-center gap-2 group"
-                                            >
-                                                <a
-                                                    href="/docs/ku-band-spec-sheet.pdf"
-                                                    download="Satwave_Ku-Band_Spec_Sheet.pdf"
-                                                >
-                                                    <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    <span className="font-semibold uppercase tracking-wide">Download Spec Sheet (PDF)</span>
-                                                </a>
-                                            </Button>
-                                        </div>
+                {/* Row 3: Specifications (2 Columns) */}
+                <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto w-full px-6">
+                    {/* Ku-Band Specifications */}
+                    <Card className="glass-card border-slate-gray/30 h-full flex flex-col">
+                        <CardContent className="p-6 flex flex-col flex-1">
+                            <h3 className="text-2xl font-bold text-white mb-6 text-center uppercase tracking-wider">Ku-Band Specifications</h3>
+                            <div className="pt-6 border-t border-white/10">
+                                <div className="grid grid-cols-1 gap-y-3 text-sm">
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Frequencies:</span>
+                                        <span className="text-white text-right font-semibold">10.7 – 12.75 GHz, 13.75 – 14.5 GHz</span>
                                     </div>
-                                </CardContent>
-                            </Card>
-
-                            {/* Ka-Band Antenna */}
-                            <Card className="glass-card border-brand-black/30 h-full flex flex-col">
-                                <CardContent className="p-6 flex flex-col flex-1">
-                                    <h3 className="text-2xl font-bold text-white mb-4 text-center">Ka-Band Antenna</h3>
-                                    <Carousel
-                                        className="w-full"
-                                        plugins={[
-                                            Autoplay({
-                                                delay: 8000,
-                                                stopOnInteraction: true,
-                                            })
-                                        ]}
-                                    >
-                                        <CarouselContent>
-                                            {kaBandImages.map((item, index) => (
-                                                <CarouselItem key={index}>
-                                                    <div className="space-y-4">
-                                                        {/* Actual Image */}
-                                                        <div className="aspect-video w-full rounded-lg overflow-hidden bg-gray-900">
-                                                            <img
-                                                                src={item.image}
-                                                                alt={item.title}
-                                                                className="w-full h-full object-cover"
-                                                            />
-                                                        </div>
-                                                        {/* Content */}
-                                                        <div className="space-y-2">
-                                                        </div>
-                                                    </div>
-                                                </CarouselItem>
-                                            ))}
-                                        </CarouselContent>
-                                        <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                        <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                    </Carousel>
-
-                                    {/* Specifications */}
-                                    <div className="mt-auto pt-6 border-t border-white/10">
-                                        <h4 className="text-sm font-bold text-brand-accent uppercase tracking-wider mb-5">Prototype Specifications</h4>
-                                        <div className="grid grid-cols-1 gap-y-3 text-sm">
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Prototype Size</span>
-                                                <span className="text-white text-right font-semibold">50cm × 50cm × 7.8cm (19.69" × 19.69" × 3.07")</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Prototype Weight</span>
-                                                <span className="text-white text-right font-semibold">&lt; 20 lbs</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Power</span>
-                                                <span className="text-white text-right font-semibold">~341 W</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; LP</span>
-                                                <span className="text-white text-right font-semibold text-xs">46 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; LP</span>
-                                                <span className="text-white text-right font-semibold text-xs">42 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ Broadside ; CP</span>
-                                                <span className="text-white text-right font-semibold text-xs">49 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">EIRP (CW) at P1dB @ 60deg scan ; CP</span>
-                                                <span className="text-white text-right font-semibold text-xs">45 dBW @ Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ Broadside</span>
-                                                <span className="text-white text-right font-semibold text-xs">10.2 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2">
-                                                <span className="text-gray-400 font-medium pr-4 text-xs">G/T Estimate @ 60deg scan</span>
-                                                <span className="text-white text-right font-semibold text-xs">6.3 dB/K @ 85°C Rx BFIC Temp ; Mid Band</span>
-                                            </div>
-                                            <div className="grid grid-cols-2 items-center pb-2">
-                                                <span className="text-gray-400 font-medium pr-4">Manual Beam Load Time</span>
-                                                <span className="text-white text-right font-semibold">&lt; 500 µS</span>
-                                            </div>
-                                        </div>
-
-                                        {/* Download Button */}
-                                        <div className="mt-8 pt-4 flex justify-center border-t border-white/5">
-                                            <Button 
-                                                asChild 
-                                                className="btn-brand h-auto px-6 py-3 w-full sm:w-auto flex items-center justify-center gap-2 group"
-                                            >
-                                                <a
-                                                    href="/docs/ka-band-spec-sheet.pdf"
-                                                    download="Satwave_Ka-Band_Spec_Sheet.pdf"
-                                                >
-                                                    <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                    </svg>
-                                                    <span className="font-semibold uppercase tracking-wide">Download Spec Sheet (PDF)</span>
-                                                </a>
-                                            </Button>
-                                        </div>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Size:</span>
+                                        <span className="text-white text-right font-semibold">40” × 18.5” × 6” (100 × 47 × 16 cm.)</span>
                                     </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </TabsContent>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Weight:</span>
+                                        <span className="text-white text-right font-semibold">&lt;50 lbs (&lt;23 kg)</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Power:</span>
+                                        <span className="text-white text-right font-semibold">425W</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Scan Range:</span>
+                                        <span className="text-white text-right font-semibold">90°</span>
+                                    </div>
+                                </div>
 
-                    {/* Applications Tab */}
-                    <TabsContent value="applications" className="mt-8">
-                        {/* Introduction Text */}
-                        <div className="text-center mb-8">
-                            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                                Our phased array antennas support satellite communications across all orbital regimes:
-                                <span className="text-brand-accent font-semibold"> Geostationary (GEO)</span>,
-                                <span className="text-brand-accent font-semibold"> Medium Earth Orbit (MEO)</span>, and
-                                <span className="text-brand-accent font-semibold"> Low Earth Orbit (LEO)</span>.
-                            </p>
-                        </div>
+                                {/* EIRP Table */}
+                                <div className="mt-6 pt-4 border-t border-white/10 grid grid-cols-1 gap-y-2 text-sm">
+                                    <div className="grid grid-cols-3 items-center border-b border-white/10 pb-2 mb-1">
+                                        <span className="text-white font-bold">EIRP</span>
+                                        <span className="text-white font-bold text-center">LP</span>
+                                        <span className="text-white font-bold text-center">CP</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">0° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">46.5 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">49.5 dBW</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">45° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">44.5 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">47.5 dBW</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">60° (extrapolated)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">42.4 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">45.4 dBW</span>
+                                    </div>
+                                </div>
 
-                        {/* Application Cards in Grid */}
-                        <div className="grid md:grid-cols-2 auto-rows-fr gap-16 max-w-6xl mx-auto">
-                            {applicationImages.map((item, index) => (
-                                <Card key={index} className="glass-card border-brand-black/30 h-full flex flex-col">
-                                    <CardContent className="p-6 flex flex-col flex-1">
-                                        <Carousel
-                                            className="w-full mb-4"
-                                            plugins={[
-                                                Autoplay({
-                                                    delay: 10000,
-                                                    stopOnInteraction: true,
-                                                })
-                                            ]}
+                                {/* G/T Table */}
+                                <div className="mt-6 pt-4 border-t border-white/10 grid grid-cols-1 gap-y-2 text-sm">
+                                    <div className="grid grid-cols-3 items-center border-b border-white/10 pb-2 mb-1">
+                                        <span className="text-white font-bold">G/T</span>
+                                        <span className="text-white font-bold text-center">25° C</span>
+                                        <span className="text-white font-bold text-center">Hottest*</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">0° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">10 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">8 dB/K</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">45° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">8 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">6 dB/K</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2 text-xs sm:text-sm">60° (extrapolated)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">6 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">4 dB/K</span>
+                                    </div>
+                                </div>
+                                <div className="mt-2 text-xs text-gray-400/80">
+                                    *Hottest BFIC operating temperature - 85 °C
+                                </div>
+
+                                {/* Download Button */}
+                                <div className="mt-8 pt-4 flex justify-center border-t border-white/5">
+                                    <Button
+                                        asChild
+                                        className="btn-brand h-auto px-6 py-3 w-full sm:w-auto flex items-center justify-center gap-2 group"
+                                    >
+                                        <a
+                                            href="/docs/ku-band-spec-sheet.pdf"
+                                            download="Satwave_Ku-Band_Spec_Sheet.pdf"
                                         >
-                                            <CarouselContent>
-                                                <CarouselItem>
-                                                    {/* Orbit Visualization */}
-                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-black/20 to-brand-accent/20 rounded-lg flex items-center justify-center">
-                                                        <div className="text-center p-6">
-                                                            <div className="text-7xl mb-4">🛰️</div>
-                                                            <span className="text-white font-bold text-2xl">{item.orbit}</span>
-                                                        </div>
-                                                    </div>
-                                                </CarouselItem>
-                                                <CarouselItem>
-                                                    {/* Diagram Placeholder */}
-                                                    <div className="aspect-video w-full bg-gradient-to-br from-brand-accent/20 to-brand-black/20 rounded-lg flex items-center justify-center">
-                                                        <div className="text-center p-6">
-                                                            <div className="text-7xl mb-4">🌍</div>
-                                                            <span className="text-white/60 text-sm">{item.orbit} Orbit Diagram</span>
-                                                        </div>
-                                                    </div>
-                                                </CarouselItem>
-                                            </CarouselContent>
-                                            <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                            <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                        </Carousel>
+                                            <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                            </svg>
+                                            <span className="font-semibold uppercase tracking-wide">Download Spec Sheet (PDF)</span>
+                                        </a>
+                                    </Button>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
 
-                                        {/* Content */}
-                                        <div className="space-y-3">
-                                            <h4 className="text-xl font-bold text-white">{item.title}</h4>
-                                            <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
-                                        </div>
+                    {/* Ka-Band Specifications */}
+                    <Card className="glass-card border-brand-black/30 h-full flex flex-col">
+                        <CardContent className="p-6 flex flex-col flex-1">
+                            <h3 className="text-2xl font-bold text-white mb-6 text-center uppercase tracking-wider">Ka-Band Specifications</h3>
+                            <div className=" pt-6 border-t border-white/10">
+                                <div className="grid grid-cols-1 gap-y-3 text-sm">
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Frequencies:</span>
+                                        <span className="text-white text-right font-semibold">17.7 – 21.2 GHz, 27.5 – 31.0 GHz</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Size:</span>
+                                        <span className="text-white text-right font-semibold">19.7” x 19.7” x 3” (50 × 50 × 7.8 cm.)</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Weight:</span>
+                                        <span className="text-white text-right font-semibold">&lt;35 lbs (&lt;16 kg)</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center border-b border-white/5 pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Power:</span>
+                                        <span className="text-white text-right font-semibold">375W</span>
+                                    </div>
+                                    <div className="grid grid-cols-2 items-center pb-2 min-h-[3.25rem]">
+                                        <span className="text-gray-400 font-medium pr-4">Scan Range:</span>
+                                        <span className="text-white text-right font-semibold">60° without grating lobes</span>
+                                    </div>
+                                </div>
 
-                                        {/* Orbit Details */}
-                                        <div className="mt-auto pt-4 border-t border-white/10">
-                                            <div className="text-xs text-gray-400 space-y-1">
-                                                {item.orbit === 'GEO' && (
-                                                    <>
-                                                        <p>• Altitude: ~35,786 km</p>
-                                                        <p>• Coverage: Fixed position over Earth</p>
-                                                    </>
-                                                )}
-                                                {item.orbit === 'LEO' && (
-                                                    <>
-                                                        <p>• Altitude: 160-2,000 km</p>
-                                                        <p>• Coverage: Low latency, high speed</p>
-                                                    </>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </TabsContent>
-                </Tabs>
+                                {/* EIRP Table */}
+                                <div className="mt-6 pt-4 border-t border-white/10 grid grid-cols-1 gap-y-2 text-sm">
+                                    <div className="grid grid-cols-3 items-center border-b border-white/10 pb-2 mb-1">
+                                        <span className="text-white font-bold">EIRP</span>
+                                        <span className="text-white font-bold text-center">LP</span>
+                                        <span className="text-white font-bold text-center">CP</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">0° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">46 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">49 dBW</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">45° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">44 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">47 dBW</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">60° (extrapolated)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">41.8 dBW</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">44.8 dBW</span>
+                                    </div>
+                                </div>
+
+                                {/* G/T Table */}
+                                <div className="mt-6 pt-4 border-t border-white/10 grid grid-cols-1 gap-y-2 text-sm">
+                                    <div className="grid grid-cols-3 items-center border-b border-white/10 pb-2 mb-1">
+                                        <span className="text-white font-bold">G/T</span>
+                                        <span className="text-white font-bold text-center">25° C</span>
+                                        <span className="text-white font-bold text-center">Hottest*</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">0° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">10 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">7.1 dB/K</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center border-b border-white/5 pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2">45° (measured)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">8 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">5.2 dB/K</span>
+                                    </div>
+                                    <div className="grid grid-cols-3 items-center pb-2 min-h-[2.5rem]">
+                                        <span className="text-gray-400 pr-2 text-xs sm:text-sm">60° (extrapolated)</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">6 dB/K</span>
+                                        <span className="text-white text-center font-semibold text-xs sm:text-sm">3.2 dB/K</span>
+                                    </div>
+                                </div>
+                                <div className="mt-2 text-xs text-gray-400/80">
+                                    *Hottest BFIC operating temperature - 85 °C
+                                </div>
+
+                                {/* Download Button */}
+                                <div className="mt-8 pt-4 flex justify-center border-t border-white/5">
+                                    <Button
+                                        asChild
+                                        className="btn-brand h-auto px-6 py-3 w-full sm:w-auto flex items-center justify-center gap-2 group"
+                                    >
+                                        <a
+                                            href="/docs/ka-band-spec-sheet.pdf"
+                                            download="Satwave_Ka-Band_Spec_Sheet.pdf"
+                                        >
+                                            <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                            </svg>
+                                            <span className="font-semibold uppercase tracking-wide">Download Spec Sheet (PDF)</span>
+                                        </a>
+                                    </Button>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                {/* Footer Note */}
+                <div className="mt-16 text-center text-sm mx-auto max-w-4xl px-6">
+                    <p>
+                        Satwave Arrays Inc. proprietary - Data Sheet represents Satwave Arrays Ka-Band AESA as configured for optimal market parameters. Actual configuration for customers and results may vary. For more information, email <a href="mailto:info@satwave.ai" className="text-brand-accent hover:underline transition-colors">info@satwave.ai</a>.
+                    </p>
+                </div>
             </div>
         </section>
     );

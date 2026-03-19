@@ -69,8 +69,8 @@ const techTopics = [
             <ul class="text-gray-300 my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Extensive antenna testing in:
                     <ul class="text-gray-400 my-4 list-[circle] pl-6">
-                        <li class="mb-2 leading-relaxed">Planar near-field measurement chambers</li>
-                        <li class="mb-2 leading-relaxed">Compact range antenna measurement facilities</li>
+                        <li class="mb-2 leading-relaxed">Planar near-field measurement range</li>
+                        <li class="mb-2 leading-relaxed">Compact antenna test range</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Validation across:
@@ -146,7 +146,7 @@ const techTopics = [
         description: "R&D into multi-band, digital beamforming, and AI-driven designs",
         content: `
             <ul class="text-gray-300 my-6 list-disc pl-6">
-                <li class="mb-3 leading-relaxed">R&D into simultaneous Ku and Ka operation by antenna                    
+                <li class="mb-3 leading-relaxed">R&D into simultaneous Ku and Ka operation through a single antenna                    
                 </li>
                 <li class="mb-3 leading-relaxed">Exploration of next gen capabilities:
                     <ul class="text-gray-400 my-4 list-[circle] pl-6">
@@ -157,7 +157,7 @@ const techTopics = [
                         <li class="mb-2 leading-relaxed">AI/ML-driven antenna design.</li>
                     </ul>
                 </li>
-                <li class="mb-3 leading-relaxed">Architectures being prepared for future digital beamforming integration.</li>
+                <li class="mb-3 leading-relaxed">Architectures for future digital beamforming integration.</li>
             </ul>
         `
     },

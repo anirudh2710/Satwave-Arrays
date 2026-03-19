@@ -48,12 +48,12 @@ export default function NewsTicker({ news }: NewsTickerProps) {
     if (news.length === 0) return null;
 
     return (
-        <div className="relative z-10 py-6 pb-12 md:pb-16 lg:pb-20">
+        <div className="relative z-10 pt-0 pb-4 md:pb-8 lg:pb-12">
             {/* Section Header */}
-            <div className="max-w-7xl mx-auto mb-4 px-4 sm:px-12 flex items-center justify-between gap-6">
-                <h4 className="text-white text-lg md:text-xl font-bold uppercase tracking-wider">Latest News</h4>
+            <div className="max-w-7xl mx-auto mb-3 px-4 sm:px-12 flex items-center justify-between gap-6">
+                <h4 className="text-white text-base md:text-lg font-bold uppercase tracking-wider">Latest News</h4>
                 <Link href="/news" className="transition-colors text-sm font-medium" >
-                    <Button className="btn-brand uppercase h-auto px-4 md:px-8 py-2 md:py-3 text-xs tracking-widest">
+                    <Button className="btn-brand uppercase h-auto px-4 md:px-6 py-1.5 md:py-2 text-[10px] md:text-xs tracking-widest">
                         View All →
                     </Button>
                 </Link>
@@ -77,9 +77,9 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                                     className="block h-full"
                                 >
                                     <Card className="py-2 group rounded-lg glass-card border-brand-black/30 hover:border-brand-accent hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all duration-300 cursor-pointer h-full">
-                                        <CardContent className="p-6 md:p-6 flex flex-col justify-between h-[180px]">
+                                        <CardContent className="p-4 md:p-5 flex flex-col justify-between h-auto min-h-[120px]">
                                             <div>
-                                                <h4 className="text-white uppercase text-xl md:text-2xl font-bold leading-snug group-hover:text-brand-accent transition-colors line-clamp-2">
+                                                <h4 className="text-white uppercase text-base md:text-lg font-bold leading-snug group-hover:text-brand-accent transition-colors line-clamp-2">
                                                     {item.title}
                                                 </h4>
                                                 {item.excerpt && (
@@ -114,7 +114,7 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                 </Carousel>
 
                 {/* Dot Indicators */}
-                <div className="flex justify-center gap-3 mt-8">
+                <div className="hidden">
                     {Array.from({ length: count }).map((_, index) => (
                         <button
                             key={index}

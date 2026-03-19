@@ -103,7 +103,7 @@ export default function TechnologyPage() {
 
                         {/* Page Header */}
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center uppercase tracking-wider mb-4">
-                            Technology Portfolio
+                            Our Phased Array Technology
                         </h1>
                         <p className="text-gray-400 text-center text-lg max-w-3xl mx-auto">
                             Explore our comprehensive technology portfolio in phased array antenna systems

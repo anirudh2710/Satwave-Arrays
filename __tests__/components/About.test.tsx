@@ -4,7 +4,7 @@ import About from '@/app/components/About'
 describe('About Component', () => {
     it('renders the overview text by default', () => {
         render(<About />)
-        expect(screen.getByText(/Satwave Arrays is a flat panel antenna company/i)).toBeInTheDocument()
+        expect(screen.getByText(/Satwave Arrays is a satellite antenna company/i)).toBeInTheDocument()
     })
 
     it('renders the tabs', () => {
