@@ -69,8 +69,8 @@ const techTopics = [
             <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Extensive antenna testing in:
                     <ul class="my-4 list-[circle] pl-6">
-                        <li class="mb-2 leading-relaxed">Planar near-field measurement range</li>
-                        <li class="mb-2 leading-relaxed">Compact antenna test range</li>
+                        <li class="mb-2 leading-relaxed">Planar Near-Field Measurement Range</li>
+                        <li class="mb-2 leading-relaxed">Compact Antenna Test Range</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Validation across:
@@ -118,14 +118,14 @@ const techTopics = [
         title: "Tracking & Control Algorithms",
         icon: "🎯",
         image: "/tracking-control/image.png",
-        description: "Conical scan techniques for LEO and GEO satellites",
+        description: "Conical scan techniques for LEO, MEO and GEO satellites",
         content: `
             <ul class="my-6 list-disc pl-6">
                 <li class="mb-3 leading-relaxed">Satellite tracking algorithms based on scan techniques.</li>
                 <li class="mb-3 leading-relaxed">We validate our algorithms using:
                     <ul class="my-4 list-[circle] pl-6">
                         <li class="mb-2 leading-relaxed">Motion platforms with roll and pitch dynamics.</li>
-                        <li class="mb-2 leading-relaxed">Live tracking of MEO and GEO satellites.</li>
+                        <li class="mb-2 leading-relaxed">Live tracking of LEO, MEO and GEO satellites.</li>
                     </ul>
                 </li>
                 <li class="mb-3 leading-relaxed">Designed for direct integration with:

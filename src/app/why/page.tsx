@@ -146,7 +146,7 @@ export default function WhySatwave() {
                                 </h3>
                             </div>
                             <p className="text-gray-400 font-light leading-relaxed text-lg">
-                                Designed to be upgraded to support higher security levels and other features based on customer requirements.
+                                Using software updates, Satwave AESAs are designed to support higher cybersecurity and anti-jamming countermeasures in a defense environment.
                             </p>
                         </motion.div>
 

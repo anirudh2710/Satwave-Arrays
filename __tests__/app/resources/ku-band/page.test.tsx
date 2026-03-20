@@ -69,7 +69,7 @@ describe('KuBandPage Component', () => {
 
         // Ensure tables exist
         expect(screen.getByText(/EIRP/i)).toBeInTheDocument();
-        expect(screen.getByText('46.5 dBW')).toBeInTheDocument(); // One of the EIRP values
+        expect(screen.getByText('49.5 dBW')).toBeInTheDocument(); // One of the EIRP values
     });
 
     it('renders images correctly', () => {

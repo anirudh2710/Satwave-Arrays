@@ -105,7 +105,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
                         className="text-lg text-gray-300 leading-relaxed"
                     >
-                        Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance 32×32 AESAs designed for mission-specific applications in defense and aerospace.
+                        Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance AESAs designed for mission-specific applications in defense and aerospace.
                     </motion.p>
                 </div>
 

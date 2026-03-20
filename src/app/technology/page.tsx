@@ -43,7 +43,7 @@ export default function TechnologyPage() {
             title: "Tracking & Control Algorithms",
             icon: "🎯",
             image: "/tracking-control/image.png",
-            description: "Conical scan techniques for LEO and GEO satellites"
+            description: "Conical scan techniques for LEO, MEO and GEO satellites"
         },
         {
             id: "validation",

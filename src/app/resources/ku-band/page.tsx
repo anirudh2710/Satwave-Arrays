@@ -191,7 +191,7 @@ export default function KuBandPage() {
                                                     <tbody className="divide-y divide-white/5">
                                                         <tr>
                                                             <td className="py-3 px-4">0&deg; (measured)</td>
-                                                            <td className="py-3 px-4">46.5 dBW</td>
+                                                            <td className="py-3 px-4">49.5 dBW</td>
                                                             <td className="py-3 px-4">9.5 dBW</td>
                                                         </tr>
                                                         <tr>

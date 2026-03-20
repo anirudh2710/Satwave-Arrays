@@ -29,7 +29,7 @@ export default function AnimatedNewsGrid({ articles }: { articles: NewsArticle[]
     if (articles.length === 0) {
         return (
             <div className="text-center text-gray-400 py-20">
-                <p>No news articles found at the moment.</p>
+                <p>No news articles at the moment.</p>
             </div>
         );
     }
