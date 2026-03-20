@@ -44,7 +44,7 @@ const techTopics = [
         id: "em-simulation",
         title: "Electromagnetic Simulation & Modeling",
         icon: "🔬",
-        image: "/em-sim/image005.png",
+        image: "/em-sim/image004.png",
         description: "Data-driven EM design validation and analysis",
         content: `
             <ul class="my-6 list-disc pl-6">
