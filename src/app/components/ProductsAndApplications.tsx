@@ -48,7 +48,6 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
         { title: "Ku-Band AESA - Front Render", description: "High-performance Ku-band phased array antenna with advanced beamforming capabilities.", image: "/Antenna_images/ku_antenna_render/optimized/01-001009-00-030226-4.png" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Precision-engineered antenna system for reliable satellite connectivity.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-3.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Advanced technology delivering superior performance for mobile communications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-19.JPG" },
-        { title: "Ku-Band Antenna - Integrated Unit", description: "Robust construction with electronic beam steering for optimal signal reception.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-22.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "State-of-the-art antenna technology for demanding environments.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-27.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Versatile deployment options for various platform configurations.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-30.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Integrated phased array system for broadcast and mobile applications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-68.JPG" }
@@ -62,7 +61,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
         { title: "Ka-Band Antenna - Production Unit", description: "Advanced technology delivering superior performance in demanding environments.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-3.JPG" },
         { title: "Ka-Band Antenna - Production Unit", description: "State-of-the-art antenna technology for military and commercial applications.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-4.JPG" },
         { title: "Ka-Band Antenna - Production Unit", description: "Robust construction with electronic beam steering capabilities.", image: "/Antenna_images/ka_antenna_render/optimized/Ka_Production_020326-11.JPG" },
-        { title: "Ka-Band Antenna - Production Unit", description: "High-performance antenna system for LEO, MEO, and GEO satellite networks.", image: "/Antenna_images/ka_antenna_render/optimized/Ku_Integrated_020726-40.JPG" },
+        // { title: "Ka-Band Antenna - Production Unit", description: "High-performance antenna system for LEO, MEO, and GEO satellite networks.", image: "/Antenna_images/ka_antenna_render/optimized/Ku_Integrated_020726-40.JPG" },
         { title: "Ka-Band Antenna - Production Unit", description: "Production-ready antenna delivering exceptional signal quality and reliability.", image: "/Antenna_images/ka_antenna_render/optimized/Ku_Integrated_020726-46.JPG" }
     ];
 
