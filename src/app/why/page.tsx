@@ -198,7 +198,7 @@ export default function WhySatwave() {
                                     Benefits of our Approach
                                 </h2>
                                 <p className="text-gray-400 font-light leading-relaxed">
-                                    We architect every component of our arrays to scale beautifully, reduce integration friction, and maximise on-mission performance.
+                                    We architect every component of our arrays to scale to mission requirements, reduce integration friction, and maximize performance.
                                 </p>
                                 <div className="mt-8 w-12 h-px bg-brand-accent" />
                             </motion.div>
