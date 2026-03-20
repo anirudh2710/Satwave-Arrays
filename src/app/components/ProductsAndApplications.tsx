@@ -49,7 +49,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
         { title: "Ku-Band Antenna - Integrated Unit", description: "Precision-engineered antenna system for reliable satellite connectivity.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-3.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Advanced technology delivering superior performance for mobile communications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-38.JPG" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "State-of-the-art antenna technology for demanding environments.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-27.JPG" },
-        { title: "Ku-Band Antenna - Integrated Unit", description: "Versatile deployment options for various platform configurations.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-30.JPG" },
+        { title: "Ku-Band Antenna - Integrated Unit", description: "Versatile deployment options for various platform configurations.", image: "/Antenna_images/ku_antenna_render/optimized/IMG_8613.jpeg" },
         { title: "Ku-Band Antenna - Integrated Unit", description: "Integrated phased array system for broadcast and mobile applications.", image: "/Antenna_images/ku_antenna_render/optimized/Ku_Integrated_020726-68.JPG" }
     ];
 
