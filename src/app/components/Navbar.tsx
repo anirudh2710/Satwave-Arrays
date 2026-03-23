@@ -73,7 +73,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         }}
                     >
                         <img
-                            src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White.svg'
+                            src='/Satwave_logos/Horizontal_logo/SVGs/Satwave_White_SmallMark.svg'
                             alt="Satwave Logo"
                             className="h-12 w-auto cursor-pointer"
                         />
@@ -87,7 +87,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                         {/* About Dropdown */}
                         <NavigationMenuItem value="about">
                             <NavigationMenuTrigger
-                                className="uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                className="uppercase tracking-[0.3em] hover:bg-[#696969]/60 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
                                 onPointerMove={(e: any) => e.preventDefault()}
                                 onPointerLeave={(e: any) => e.preventDefault()}
                                 onClick={() => setActiveDropdown(activeDropdown === 'about' ? null : 'about')}
@@ -98,85 +98,73 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                 <ul className="grid w-[220px] gap-0.5 p-3">
                                     <li>
                                         <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             onClick={() => handleAboutClick('overview')}
                                         >
-                                            <div className="uppercase text-sm font-medium">Overview</div>
+                                            <div className="uppercase text-sm font-semibold tracking-wider">Overview</div>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
                                         <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             onClick={() => handleAboutClick('mission')}
                                         >
-                                            <div className="uppercase text-sm font-medium">Mission & Values</div>
+                                            <div className="uppercase text-sm font-semibold tracking-wider">Mission & Values</div>
                                         </NavigationMenuLink>
                                     </li>
 
                                     <li>
                                         <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             onClick={() => handleAboutClick('team')}
                                         >
-                                            <div className="uppercase text-sm font-medium">Team</div>
+                                            <div className="uppercase text-sm font-semibold tracking-wider">Team</div>
                                         </NavigationMenuLink>
                                     </li>
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
 
-                        {/* Separator */}
-                        <div className="h-6 w-px bg-white/20"></div>
-
                         {/* Products & Applications - Direct Link */}
                         <NavigationMenuItem>
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/products?tab=products"
-                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-[#696969]/60 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
                                 >
                                     Products
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
 
-                        {/* Separator */}
-                        <div className="h-6 w-px bg-white/20"></div>
-
                         {/* Why Satwave - Direct Link */}
                         <NavigationMenuItem>
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/why"
-                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-[#696969]/60 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
                                 >
                                     Why Satwave
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
 
-                        {/* Separator */}
-                        <div className="h-6 w-px bg-white/20"></div>
-
                         {/* Technology */}
                         <NavigationMenuItem>
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/technology"
-                                    className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
+                                    className="text-white uppercase tracking-[0.3em] hover:bg-[#696969]/60 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md inline-flex items-center justify-center"
                                 >
                                     Technology
                                 </Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
 
-                        {/* Separator */}
-                        <div className="h-6 w-px bg-white/20"></div>
-
                         {/* More */}
                         <NavigationMenuItem value="more">
                             <NavigationMenuTrigger
-                                className="text-white uppercase tracking-[0.3em] hover:bg-white/10 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
+                                className="text-white uppercase tracking-[0.3em] hover:bg-[#696969]/60 transition-all font-bold bg-transparent px-3 py-2 h-auto rounded-md gap-1.5"
                                 onPointerMove={(e: any) => e.preventDefault()}
                                 onPointerLeave={(e: any) => e.preventDefault()}
                                 onClick={() => setActiveDropdown(activeDropdown === 'more' ? null : 'more')}
@@ -189,36 +177,35 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href="/news"
-                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             >
-                                                <div className="text-sm font-medium">News</div>
+                                                <div className="text-sm font-semibold tracking-wider uppercase">News</div>
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
-                                        <div className="block px-4 py-2.5 rounded-md text-gray-300 text-sm font-medium">
-                                            Resources
-                                        </div>
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href="/resources/ku-band"
-                                                className="block px-6 py-2 rounded-md cursor-pointer text-gray-500 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             >
-                                                <div className="text-sm font-normal">Ku-band</div>
+                                                <div className="text-sm font-semibold tracking-wider uppercase">Ku-Band Resource</div>
                                             </Link>
                                         </NavigationMenuLink>
+                                    </li>
+                                    <li>
                                         <NavigationMenuLink asChild>
                                             <Link
                                                 href="/resources/ka-band"
-                                                className="block px-6 py-2 rounded-md cursor-pointer text-gray-500 hover:text-white hover:bg-white/10 transition-all duration-200"
+                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             >
-                                                <div className="text-sm font-normal">Ka-band</div>
+                                                <div className="text-sm font-semibold tracking-wider uppercase">Ka-Band Resource</div>
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
                                     <li>
                                         <NavigationMenuLink
-                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200 mt-1"
+                                            className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             onClick={() => {
                                                 if (isHomePage && scrollTo) {
                                                     scrollTo('contact');
@@ -227,7 +214,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                                 }
                                             }}
                                         >
-                                            <div className="text-sm font-medium">Contact Us</div>
+                                            <div className="text-sm font-semibold tracking-wider uppercase">Contact Us</div>
                                         </NavigationMenuLink>
                                     </li>
                                 </ul>
@@ -240,7 +227,7 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                 <div className="flex items-center justify-end lg:hidden flex-1 relative z-50">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+                        className="p-2 text-white hover:bg-[#696969]/60 rounded-md transition-colors"
                         aria-label="Toggle mobile menu"
                     >
                         {isMobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}

@@ -2,6 +2,7 @@
 
 import Navbar from "./Navbar";
 import NewsTicker from "./NewsTicker";
+import { motion } from "framer-motion";
 
 interface NewsItem {
     title: string;
@@ -30,8 +31,25 @@ export default function Hero({ scrollTo, setAboutTab, news }: HeroProps) {
                 {/* Headline & CTA */}
                 <div className="flex-1 flex flex-col items-center justify-start w-full px-4 sm:px-6 lg:px-8">
                     <div className="w-full max-w-7xl text-center">
-                        <h1 className="uppercase text-white text-7xl sm:text-8xl md:text-8xl leading-[0.85] w-full mb-6 drop-shadow-2xl">
-                            Enabling<br className="sm:hidden" /> Mobility
+                        <h1 className="uppercase text-7xl sm:text-8xl md:text-9xl leading-[0.82] w-full mb-8 tracking-tighter flex flex-col sm:block overflow-hidden">
+                            <motion.span
+                                initial={{ y: 80, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                                className="inline-block text-white/90 font-light drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+                            >
+                                Enabling
+                            </motion.span>
+                            <br className="sm:hidden" />
+                            {" "}
+                            <motion.span
+                                initial={{ y: 80, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+                                className="inline-block relative text-white font-black drop-shadow-[0_0_50px_rgba(255,255,255,0.15)]"
+                            >
+                                Mobility
+                            </motion.span>
                         </h1>
                     </div>
                 </div>

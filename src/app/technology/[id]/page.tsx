@@ -189,7 +189,7 @@ export default function TechnologyDetailPage() {
             <main className="min-h-screen bg-brand-black flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-4xl font-bold text-white mb-4">Topic Not Found</h1>
-                    <Link href="/technology" className="text-brand-accent hover:underline">
+                    <Link href="/technology" className="text-white hover:underline">
                         Back to Technology Portfolio
                     </Link>
                 </div>
@@ -213,11 +213,11 @@ export default function TechnologyDetailPage() {
                         <Breadcrumb>
                             <BreadcrumbList>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                    <BreadcrumbLink href="/" className="text-gray-400 hover:text-white transition-colors">Home</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator className="text-gray-600" />
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/technology" className="text-gray-400 hover:text-brand-accent transition-colors">Technology</BreadcrumbLink>
+                                    <BreadcrumbLink href="/technology" className="text-gray-400 hover:text-white transition-colors">Technology</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator className="text-gray-600" />
                                 <BreadcrumbItem>
@@ -226,7 +226,7 @@ export default function TechnologyDetailPage() {
                             </BreadcrumbList>
                         </Breadcrumb>
 
-                        <Link href="/technology" className="group inline-flex items-center text-brand-accent hover:bg-white/10 transition-all px-3 py-2 rounded-md self-start sm:self-auto">
+                        <Link href="/technology" className="group inline-flex items-center text-white hover:bg-white/10 transition-all px-3 py-2 rounded-md self-start sm:self-auto">
                             <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
@@ -235,16 +235,16 @@ export default function TechnologyDetailPage() {
                     </div>
 
                     {/* Title Section */}
-                    <div className="flex flex-col items-center sm:items-start gap-6 mb-12 text-center sm:text-left text-brand-accent">
+                    <div className="flex flex-col items-center sm:items-start gap-6 mb-12 text-center sm:text-left text-white">
                         <div>
                             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight uppercase tracking-tight">
                                 {topic.title}
                             </h1>
-                            <p className="text-brand-accent text-lg sm:text-xl mt-4 font-medium italic opacity-80">
+                            <p className="text-white text-lg sm:text-xl mt-4 font-medium italic opacity-80">
                                 {topic.description}
                             </p>
                         </div>
-                        <div className="aspect-video w-full rounded-lg overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 mb-12 relative flex items-center justify-center text-9xl">
+                        <div className="aspect-video w-full rounded-lg overflow-hidden bg-gradient-to-br from-brand-black/20 to-white/20 mb-12 relative flex items-center justify-center text-9xl">
                             {topic.image ? (
                                 <img src={topic.image} alt={topic.title} className="w-full h-full object-cover" />
                             ) : (
@@ -258,7 +258,7 @@ export default function TechnologyDetailPage() {
                 <section className="max-w-4xl mx-auto px-6 pb-24 w-full flex-grow">
                     <div className="glass-card p-10 border-brand-black/30 bg-brand-black/5">
                         <div
-                            className="max-w-none text-brand-accent text-sm sm:text-lg"
+                            className="max-w-none text-white text-sm sm:text-lg"
                             dangerouslySetInnerHTML={{ __html: topic.content }}
                         />
                     </div>

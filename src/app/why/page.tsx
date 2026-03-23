@@ -11,7 +11,6 @@ import {
     Zap,
     Layers,
     Lock,
-    CheckCircle2
 } from 'lucide-react';
 
 export default function WhySatwave() {
@@ -31,15 +30,15 @@ export default function WhySatwave() {
     };
 
     return (
-        <main className="min-h-screen bg-brand-black text-white selection:bg-brand-accent/30 selection:text-white flex flex-col font-sans">
+        <main className="min-h-screen why-bg bg-brand-black text-white selection:bg-white/30 selection:text-white flex flex-col font-sans">
             <Navbar />
 
             {/* Premium Hero Section */}
             <section className="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden flex flex-col items-center justify-center text-center">
                 {/* Background ambient lighting */}
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-accent/10 to-transparent blur-3xl opacity-50"></div>
-                    <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-brand-accent/20 to-transparent blur-[150px]"></div>
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent blur-3xl opacity-50"></div>
+                    <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-white/20 to-transparent blur-[150px]"></div>
                 </div>
 
                 <div className="max-w-5xl mx-auto px-6 relative z-10 w-full">
@@ -48,12 +47,11 @@ export default function WhySatwave() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 1, ease: 'easeOut' }}
                     >
-                        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/5 backdrop-blur-sm">
-                            <span className="text-brand-accent text-sm font-semibold tracking-widest uppercase">The Satwave Advantage</span>
+                        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm">
+                            <span className="text-sm font-semibold tracking-widest uppercase">The Satwave Advantage</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                            WHY SATWAVE <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">AESAs?</span>
+                            WHY SATWAVE <br />AESAs?
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
                             Pioneering the next generation of flat panel satellite antennas through unmatched engineering excellence and innovation.
@@ -76,12 +74,12 @@ export default function WhySatwave() {
                         className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-32"
                     >
                         {/* FEATURE 1 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <Activity strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Electronic Beam Steering
                                 </h3>
                             </div>
@@ -91,12 +89,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* FEATURE 2 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <ShieldCheck strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Reliability
                                 </h3>
                             </div>
@@ -106,12 +104,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* FEATURE 3 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default md:col-span-2 lg:col-span-1">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default md:col-span-2 lg:col-span-1">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <Move strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Portability
                                 </h3>
                             </div>
@@ -121,12 +119,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* RESILIENCE */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default md:col-span-2 lg:col-span-3">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default md:col-span-2 lg:col-span-3">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <Lock strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Resilience
                                 </h3>
                             </div>
@@ -136,12 +134,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* FEATURE 4 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <ArrowUpRight strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Upgradability
                                 </h3>
                             </div>
@@ -151,12 +149,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* FEATURE 5 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <Zap strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Agility
                                 </h3>
                             </div>
@@ -166,12 +164,12 @@ export default function WhySatwave() {
                         </motion.div>
 
                         {/* FEATURE 6 */}
-                        <motion.div variants={itemVariants} className="group glass-card p-8 border-brand-black/40 bg-white/[0.02] hover:bg-white/[0.05] hover:border-brand-accent/40 hover:-translate-y-2 transition-all duration-300 h-full cursor-default">
+                        <motion.div variants={itemVariants} className="group glass-card p-8 rounded-lg border-brand-black/40 bg-white/[0.02] transition-all duration-300 h-full cursor-default">
                             <div className="flex items-center gap-4 mb-5">
-                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:scale-110 group-hover:bg-brand-accent/20 transition-transform">
+                                <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center text-white transition-transform">
                                     <Layers strokeWidth={1.5} size={28} />
                                 </div>
-                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide group-hover:text-brand-accent transition-colors">
+                                <h3 className="text-xl lg:text-2xl font-bold text-white tracking-wide">
                                     Low Profile
                                 </h3>
                             </div>
@@ -193,14 +191,14 @@ export default function WhySatwave() {
                                 transition={{ duration: 0.7 }}
                                 className="lg:w-72 shrink-0"
                             >
-                                <p className="text-brand-accent text-sm font-semibold tracking-widest uppercase mb-4">Why it matters</p>
+                                <p className="text-white text-sm font-semibold tracking-widest uppercase mb-4">Why it matters</p>
                                 <h2 className="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-6">
                                     Benefits of our Approach
                                 </h2>
                                 <p className="text-gray-400 font-light leading-relaxed">
                                     We architect every component of our arrays to scale to mission requirements, reduce integration friction, and maximize performance.
                                 </p>
-                                <div className="mt-8 w-12 h-px bg-brand-accent" />
+                                <div className="mt-8 w-12 h-px bg-white" />
                             </motion.div>
 
                             {/* Right: numbered list */}
@@ -237,10 +235,10 @@ export default function WhySatwave() {
                                     <motion.li
                                         key={i}
                                         variants={itemVariants}
-                                        className="group flex items-center gap-10 py-8 hover:bg-white/[0.02] transition-colors px-2 rounded-sm"
+                                        className="group flex items-center gap-10 py-8 transition-colors px-2 rounded-sm"
                                     >
                                         {/* Number */}
-                                        <span className="text-5xl font-black text-white/60 group-hover:text-brand-accent/70 transition-colors leading-none select-none w-10 shrink-0">
+                                        <span className="text-5xl font-black text-white/60 group-hover:text-white/70 transition-colors leading-none select-none w-10 shrink-0">
                                             {String(i + 1).padStart(2, '0')}
                                         </span>
                                         {/* Content */}

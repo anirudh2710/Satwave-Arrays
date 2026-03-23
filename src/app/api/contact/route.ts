@@ -27,8 +27,7 @@ export async function POST(request: NextRequest) {
         // Send email using Resend
         const data = await resend.emails.send({
             from: 'Satwave Contact Form <onboarding@resend.dev>',
-            to: ['anikrish1998@gmail.com'], // Using your verified email for testing (Resend free tier limitation)
-            // TODO: Change to ['info@satwave.ai'] after domain verification
+            to: ['info@satwave.ai'],
             replyTo: email,
             subject: `New Contact Form Submission from ${firstName} ${lastName}`,
             html: `

@@ -76,10 +76,10 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                                     href={`/news/${item.slug}`}
                                     className="block h-full"
                                 >
-                                    <Card className="py-2 group rounded-lg glass-card border-brand-black/30 hover:border-brand-accent hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all duration-300 cursor-pointer h-full">
+                                    <Card className="py-2 group rounded-lg glass-card border-brand-black/30 transition-all duration-300 cursor-pointer h-full">
                                         <CardContent className="p-4 md:p-5 flex flex-col justify-between h-auto min-h-[120px]">
                                             <div>
-                                                <h4 className="text-white uppercase text-base md:text-lg font-bold leading-snug group-hover:text-brand-accent transition-colors line-clamp-2">
+                                                <h4 className="text-white uppercase text-base md:text-lg font-bold leading-snug transition-colors line-clamp-2">
                                                     {item.title}
                                                 </h4>
                                                 {item.excerpt && (
@@ -89,8 +89,8 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                                                 )}
                                             </div>
                                             <div className="flex items-center justify-between gap-3 mt-4">
-                                                <div className="flex items-center text-brand-accent text-xs font-medium">
-                                                    <span className="text-brand-accent relative group-hover:underline underline-offset-2 decoration-1">
+                                                <div className="flex items-center text-xs font-medium">
+                                                    <span className="relative group-hover:underline underline-offset-2 decoration-1">
                                                         Read More
                                                     </span>
                                                     <svg className="w-3 h-3 ml-1 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,8 +109,8 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                     </CarouselContent>
 
                     {/* Navigation Arrows */}
-                    <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12 border-white/20 bg-white/10 text-white hover:bg-brand-accent hover:border-brand-accent hover:text-white transition-all duration-300 hover:scale-110" />
-                    <CarouselNext className="hidden sm:flex -right-4 md:-right-12 border-white/20 bg-white/10 text-white hover:bg-brand-accent hover:border-brand-accent hover:text-white transition-all duration-300 hover:scale-110" />
+                    <CarouselPrevious className="hidden sm:flex -left-4 md:-left-12 border-white/20 bg-white/10 text-white hover:text-white transition-all duration-300 hover:scale-110" />
+                    <CarouselNext className="hidden sm:flex -right-4 md:-right-12 border-white/20 bg-white/10 text-white hover:text-white transition-all duration-300 hover:scale-110" />
                 </Carousel>
 
                 {/* Dot Indicators */}
@@ -119,7 +119,7 @@ export default function NewsTicker({ news }: NewsTickerProps) {
                         <button
                             key={index}
                             className={`h-2.5 rounded-full transition-all duration-500 ease-out border border-transparent ${index === current
-                                ? "bg-brand-accent w-8"
+                                ? "w-8"
                                 : "bg-brand-black/60 w-2.5 hover:bg-brand-black/80 hover:border-brand-black/50"
                                 }`}
                             onClick={() => api?.scrollTo(index)}

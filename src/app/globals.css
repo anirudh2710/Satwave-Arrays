@@ -126,6 +126,22 @@
     /* Light 25% */
     --glass-card-glow: rgba(255, 255, 255, 0.05);
     /* Bright accent glow */
+
+    --animate-gradient-sweep: gradient-sweep 8s ease-in-out infinite;
+
+    @keyframes gradient-sweep {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 }
 
 html {
@@ -201,12 +217,11 @@ body {
 
 .nav-hero-active {
     background: var(--color-surface-color);
-    opacity: 0.9;
 }
 
 .nav-transparent {
     backdrop-filter: blur(0px);
-    /* background-color: color-mix(in srgb, var(--color-surface-color) 50%, transparent); */
+    background-color: var(--color-accent-deep);
 }
 
 .hero-background {
@@ -221,14 +236,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-image:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 70%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 40%),
         url('/Background/elevated_bg.jpg');
-    /* opacity: 0.8; */
 }
 
 .news-ticker-area {
     background: linear-gradient(to bottom, transparent, rgba(10, 14, 31, 0.4));
-    /* backdrop-filter: blur(0px); */
 }
 
 .orbital-arcs {
@@ -294,10 +307,17 @@ body {
     /* background-repeat: no-repeat; */
 }
 
+.why-bg {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 20%, transparent 40%), url('/Background/earth_bg6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 /* Contact Us Section Background */
 .contact {
     background-image:
-        /* linear-gradient(to bottom, var(--color-elevated-bg) 0%, color-mix(in srgb, var(--color-elevated-bg) 60%, transparent) 50%, var(--color-elevated-bg) 100%), */
         url('/Background/thumb1.jpg');
     background-size: cover;
     background-position: center;
@@ -375,7 +395,6 @@ body {
 .input-field:focus {
     outline: none;
     background: var(--color-elevated-bg);
-    box-shadow: 0 0 10px var(--color-brand-accent);
 }
 
 .btn-brand {
@@ -456,9 +475,7 @@ body {
 }
 
 .gradient-navbar-dropdown {
-    background: linear-gradient(to bottom right,
-            rgba(20, 20, 20, 1) 0%,
-            rgba(5, 5, 5, 1) 100%);
+    background-color: var(--color-accent-deep);
 }
 
 /* Border Classes */

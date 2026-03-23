@@ -193,7 +193,7 @@ export default function AntennaShowcase() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-8 md:mb-12"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold text-pure-white uppercase tracking-wider mb-4">
+                    <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4">
                         Explore Our Antennas
                     </h2>
                     <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto">

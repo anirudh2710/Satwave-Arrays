@@ -25,7 +25,7 @@ export default function KuBandPage() {
                         <Breadcrumb>
                             <BreadcrumbList>
                                 <BreadcrumbItem>
-                                    <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                    <BreadcrumbLink href="/" className="text-gray-400 hover:text-white transition-colors">Home</BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator className="text-gray-600" />
                                 <BreadcrumbItem>
@@ -40,7 +40,7 @@ export default function KuBandPage() {
                     </div>
 
                     {/* Title Section */}
-                    <div className="flex flex-col items-center sm:items-start gap-6 mb-12 text-center sm:text-left text-brand-accent">
+                    <div className="flex flex-col items-center sm:items-start gap-6 mb-12 text-center sm:text-left text-white">
                         <div>
                             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight uppercase tracking-tight font-bebas-neue flex justify-center text-center">
                                 Full Duplex Ku-Band AESA
@@ -56,12 +56,12 @@ export default function KuBandPage() {
                 <section className="max-w-7xl mx-auto px-6 pb-24 w-full flex-grow">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 lg:gap-20 items-stretch">
                         {/* Left Column: Key Features */}
-                        <Card className="md:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-brand-accent h-full flex flex-col justify-center">
+                        <Card className="md:col-span-3 glass-card border-brand-black/30 bg-brand-black/5 text-white h-full flex flex-col justify-center">
                             <CardHeader>
                                 <CardTitle className="text-2xl font-bold text-white uppercase tracking-wider font-bebas-neue">Key features include:</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <ul className="text-gray-300 space-y-4 list-disc list-outside pl-5 marker:text-brand-accent">
+                                <ul className="text-gray-300 space-y-4 list-disc list-outside pl-5 marker:text-white">
                                     {[
                                         "AESA design scalable to custom sizes and multi-panel antennas",
                                         "Stacked patch radiating elements with proprietary, ML optimized, inner layers for wideband performance, enhanced cross-polarization, and improved efficiency at large scan angles",
@@ -96,21 +96,21 @@ export default function KuBandPage() {
                             </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-brand-accent/30 transition-all duration-300 group cursor-default">
+                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-white/30 transition-all duration-300 group cursor-default">
                                 <CardContent className="p-8 text-center flex flex-col items-center pt-8">
                                     <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🧮</div>
                                     <h4 className="text-white font-semibold text-lg mb-2">Data-Driven Design</h4>
                                     <p className="text-gray-400 text-sm leading-relaxed">Simulation is always paired with real-world measurements</p>
                                 </CardContent>
                             </Card>
-                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-brand-accent/30 transition-all duration-300 group cursor-default">
+                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-white/30 transition-all duration-300 group cursor-default">
                                 <CardContent className="p-8 text-center flex flex-col items-center pt-8">
                                     <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">📖</div>
                                     <h4 className="text-white font-semibold text-lg mb-2">Open-Book Engineering</h4>
                                     <p className="text-gray-400 text-sm leading-relaxed">Customers receive detailed performance data and validation reports</p>
                                 </CardContent>
                             </Card>
-                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-brand-accent/30 transition-all duration-300 group cursor-default">
+                            <Card className="glass-card border-brand-black/30 bg-brand-black/5 hover:bg-white/5 hover:border-white/30 transition-all duration-300 group cursor-default">
                                 <CardContent className="p-8 text-center flex flex-col items-center pt-8">
                                     <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🛡️</div>
                                     <h4 className="text-white font-semibold text-lg mb-2">Transparency & Reliability</h4>
@@ -155,23 +155,23 @@ export default function KuBandPage() {
                                         {/* General Specs */}
                                         <div className="flex flex-col font-mono text-sm lg:text-base border-b border-brand-black/20 pb-6 divide-y divide-white/10">
                                             <div className="flex flex-col sm:flex-row sm:justify-between py-3 gap-2">
-                                                <span className="text-brand-accent font-semibold">Frequencies:</span>
+                                                <span className="text-white font-semibold">Frequencies:</span>
                                                 <span className="text-left sm:text-right">10.7 – 12.75 GHz, 13.75 – 14.5 GHz</span>
                                             </div>
                                             <div className="flex flex-col sm:flex-row sm:justify-between py-3 gap-2">
-                                                <span className="text-brand-accent font-semibold">Size:</span>
+                                                <span className="text-white font-semibold">Size:</span>
                                                 <span className="text-left sm:text-right">40” x 18.5” x 6” (100 X 47 X 16 cm.)</span>
                                             </div>
                                             <div className="flex flex-col sm:flex-row sm:justify-between py-3 gap-2">
-                                                <span className="text-brand-accent font-semibold">Weight:</span>
+                                                <span className="text-white font-semibold">Weight:</span>
                                                 <span className="text-left sm:text-right">&lt;50 lbs (&lt;23 kg)</span>
                                             </div>
                                             <div className="flex flex-col sm:flex-row sm:justify-between py-3 gap-2">
-                                                <span className="text-brand-accent font-semibold">Power:</span>
+                                                <span className="text-white font-semibold">Power:</span>
                                                 <span className="text-left sm:text-right">425W</span>
                                             </div>
                                             <div className="flex flex-col sm:flex-row sm:justify-between py-3 gap-2">
-                                                <span className="text-brand-accent font-semibold">Scan Range:</span>
+                                                <span className="text-white font-semibold">Scan Range:</span>
                                                 <span className="text-left sm:text-right">90&deg;</span>
                                             </div>
                                         </div>
@@ -182,7 +182,7 @@ export default function KuBandPage() {
                                             <div className="overflow-x-auto text-sm lg:text-base font-mono">
                                                 <table className="w-full text-left border-collapse">
                                                     <thead>
-                                                        <tr className="border-b border-white/10 text-brand-accent/80">
+                                                        <tr className="border-b border-white/10 text-white/80">
                                                             <th className="py-2 px-4 font-normal">Steer</th>
                                                             <th className="py-2 px-4 font-normal">LP</th>
                                                             <th className="py-2 px-4 font-normal">CP</th>
@@ -200,7 +200,7 @@ export default function KuBandPage() {
                                                             <td className="py-3 px-4">47.5 dBW</td>
                                                         </tr>
                                                         <tr>
-                                                            <td className="py-3 px-4 text-brand-accent">60&deg; (extrapolated)</td>
+                                                            <td className="py-3 px-4 text-white">60&deg; (extrapolated)</td>
                                                             <td className="py-3 px-4">42.4 dBW</td>
                                                             <td className="py-3 px-4">45.4 dBW</td>
                                                         </tr>
@@ -215,7 +215,7 @@ export default function KuBandPage() {
                                             <div className="overflow-x-auto text-sm lg:text-base font-mono">
                                                 <table className="w-full text-left border-collapse">
                                                     <thead>
-                                                        <tr className="border-b border-white/10 text-brand-accent/80">
+                                                        <tr className="border-b border-white/10 text-white/80">
                                                             <th className="py-2 px-4 font-normal">Steer</th>
                                                             <th className="py-2 px-4 font-normal">25&deg; C</th>
                                                             <th className="py-2 px-4 font-normal">Hottest*</th>
@@ -233,14 +233,14 @@ export default function KuBandPage() {
                                                             <td className="py-3 px-4">6 dB/K</td>
                                                         </tr>
                                                         <tr>
-                                                            <td className="py-3 px-4 text-brand-accent">60&deg; (extrapolated)</td>
+                                                            <td className="py-3 px-4 text-white">60&deg; (extrapolated)</td>
                                                             <td className="py-3 px-4">6 dB/K</td>
                                                             <td className="py-3 px-4">4 dB/K</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <p className="text-xs text-brand-accent mt-4 italic opacity-80">*Hottest BFIC operating temperature - 85&deg; C</p>
+                                            <p className="text-xs text-white mt-4 italic opacity-80">*Hottest BFIC operating temperature - 85&deg; C</p>
                                         </div>
                                     </CardContent>
                                 </Card>
@@ -261,7 +261,7 @@ export default function KuBandPage() {
             {/* Disclaimer */}
             <div className="max-w-7xl mx-auto px-6 pb-12 w-full text-center">
                 <p className="text-gray-500 text-sm opacity-80 leading-relaxed max-w-4xl mx-auto">
-                    Satwave Arrays Inc. proprietary - Data Sheet represents Satwave Arrays Ku-Band AESA as configured for optimal market parameters. Actual configuration for customers and results may vary. For more information, email <a href="mailto:info@satwave.ai" className="text-brand-accent hover:text-brand-accent/80 transition-colors">info@satwave.ai</a>.
+                    Satwave Arrays Inc. proprietary - Data Sheet represents Satwave Arrays Ku-Band AESA as configured for optimal market parameters. Actual configuration for customers and results may vary. For more information, email <a href="mailto:info@satwave.ai" className="text-white hover:text-white/80 transition-colors">info@satwave.ai</a>.
                 </p>
             </div>
 

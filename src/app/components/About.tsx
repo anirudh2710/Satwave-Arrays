@@ -17,6 +17,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import { FileDown } from 'lucide-react';
 import Autoplay from "embla-carousel-autoplay";
 
 interface AboutProps {
@@ -119,14 +120,23 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
-                        <TabsList className="flex flex-wrap justify-center w-full mb-8 bg-[#696969] backdrop-blur-sm p-2 rounded-lg h-auto gap-2">
-                            <TabsTrigger value="overview" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
+                        <TabsList className="grid grid-cols-3 w-full mb-8 glass-card backdrop-blur-sm p-1 sm:p-2 rounded-lg h-auto gap-1 sm:gap-2">
+                            <TabsTrigger
+                                value="overview"
+                                className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md text-[10px] sm:text-xs md:text-sm py-2 px-1"
+                            >
                                 Overview
                             </TabsTrigger>
-                            <TabsTrigger value="mission" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
+                            <TabsTrigger
+                                value="mission"
+                                className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md text-[10px] sm:text-xs md:text-sm py-2 px-1 text-center"
+                            >
                                 Mission & Values
                             </TabsTrigger>
-                            <TabsTrigger value="team" className="flex-1 min-w-[100px] data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md">
+                            <TabsTrigger
+                                value="team"
+                                className="data-[state=active]:bg-light-gray-secondary data-[state=active]:text-white hover:bg-gray-800 uppercase rounded-md text-[10px] sm:text-xs md:text-sm py-2 px-1"
+                            >
                                 Team
                             </TabsTrigger>
                         </TabsList>
@@ -139,12 +149,12 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                 transition={{ duration: 0.5 }}
                                 className="w-full max-w-7xl mx-auto"
                             >
-                                <Card className="grid grid-cols-1 lg:grid-cols-5 rounded-lg gap-6 items-stretch glass-card border-brand-black/30 p-6 overflow-hidden">
+                                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
                                     {/* Left: Image Carousel (3/5 = 60% width) */}
                                     <div className="lg:col-span-3">
-                                        <div className="px-8 h-full flex items-center">
+                                        <div className="w-full">
                                             <Carousel
-                                                className="w-full"
+                                                className="w-full relative px-12"
                                                 plugins={[
                                                     Autoplay({
                                                         delay: 3500,
@@ -155,7 +165,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                 <CarouselContent>
                                                     {overviewItems.map((item, index) => (
                                                         <CarouselItem key={index}>
-                                                            <div className="aspect-[4/3] w-full rounded-lg overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
+                                                            <div className="aspect-[4/3] w-full rounded-lg overflow-hidden">
                                                                 <img
                                                                     src={item.image}
                                                                     alt={item.title}
@@ -165,15 +175,15 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                         </CarouselItem>
                                                     ))}
                                                 </CarouselContent>
-                                                <CarouselPrevious className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
-                                                <CarouselNext className="bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
+                                                <CarouselPrevious className="hidden md:flex -left-5 bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
+                                                <CarouselNext className="hidden md:flex -right-5 bg-brand-black/80 text-white border-brand-black hover:bg-brand-black" />
                                             </Carousel>
                                         </div>
                                     </div>
 
-                                    {/* Right: Text Content (2/5 = 40% width) */}
-                                    <div className="lg:col-span-2 flex">
-                                        <div className="space-y-3 leading-relaxed text-lg">
+                                    {/* Right: Info Card (2/5 = 40% width) */}
+                                    <Card className="gap-0 lg:col-span-2 glass-card border-brand-black/30 p-8 flex flex-col justify-between h-auto rounded-2xl">
+                                        <div className="space-y-5 leading-relaxed text-lg text-gray-300">
                                             <p>
                                                 Satwave Arrays is a satellite antenna company based in the city of Atlanta, USA. We design, develop, and deliver active electronically steered phased array antennas for satellite communications. We are building reliable, robust, and high-quality phased-array systems that support mobility and fixed connectivity across LEO, MEO, and GEO.
                                             </p>
@@ -184,10 +194,19 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                 Satwave's focus is on military and government applications as well as commercial markets. We started operations in mid-2023 and have a talented team of engineers and experienced satellite industry veterans.
                                             </p>
                                         </div>
-                                        {/* </CardContent>
-                                        </Card> */}
-                                    </div>
-                                </Card>
+
+                                        <div className="mt-4 pt-4 border-t border-white/10 flex justify-center w-full">
+                                            <a
+                                                href="/docs/Satwave_Brochure.pdf"
+                                                download
+                                                className="btn-brand inline-flex items-center gap-3 px-8 py-4 rounded-lg transition-all font-bold uppercase tracking-[0.2em] text-sm group w-full justify-center"
+                                            >
+                                                <FileDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                                                Download Our Brochure
+                                            </a>
+                                        </div>
+                                    </Card>
+                                </div>
                             </motion.div>
                         </TabsContent>
 
@@ -228,7 +247,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                     className="glass-card border-brand-black/30 duration-300 group h-full flex flex-col"
                                                 >
                                                     <CardHeader>
-                                                        <CardTitle className="text-2xl uppercase font-bold text-white group-hover:text-brand-accent transition-colors">
+                                                        <CardTitle className="text-2xl uppercase font-bold text-white transition-colors">
                                                             <h4>{value.title}</h4>
                                                         </CardTitle>
                                                     </CardHeader>
@@ -260,7 +279,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                         >
                                             <Card key={i} className="glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 h-full">
                                                 <CardContent className="p-4">
-                                                    <div className="aspect-square w-full bg-gradient-to-br from-brand-black/20 to-brand-accent/20 rounded-lg mb-4 flex items-center justify-center">
+                                                    <div className="aspect-square w-full rounded-lg mb-4 flex items-center justify-center">
                                                         <span className="text-white/40 text-xs">Photo</span>
                                                     </div>
                                                     <h3 className="text-white font-bold text-center mb-1">{member.name}</h3>
@@ -294,17 +313,17 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                 transition={{ delay: i * 0.1 }}
                                             >
                                                 <Card
-                                                    className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer relative"
+                                                    className="group glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer relative"
                                                     onClick={() => setSelectedMember(member)}
                                                 >
                                                     <CardContent className="p-4">
-                                                        <div className="aspect-square w-full rounded-lg mb-4 overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 relative">
+                                                        <div className="aspect-square w-full rounded-lg mb-4 overflow-hidden relative">
                                                             <img
                                                                 src={member.image}
                                                                 alt={member.name}
                                                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                                                             />
-                                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end justify-center">
                                                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-2">
                                                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -340,22 +359,22 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                 transition={{ delay: 0.3 + (i * 0.1) }}
                                             >
                                                 <Card
-                                                    className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer relative"
+                                                    className="group glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer relative"
                                                     onClick={() => setSelectedMember(member)}
                                                 >
                                                     <CardContent className="p-4">
-                                                        <div className="aspect-square w-full rounded-lg mb-4 overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 relative">
+                                                        <div className="aspect-square w-full rounded-lg mb-4 overflow-hidden relative">
                                                             <img
                                                                 src={member.image}
                                                                 alt={member.name}
                                                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                                                             />
-                                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-end justify-center">
                                                                 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-2">
                                                                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                                     </svg>
-                                                                    <span className="text-white text-xs font-medium">Click for bio</span>
+                                                                    <span className="text-white text-xs font-medium uppercase">Click for bio</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -379,7 +398,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                             <>
                                 <DialogHeader>
                                     <div className="flex items-start gap-6">
-                                        <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 border-brand-accent shadow-xl shadow-brand-accent/20">
+                                        <div className="w-32 h-32 rounded-2xl overflow-hidden border-2 shadow-xl">
                                             <img
                                                 src={selectedMember.image}
                                                 alt={selectedMember.name}
@@ -390,7 +409,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                             <DialogTitle asChild className="text-white text-4xl md:text-4xl font-bold mb-3 leading-tight uppercase">
                                                 <h3>{selectedMember.name}</h3>
                                             </DialogTitle>
-                                            <p className="text-brand-accent text-xl md:text-2xl uppercase tracking-wider font-semibold">
+                                            <p className="text-xl md:text-2xl uppercase tracking-wider font-semibold">
                                                 {selectedMember.role}
                                             </p>
                                         </div>
@@ -412,7 +431,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                         href={selectedMember.linkedin}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-black to-brand-accent hover:from-brand-accent hover:to-brand-black text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:shadow-xl hover:shadow-brand-accent/50"
+                                        className="group inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-brand-black text-white text-lg font-semibold rounded-lg transition-all duration-300"
                                     >
                                         <svg className="w-6 h-6 transition-transform group-hover:fill-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
                                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

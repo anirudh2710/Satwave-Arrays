@@ -79,7 +79,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                     <Breadcrumb>
                         <BreadcrumbList>
                             <BreadcrumbItem>
-                                <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                <BreadcrumbLink href="/" className="text-gray-400 transition-colors">Home</BreadcrumbLink>
                             </BreadcrumbItem>
                             <BreadcrumbSeparator className="text-gray-600" />
                             <BreadcrumbItem>
@@ -104,7 +104,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
                         className="text-lg text-gray-300 leading-relaxed"
                     >
-                        Satwave builds Active Electronically Steered Arrays (AESA) for <span className="text-brand-accent font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance AESAs designed for mission-specific applications in defense and aerospace.
+                        Satwave builds Active Electronically Steered Arrays (AESA) for <span className="font-semibold">Ku-band and Ka-Band</span> frequencies to connect with satellites on any constellation on any orbit. As developed and tested by us, there are several commonalities between Satwave's Ku-Band and Ka-Band antennas – their capabilities are centered on high-performance AESAs designed for mission-specific applications in defense and aerospace.
                     </motion.p>
                 </div>
 
@@ -197,18 +197,18 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                 >
                     <Accordion type="single" collapsible defaultValue="capabilities" className="w-full max-w-none">
                         <AccordionItem value="capabilities" className="border-white/10 glass-card bg-brand-black/20 px-6 md:px-12 lg:px-24 rounded-2xl">
-                            <AccordionTrigger className="text-xl font-bold text-white justify-center hover:text-brand-accent transition-colors py-6 hover:no-underline">
+                            <AccordionTrigger className="text-xl font-bold text-white justify-center transition-colors py-6 hover:no-underline">
                                 Our Shared Approach for Ku-Band & Ka-Band Antennas
                             </AccordionTrigger>
                             <AccordionContent className="pt-2 pb-8">
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-6">
                                     {sharedCapabilities.map((capability, idx) => (
-                                        <div key={idx} className="relative overflow-hidden bg-brand-black/40 backdrop-blur-md border border-white/10 p-6 hover:border-brand-accent/50 hover:bg-brand-black/60 transition-all duration-300 group h-full rounded-lg">
+                                        <div key={idx} className="relative overflow-hidden bg-brand-black/40 backdrop-blur-md border border-white/10 p-6 hover:border-white/50 hover:bg-brand-black/60 transition-all duration-300 group h-full rounded-lg">
                                             {/* Subtle Glowing Accent Line at the top */}
-                                            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                             {/* Accent gradient blob in the background on hover */}
-                                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"></div>
+                                            <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-500"></div>
 
                                             <span className="relative z-10 text-base sm:text-lg leading-relaxed font-medium text-gray-300 group-hover:text-white transition-colors">
                                                 {capability}
@@ -427,7 +427,7 @@ export default function ProductsAndApplications(props: ProductsAndApplicationsPr
                 {/* Footer Note */}
                 <div className="mt-16 text-center text-sm mx-auto max-w-4xl px-6">
                     <p>
-                        Satwave Arrays Inc. proprietary - Data Sheet represents Satwave Arrays Ka-Band AESA as configured for optimal market parameters. Actual configuration for customers and results may vary. For more information, email <a href="mailto:info@satwave.ai" className="text-brand-accent hover:underline transition-colors">info@satwave.ai</a>.
+                        Satwave Arrays Inc. proprietary - Data Sheet represents Satwave Arrays Ka-Band AESA as configured for optimal market parameters. Actual configuration for customers and results may vary. For more information, email <a href="mailto:info@satwave.ai" className="text-white hover:underline transition-colors">info@satwave.ai</a>.
                     </p>
                 </div>
             </div>

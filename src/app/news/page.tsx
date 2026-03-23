@@ -56,7 +56,7 @@ export default async function NewsPage() {
                             <Breadcrumb>
                                 <BreadcrumbList>
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                        <BreadcrumbLink href="/" className="text-gray-400 hover:text-white transition-colors">Home</BreadcrumbLink>
                                     </BreadcrumbItem>
                                     <BreadcrumbSeparator className="text-gray-600" />
                                     <BreadcrumbItem>
@@ -65,7 +65,7 @@ export default async function NewsPage() {
                                 </BreadcrumbList>
                             </Breadcrumb>
 
-                            <Link href="/" className="group inline-flex items-center text-brand-accent hover:bg-white/10 transition-all px-3 py-2 rounded-md">
+                            <Link href="/" className="group inline-flex items-center text-white hover:bg-white/10 transition-all px-3 py-2 rounded-md">
                                 <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                 </svg>

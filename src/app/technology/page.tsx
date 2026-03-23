@@ -11,6 +11,7 @@ import {
     BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -79,7 +80,7 @@ export default function TechnologyPage() {
                             <Breadcrumb>
                                 <BreadcrumbList>
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink href="/" className="text-gray-400 hover:text-brand-accent transition-colors">Home</BreadcrumbLink>
+                                        <BreadcrumbLink href="/" className="text-gray-400 hover:text-white transition-colors">Home</BreadcrumbLink>
                                     </BreadcrumbItem>
                                     <BreadcrumbSeparator className="text-gray-600" />
                                     <BreadcrumbItem>
@@ -88,7 +89,7 @@ export default function TechnologyPage() {
                                 </BreadcrumbList>
                             </Breadcrumb>
 
-                            <Link href="/" className="group inline-flex items-center text-brand-accent hover:bg-white/10 transition-all px-3 py-2 rounded-md">
+                            <Link href="/" className="group inline-flex items-center text-white hover:bg-white/10 transition-all px-3 py-2 rounded-md">
                                 <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                                 </svg>
@@ -110,23 +111,26 @@ export default function TechnologyPage() {
                             initial="hidden"
                             animate="show"
                             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.15 } } }}
-                            className="grid md:grid-cols-2 gap-8 mb-4 w-full"
+                            className="grid md:grid-cols-2 gap-10 mb-4 w-full"
                         >
                             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } }}>
-                                <Card className="glass-card group border-brand-black/30 w-full hover:border-brand-accent/50 transition-colors h-full">
+                                <Card className="glass-card group w-full transition-colors h-full rounded-lg">
                                     <CardContent className="p-6 h-full flex flex-col justify-start text-left">
-                                        <h3 className="text-3xl font-bold text-white mb-4 uppercase tracking-wide group-hover:text-brand-accent transition-colors">Our Approach</h3>
+                                        <h3 className="text-3xl font-bold text-white text-center mb-6 uppercase tracking-wide transition-colors">Our Approach</h3>
+                                        <Separator className="mb-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
                                         <p className="text-lg/relaxed text-gray-300 leading-relaxed font-light">
-                                            Our innovative approach includes an end-to-end structure that starts with array designs using simulations and modeling, developing critical components such as antenna control unit, software and satellite tracking algorithms and finally integrating them into antennas for measurement and validation through multiple rounds of testing planar near field and compact test ranges.
+                                            Our innovative approach includes an end-to-end structure that starts with array designs using simulations and modeling, developing critical components such as antenna control unit, software and satellite tracking algorithms and finally integrating them into antennas for measurement and validation through multiple rounds of testing in Planar Near Field and Compact Antenna Test ranges.
                                         </p>
                                     </CardContent>
                                 </Card>
                             </motion.div>
 
                             <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } }}>
-                                <Card className="glass-card group border-brand-black/30 w-full hover:border-brand-accent/50 transition-colors h-full">
+                                <Card className="glass-card group w-full transition-colors h-full rounded-lg">
                                     <CardContent className="p-6 h-full flex flex-col justify-start text-left">
-                                        <h3 className="text-3xl font-bold text-white mb-4 uppercase tracking-wide group-hover:text-brand-accent transition-colors">Engineering Philosophy</h3>
+                                        <h3 className="text-3xl font-bold text-white text-center mb-6 uppercase tracking-wide transition-colors">Engineering Philosophy</h3>
+                                        <Separator className="mb-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
                                         <ul className="text-lg/relaxed text-gray-300 font-light leading-relaxed list-disc pl-6 space-y-3">
                                             <li><strong className="text-white font-semibold flex-shrink-0">Data-Driven Design:</strong> Simulation is always paired with real-world measurements.</li>
                                             <li><strong className="text-white font-semibold flex-shrink-0">Open-Book Engineering:</strong> Customers receive detailed performance data and validation reports.</li>
@@ -156,10 +160,10 @@ export default function TechnologyPage() {
                                     variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } } }}
                                 >
                                     <Link href={`/technology/${topic.id}`}>
-                                        <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                                        <Card className="group glass-card border-brand-black/30 hover:border-white/50 transition-all duration-300 cursor-pointer h-full">
                                             <CardContent className="p-0">
                                                 {/* Image Placeholder */}
-                                                <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20">
+                                                <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-white/20">
                                                     {topic.image ? (
                                                         <img src={topic.image} alt={topic.title} className="w-full h-full object-cover" />
                                                     ) : (
@@ -171,13 +175,13 @@ export default function TechnologyPage() {
 
                                                 {/* Content */}
                                                 <div className="p-6">
-                                                    <h3 className="text-white uppercase font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors">
+                                                    <h3 className="text-white uppercase font-bold text-lg mb-3 group-hover:text-white transition-colors">
                                                         {topic.title}
                                                     </h3>
                                                     <p className="uppercase text-gray-400 text-sm leading-relaxed">
                                                         {topic.description}
                                                     </p>
-                                                    <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
+                                                    <div className="mt-4 flex items-center text-white text-sm font-medium">
                                                         <span className="group-hover:underline">Learn More</span>
                                                         <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

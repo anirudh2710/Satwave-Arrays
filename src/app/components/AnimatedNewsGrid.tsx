@@ -45,10 +45,10 @@ export default function AnimatedNewsGrid({ articles }: { articles: NewsArticle[]
             {articles.map((article) => (
                 <motion.div key={article.slug} variants={cardVariants}>
                     <Link href={`/news/${article.slug}`}>
-                        <Card className="group glass-card border-brand-black/30 hover:border-brand-accent/50 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
+                        <Card className="group glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer h-full">
                             <CardContent className="p-0">
                                 {/* Image */}
-                                <div className="aspect-video w-full overflow-hidden bg-gradient-to-br from-brand-black/20 to-brand-accent/20 relative">
+                                <div className="aspect-video w-full overflow-hidden relative">
                                     {article.mainImage ? (
                                         <img
                                             src={urlFor(article.mainImage).width(800).height(450).url()}
@@ -75,7 +75,7 @@ export default function AnimatedNewsGrid({ articles }: { articles: NewsArticle[]
                                     </div>
 
                                     {/* Headline */}
-                                    <h3 className="text-white font-bold text-lg mb-3 group-hover:text-brand-accent transition-colors line-clamp-2">
+                                    <h3 className="text-white font-bold text-lg mb-3 transition-colors line-clamp-2">
                                         {article.title}
                                     </h3>
 
@@ -84,7 +84,7 @@ export default function AnimatedNewsGrid({ articles }: { articles: NewsArticle[]
                                     </p>
 
                                     {/* Read More */}
-                                    <div className="mt-4 flex items-center text-brand-accent text-sm font-medium">
+                                    <div className="mt-4 flex items-center text-sm font-medium">
                                         <span className="group-hover:underline">Read More</span>
                                         <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

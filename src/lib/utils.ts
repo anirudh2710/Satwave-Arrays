@@ -18,6 +18,6 @@ export function getCategoryColor(category?: string): string {
       return 'bg-amber-500/20 text-amber-300 border-amber-500/30';
     case 'news':
     default:
-      return 'bg-brand-black/40 text-brand-accent border-brand-accent/30';
+      return 'bg-brand-black/40 text-pure-white border-pure-white/30';
   }
 }
