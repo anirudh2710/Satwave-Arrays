@@ -2,6 +2,9 @@ import { client } from '../sanity/client';
 import { NEWS_TICKER_QUERY } from '../sanity/queries';
 import HomeContent from './components/HomeContent';
 
+// Revalidate every 60 seconds
+export const revalidate = 60;
+
 interface NewsItem {
     title: string;
     slug: string;
