@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
 
         // Send email using Resend
         const data = await resend.emails.send({
-            from: 'Satwave Contact Form <onboarding@resend.dev>',
+            from: 'Satwave Contact Form <noreply@satwave.ai>',
             to: ['info@satwave.ai'],
             replyTo: email,
             subject: `New Contact Form Submission from ${firstName} ${lastName}`,
