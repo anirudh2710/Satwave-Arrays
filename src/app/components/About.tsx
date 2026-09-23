@@ -40,7 +40,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
         {
             title: "Our Team",
             description: "Team photo",
-            image: "/overview/team.jpg"
+            image: "/overview/team_new.jpeg"
         },
         {
             title: "Ku",
@@ -103,7 +103,6 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
         { name: "Sergio Navarrete", role: "Mechanical Engineer", image: "/team/optimized/sergio.jpg", bio: "I am one of the lead Mechanical Engineers at Satwave with about half a decade experience in the SATCOM industry. With a primary focus on design optimization, I help drive the team in the areas of Quality Assurance, MRP, and some Program Management to ensure the best possible products have the potential to get delivered onto the market in a timely and efficient manner. I enjoy working here because it almost feels like everyday is a new challenge and can always keep learning something new! When I am away from the office, I enjoy going the gym, going for walks and also love cleaning my car.", linkedin: "https://linkedin.com/in/snavarrete93" },
         { name: "Hunter Rabun", role: "Software Engineer", image: "/team/optimized/hunter.jpg", bio: "I am a digital engineer experienced in Hardware, Software, and RF systems. I am at Satwave because I get to work on everything from application software, to bare-metal firmware, and PCBs while working with a diverse, open-minded, and gifted team. In my free time I like to play video games, tinker with electronics, and go on spirited drives.", linkedin: "https://linkedin.com/in/hunter-rabun-8626b0231" },
         { name: "Gabriel Richmond", role: "Software Engineer", image: "/team/optimized/123.jpg", bio: "I am a soon-to-be graduate in computer engineering from Kennesaw State University with a passion for embedded systems development and design. I am at Satwave because of my desire to not only apply my learned skills but gain new ones within the RF and satellite industry. As an intern I aid with an array of projects from firmware, hardware, software, and testing. When I am not working, I am usually playing boardgames, watching movies, working on side projects, or playing video games with friends.", linkedin: "https://linkedin.com/in/placeholder" },
-        { name: "Nikolay Tranakiev", role: "Sr. Software Engineer", image: "/team/optimized/n.jpg", bio: "As an embedded engineer at Satwave AI, I work with our software team on implementing our antenna control stack as well as building an extensive software test suite. I come from a background in the satellite and space industry and enjoy being at Satwave for the opportunity to solve complex technical challenges with a great team. Outside of work, I enjoy tinkering with various hands-on projects and trying out every coffee shop in Atlanta. ", linkedin: "https://linkedin.com/in/nikolay-tranakiev" },
     ];
 
     // Combined for dialog selection
@@ -157,7 +156,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                 className="w-full relative px-12"
                                                 plugins={[
                                                     Autoplay({
-                                                        delay: 3500,
+                                                        delay: 5500,
                                                         stopOnInteraction: true,
                                                     })
                                                 ]}
@@ -265,33 +264,6 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                             </div>
                         </TabsContent>
 
-                        {/* Governance Tab - Board Members */}
-                        {/* <TabsContent value="governance" className="mt-8">
-                            <div className="max-w-6xl mx-auto">
-                                <div className="grid md:grid-cols-5 gap-6">
-                                    {boardMembers.map((member, i) => (
-                                        <motion.div
-                                            key={i}
-                                            initial={{ opacity: 0, scale: 0.9 }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: i * 0.1 }}
-                                        >
-                                            <Card key={i} className="glass-card border-brand-black/30 hover:transform hover:-translate-y-2 transition-all duration-300 h-full">
-                                                <CardContent className="p-4">
-                                                    <div className="aspect-square w-full rounded-lg mb-4 flex items-center justify-center">
-                                                        <span className="text-white/40 text-xs">Photo</span>
-                                                    </div>
-                                                    <h3 className="text-white font-bold text-center mb-1">{member.name}</h3>
-                                                    <p className="text-gray-400 text-sm text-center">{member.role}</p>
-                                                </CardContent>
-                                            </Card>
-                                        </motion.div>
-                                    ))}
-                                </div>
-                            </div>
-                        </TabsContent> */}
-
                         {/* Team Tab - Team Members Grid */}
                         <TabsContent value="team" className="mt-8">
                             <div className="max-w-6xl mx-auto space-y-8">
@@ -333,7 +305,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                             </div>
                                                         </div>
                                                         <h3 className="text-white uppercase text-center mb-1">{member.name}</h3>
-                                                        <p className="text-gray-400 uppercase text-sm text-center">{member.role}</p>
+                                                        <p className="text-white-400 uppercase text-sm text-center">{member.role}</p>
                                                     </CardContent>
                                                 </Card>
                                             </motion.div>
@@ -379,7 +351,7 @@ export default function About({ activeTab = 'overview', onTabChange }: AboutProp
                                                             </div>
                                                         </div>
                                                         <h3 className="text-white uppercase text-center mb-1">{member.name}</h3>
-                                                        <p className="text-gray-400 uppercase text-sm text-center">{member.role}</p>
+                                                        <p className="text-white-400 uppercase text-sm text-center">{member.role}</p>
                                                     </CardContent>
                                                 </Card>
                                             </motion.div>

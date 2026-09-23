@@ -1,8 +1,6 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
     try {
         const { firstName, lastName, email, message } = await request.json();
@@ -24,39 +22,53 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        // Send email using Resend
-        const data = await resend.emails.send({
-            from: 'Satwave Contact Form <noreply@satwave.ai>',
-            to: ['info@satwave.ai'],
-            replyTo: email,
-            subject: `New Contact Form Submission from ${firstName} ${lastName}`,
-            html: `
-                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                    <h2 style="color: #22257a; border-bottom: 2px solid #3b41b3; padding-bottom: 10px;">
-                        New Contact Form Submission
-                    </h2>
-                    <div style="margin: 20px 0;">
-                        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-                        <p><strong>Email:</strong> ${email}</p>
+        if (process.env.RESEND_API_KEY) {
+            const resend = new Resend(process.env.RESEND_API_KEY);
+            // Send email using Resend
+            const data = await resend.emails.send({
+                from: 'Satwave Contact Form <noreply@satwave.ai>',
+                to: ['info@satwave.ai'],
+                replyTo: email,
+                subject: `New Contact Form Submission from ${firstName} ${lastName}`,
+                html: `
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                        <h2 style="color: #22257a; border-bottom: 2px solid #3b41b3; padding-bottom: 10px;">
+                            New Contact Form Submission
+                        </h2>
+                        <div style="margin: 20px 0;">
+                            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+                            <p><strong>Email:</strong> ${email}</p>
+                        </div>
+                        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                            <p style="margin: 0;"><strong>Message:</strong></p>
+                            <p style="margin: 10px 0 0 0; white-space: pre-wrap;">${message}</p>
+                        </div>
+                        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+                        <p style="color: #666; font-size: 12px;">
+                            This email was sent from the Satwave contact form.
+                        </p>
                     </div>
-                    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                        <p style="margin: 0;"><strong>Message:</strong></p>
-                        <p style="margin: 10px 0 0 0; white-space: pre-wrap;">${message}</p>
-                    </div>
-                    <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-                    <p style="color: #666; font-size: 12px;">
-                        This email was sent from the Satwave contact form.
-                    </p>
-                </div>
-            `,
-        });
+                `,
+            });
 
-        console.log('📬 Resend response:', JSON.stringify(data, null, 2));
+            console.log('📬 Resend response:', JSON.stringify(data, null, 2));
 
-        return NextResponse.json(
-            { message: 'Email sent successfully', data },
-            { status: 200 }
-        );
+            return NextResponse.json(
+                { message: 'Email sent successfully', data },
+                { status: 200 }
+            );
+        } else {
+            console.log('📬 Development mode: contact form submitted without RESEND_API_KEY', {
+                firstName,
+                lastName,
+                email,
+                message,
+            });
+            return NextResponse.json(
+                { message: 'Email sent successfully (development mode)' },
+                { status: 200 }
+            );
+        }
     } catch (error: any) {
         console.error('❌ Error sending email:');
         console.error('Error message:', error.message);

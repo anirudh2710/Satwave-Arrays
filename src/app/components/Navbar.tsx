@@ -186,6 +186,16 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                                     <li>
                                         <NavigationMenuLink asChild>
                                             <Link
+                                                href="/careers"
+                                                className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
+                                            >
+                                                <div className="text-sm font-semibold tracking-wider uppercase">Careers</div>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link
                                                 href="/resources/ku-band"
                                                 className="block px-4 py-2.5 rounded-md cursor-pointer text-white/80 hover:text-white hover:bg-[#696969]/60 transition-all duration-200"
                                             >
@@ -281,6 +291,13 @@ export default function Navbar({ scrollTo, setAboutTab }: NavbarProps) {
                             <div className="border-b border-white/10 pb-6">
                                 <Link href="/news" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
                                     News
+                                </Link>
+                            </div>
+
+                            {/* Careers */}
+                            <div className="border-b border-white/10 pb-6">
+                                <Link href="/careers" onClick={() => setIsMobileMenuOpen(false)} className="text-white text-xl font-bold uppercase tracking-widest block">
+                                    Careers
                                 </Link>
                             </div>
 

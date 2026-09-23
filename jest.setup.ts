@@ -31,3 +31,10 @@ class IntersectionObserver {
     takeRecords() { return []; }
 }
 window.IntersectionObserver = IntersectionObserver as unknown as typeof window.IntersectionObserver;
+
+jest.mock('@portabletext/react', () => {
+    const React = require('react');
+    return {
+        PortableText: ({ value }: { value: any }) => React.createElement('div', { 'data-testid': 'portable-text' }, JSON.stringify(value)),
+    };
+});

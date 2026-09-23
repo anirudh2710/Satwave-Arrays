@@ -1,3 +1,4 @@
 import news from './news'
+import job from './job'
 
-export const schemaTypes = [news]
+export const schemaTypes = [news, job]

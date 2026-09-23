@@ -25,3 +25,33 @@ export const SINGLE_NEWS_QUERY = groq`*[_type == "news" && slug.current == $slug
   category,
   body
 }`;
+
+export const ALL_JOBS_QUERY = groq`*[_type == "job" && (isActive == true || !defined(isActive))] | order(publishedAt desc) {
+  _id,
+  positionTitle,
+  "slug": slug.current,
+  department,
+  location,
+  employmentType,
+  aboutSatwave,
+  aboutRole,
+  education,
+  responsibilities,
+  skillsAndExperience,
+  publishedAt
+}`;
+
+export const SINGLE_JOB_QUERY = groq`*[_type == "job" && slug.current == $slug][0] {
+  _id,
+  positionTitle,
+  "slug": slug.current,
+  department,
+  location,
+  employmentType,
+  aboutSatwave,
+  aboutRole,
+  education,
+  responsibilities,
+  skillsAndExperience,
+  publishedAt
+}`;
